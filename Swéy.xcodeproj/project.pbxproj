@@ -13,10 +13,46 @@
 		6E04FA0A29D212BE00503E75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA0829D212BE00503E75 /* Main.storyboard */; };
 		6E04FA0C29D212C100503E75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA0B29D212C100503E75 /* Assets.xcassets */; };
 		6E04FA0F29D212C100503E75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA0D29D212C100503E75 /* LaunchScreen.storyboard */; };
+		6E04FA1929D2179300503E75 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA1829D2179300503E75 /* Onboarding.storyboard */; };
+		6E04FA2D29D222C200503E75 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA1B29D222C100503E75 /* Poppins-ExtraBoldItalic.ttf */; };
+		6E04FA2E29D222C200503E75 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA1C29D222C100503E75 /* Poppins-Light.ttf */; };
+		6E04FA2F29D222C200503E75 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA1D29D222C100503E75 /* Poppins-BoldItalic.ttf */; };
+		6E04FA3029D222C200503E75 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA1E29D222C100503E75 /* Poppins-ThinItalic.ttf */; };
+		6E04FA3129D222C200503E75 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA1F29D222C100503E75 /* Poppins-Bold.ttf */; };
+		6E04FA3229D222C200503E75 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA2029D222C100503E75 /* Poppins-SemiBold.ttf */; };
+		6E04FA3329D222C200503E75 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA2129D222C100503E75 /* Poppins-Italic.ttf */; };
+		6E04FA3429D222C200503E75 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA2229D222C100503E75 /* Poppins-MediumItalic.ttf */; };
+		6E04FA3529D222C200503E75 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA2329D222C100503E75 /* Poppins-SemiBoldItalic.ttf */; };
+		6E04FA3629D222C200503E75 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA2429D222C200503E75 /* Poppins-Medium.ttf */; };
+		6E04FA3729D222C200503E75 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA2529D222C200503E75 /* Poppins-Thin.ttf */; };
+		6E04FA3829D222C200503E75 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA2629D222C200503E75 /* Poppins-ExtraLightItalic.ttf */; };
+		6E04FA3929D222C200503E75 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA2729D222C200503E75 /* Poppins-Black.ttf */; };
+		6E04FA3A29D222C200503E75 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA2829D222C200503E75 /* Poppins-Regular.ttf */; };
+		6E04FA3B29D222C200503E75 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA2929D222C200503E75 /* Poppins-ExtraLight.ttf */; };
+		6E04FA3C29D222C200503E75 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA2A29D222C200503E75 /* Poppins-LightItalic.ttf */; };
+		6E04FA3D29D222C200503E75 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA2B29D222C200503E75 /* Poppins-ExtraBold.ttf */; };
+		6E04FA3E29D222C200503E75 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA2C29D222C200503E75 /* Poppins-BlackItalic.ttf */; };
+		6E04FA4529D43DC000503E75 /* DMSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA3F29D43DBF00503E75 /* DMSans-BoldItalic.ttf */; };
+		6E04FA4629D43DC000503E75 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA4029D43DC000503E75 /* DMSans-Medium.ttf */; };
+		6E04FA4729D43DC000503E75 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA4129D43DC000503E75 /* DMSans-Bold.ttf */; };
+		6E04FA4829D43DC000503E75 /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA4229D43DC000503E75 /* DMSans-MediumItalic.ttf */; };
+		6E04FA4929D43DC000503E75 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA4329D43DC000503E75 /* DMSans-Regular.ttf */; };
+		6E04FA4A29D43DC000503E75 /* DMSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA4429D43DC000503E75 /* DMSans-Italic.ttf */; };
+		6E04FA4C29D459E500503E75 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04FA4B29D459E500503E75 /* Extensions.swift */; };
+		6E04FA4E29D4622500503E75 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04FA4D29D4622500503E75 /* OnboardingViewController.swift */; };
+		6E04FA5029D4627D00503E75 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04FA4F29D4627D00503E75 /* SignupViewController.swift */; };
+		6E3BE19229E497460060199C /* DOBPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19129E497460060199C /* DOBPickerViewController.swift */; };
+		6E3BE19429E5DC0D0060199C /* ProfilePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19329E5DC0D0060199C /* ProfilePictureViewController.swift */; };
+		6E3BE19629E5DC2E0060199C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19529E5DC2E0060199C /* SignInViewController.swift */; };
+		6E3BE19829E5DCF30060199C /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19729E5DCF30060199C /* ForgetPasswordViewController.swift */; };
+		6E3BE19A29E5DD010060199C /* RecoveryOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19929E5DD010060199C /* RecoveryOTPViewController.swift */; };
+		6E3BE19C29E5DD0E0060199C /* SignUpOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19B29E5DD0E0060199C /* SignUpOTPViewController.swift */; };
+		6E3BE19E29E5DD720060199C /* PhoneNumberSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19D29E5DD720060199C /* PhoneNumberSignInViewController.swift */; };
+		6EDBB63A29D6C6FE00DA91C1 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBB63929D6C6FE00DA91C1 /* PhoneNumberViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6E04F9FF29D212BE00503E75 /* Swéy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swéy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E04F9FF29D212BE00503E75 /* Swey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E04FA0229D212BE00503E75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E04FA0429D212BE00503E75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6E04FA0629D212BE00503E75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +60,42 @@
 		6E04FA0B29D212C100503E75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E04FA0E29D212C100503E75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E04FA1029D212C100503E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E04FA1829D2179300503E75 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		6E04FA1B29D222C100503E75 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		6E04FA1C29D222C100503E75 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		6E04FA1D29D222C100503E75 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		6E04FA1E29D222C100503E75 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		6E04FA1F29D222C100503E75 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		6E04FA2029D222C100503E75 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		6E04FA2129D222C100503E75 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		6E04FA2229D222C100503E75 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		6E04FA2329D222C100503E75 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		6E04FA2429D222C200503E75 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		6E04FA2529D222C200503E75 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		6E04FA2629D222C200503E75 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		6E04FA2729D222C200503E75 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		6E04FA2829D222C200503E75 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		6E04FA2929D222C200503E75 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		6E04FA2A29D222C200503E75 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		6E04FA2B29D222C200503E75 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		6E04FA2C29D222C200503E75 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		6E04FA3F29D43DBF00503E75 /* DMSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		6E04FA4029D43DC000503E75 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
+		6E04FA4129D43DC000503E75 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		6E04FA4229D43DC000503E75 /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		6E04FA4329D43DC000503E75 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
+		6E04FA4429D43DC000503E75 /* DMSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Italic.ttf"; sourceTree = "<group>"; };
+		6E04FA4B29D459E500503E75 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6E04FA4D29D4622500503E75 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		6E04FA4F29D4627D00503E75 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		6E3BE19129E497460060199C /* DOBPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOBPickerViewController.swift; sourceTree = "<group>"; };
+		6E3BE19329E5DC0D0060199C /* ProfilePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureViewController.swift; sourceTree = "<group>"; };
+		6E3BE19529E5DC2E0060199C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		6E3BE19729E5DCF30060199C /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		6E3BE19929E5DD010060199C /* RecoveryOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryOTPViewController.swift; sourceTree = "<group>"; };
+		6E3BE19B29E5DD0E0060199C /* SignUpOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpOTPViewController.swift; sourceTree = "<group>"; };
+		6E3BE19D29E5DD720060199C /* PhoneNumberSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberSignInViewController.swift; sourceTree = "<group>"; };
+		6EDBB63929D6C6FE00DA91C1 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +120,7 @@
 		6E04FA0029D212BE00503E75 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6E04F9FF29D212BE00503E75 /* Swéy.app */,
+				6E04F9FF29D212BE00503E75 /* Swey.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,20 +131,80 @@
 				6E04FA0229D212BE00503E75 /* AppDelegate.swift */,
 				6E04FA0429D212BE00503E75 /* SceneDelegate.swift */,
 				6E04FA0629D212BE00503E75 /* ViewController.swift */,
+				6E04FA4B29D459E500503E75 /* Extensions.swift */,
+				6E04FA1629D2175B00503E75 /* Onboarding */,
 				6E04FA0829D212BE00503E75 /* Main.storyboard */,
 				6E04FA0B29D212C100503E75 /* Assets.xcassets */,
 				6E04FA0D29D212C100503E75 /* LaunchScreen.storyboard */,
 				6E04FA1029D212C100503E75 /* Info.plist */,
+				6E04FA1A29D2229900503E75 /* Fonts */,
 			);
 			path = "Swéy";
+			sourceTree = "<group>";
+		};
+		6E04FA1629D2175B00503E75 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				6E04FA1729D2177500503E75 /* ViewControllers */,
+				6E04FA1829D2179300503E75 /* Onboarding.storyboard */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		6E04FA1729D2177500503E75 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6E04FA4D29D4622500503E75 /* OnboardingViewController.swift */,
+				6E04FA4F29D4627D00503E75 /* SignupViewController.swift */,
+				6EDBB63929D6C6FE00DA91C1 /* PhoneNumberViewController.swift */,
+				6E3BE19129E497460060199C /* DOBPickerViewController.swift */,
+				6E3BE19329E5DC0D0060199C /* ProfilePictureViewController.swift */,
+				6E3BE19529E5DC2E0060199C /* SignInViewController.swift */,
+				6E3BE19729E5DCF30060199C /* ForgetPasswordViewController.swift */,
+				6E3BE19929E5DD010060199C /* RecoveryOTPViewController.swift */,
+				6E3BE19B29E5DD0E0060199C /* SignUpOTPViewController.swift */,
+				6E3BE19D29E5DD720060199C /* PhoneNumberSignInViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6E04FA1A29D2229900503E75 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6E04FA4129D43DC000503E75 /* DMSans-Bold.ttf */,
+				6E04FA3F29D43DBF00503E75 /* DMSans-BoldItalic.ttf */,
+				6E04FA4429D43DC000503E75 /* DMSans-Italic.ttf */,
+				6E04FA4029D43DC000503E75 /* DMSans-Medium.ttf */,
+				6E04FA4229D43DC000503E75 /* DMSans-MediumItalic.ttf */,
+				6E04FA4329D43DC000503E75 /* DMSans-Regular.ttf */,
+				6E04FA2729D222C200503E75 /* Poppins-Black.ttf */,
+				6E04FA2C29D222C200503E75 /* Poppins-BlackItalic.ttf */,
+				6E04FA1F29D222C100503E75 /* Poppins-Bold.ttf */,
+				6E04FA1D29D222C100503E75 /* Poppins-BoldItalic.ttf */,
+				6E04FA2B29D222C200503E75 /* Poppins-ExtraBold.ttf */,
+				6E04FA1B29D222C100503E75 /* Poppins-ExtraBoldItalic.ttf */,
+				6E04FA2929D222C200503E75 /* Poppins-ExtraLight.ttf */,
+				6E04FA2629D222C200503E75 /* Poppins-ExtraLightItalic.ttf */,
+				6E04FA2129D222C100503E75 /* Poppins-Italic.ttf */,
+				6E04FA1C29D222C100503E75 /* Poppins-Light.ttf */,
+				6E04FA2A29D222C200503E75 /* Poppins-LightItalic.ttf */,
+				6E04FA2429D222C200503E75 /* Poppins-Medium.ttf */,
+				6E04FA2229D222C100503E75 /* Poppins-MediumItalic.ttf */,
+				6E04FA2829D222C200503E75 /* Poppins-Regular.ttf */,
+				6E04FA2029D222C100503E75 /* Poppins-SemiBold.ttf */,
+				6E04FA2329D222C100503E75 /* Poppins-SemiBoldItalic.ttf */,
+				6E04FA2529D222C200503E75 /* Poppins-Thin.ttf */,
+				6E04FA1E29D222C100503E75 /* Poppins-ThinItalic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6E04F9FE29D212BE00503E75 /* Swéy */ = {
+		6E04F9FE29D212BE00503E75 /* Swey */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E04FA1329D212C100503E75 /* Build configuration list for PBXNativeTarget "Swéy" */;
+			buildConfigurationList = 6E04FA1329D212C100503E75 /* Build configuration list for PBXNativeTarget "Swey" */;
 			buildPhases = (
 				6E04F9FB29D212BE00503E75 /* Sources */,
 				6E04F9FC29D212BE00503E75 /* Frameworks */,
@@ -82,9 +214,9 @@
 			);
 			dependencies = (
 			);
-			name = "Swéy";
+			name = Swey;
 			productName = "Swéy";
-			productReference = 6E04F9FF29D212BE00503E75 /* Swéy.app */;
+			productReference = 6E04F9FF29D212BE00503E75 /* Swey.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -115,7 +247,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6E04F9FE29D212BE00503E75 /* Swéy */,
+				6E04F9FE29D212BE00503E75 /* Swey */,
 			);
 		};
 /* End PBXProject section */
@@ -125,9 +257,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E04FA4529D43DC000503E75 /* DMSans-BoldItalic.ttf in Resources */,
+				6E04FA3829D222C200503E75 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				6E04FA4A29D43DC000503E75 /* DMSans-Italic.ttf in Resources */,
+				6E04FA3929D222C200503E75 /* Poppins-Black.ttf in Resources */,
+				6E04FA4929D43DC000503E75 /* DMSans-Regular.ttf in Resources */,
 				6E04FA0F29D212C100503E75 /* LaunchScreen.storyboard in Resources */,
+				6E04FA3A29D222C200503E75 /* Poppins-Regular.ttf in Resources */,
+				6E04FA3629D222C200503E75 /* Poppins-Medium.ttf in Resources */,
+				6E04FA3429D222C200503E75 /* Poppins-MediumItalic.ttf in Resources */,
+				6E04FA3129D222C200503E75 /* Poppins-Bold.ttf in Resources */,
+				6E04FA3529D222C200503E75 /* Poppins-SemiBoldItalic.ttf in Resources */,
+				6E04FA3029D222C200503E75 /* Poppins-ThinItalic.ttf in Resources */,
+				6E04FA2E29D222C200503E75 /* Poppins-Light.ttf in Resources */,
+				6E04FA4829D43DC000503E75 /* DMSans-MediumItalic.ttf in Resources */,
+				6E04FA4729D43DC000503E75 /* DMSans-Bold.ttf in Resources */,
+				6E04FA3E29D222C200503E75 /* Poppins-BlackItalic.ttf in Resources */,
+				6E04FA3D29D222C200503E75 /* Poppins-ExtraBold.ttf in Resources */,
+				6E04FA2F29D222C200503E75 /* Poppins-BoldItalic.ttf in Resources */,
+				6E04FA3C29D222C200503E75 /* Poppins-LightItalic.ttf in Resources */,
+				6E04FA3229D222C200503E75 /* Poppins-SemiBold.ttf in Resources */,
+				6E04FA3729D222C200503E75 /* Poppins-Thin.ttf in Resources */,
+				6E04FA4629D43DC000503E75 /* DMSans-Medium.ttf in Resources */,
 				6E04FA0C29D212C100503E75 /* Assets.xcassets in Resources */,
+				6E04FA3B29D222C200503E75 /* Poppins-ExtraLight.ttf in Resources */,
+				6E04FA3329D222C200503E75 /* Poppins-Italic.ttf in Resources */,
 				6E04FA0A29D212BE00503E75 /* Main.storyboard in Resources */,
+				6E04FA1929D2179300503E75 /* Onboarding.storyboard in Resources */,
+				6E04FA2D29D222C200503E75 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +295,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3BE19829E5DCF30060199C /* ForgetPasswordViewController.swift in Sources */,
+				6E04FA5029D4627D00503E75 /* SignupViewController.swift in Sources */,
+				6E3BE19E29E5DD720060199C /* PhoneNumberSignInViewController.swift in Sources */,
+				6E3BE19C29E5DD0E0060199C /* SignUpOTPViewController.swift in Sources */,
 				6E04FA0729D212BE00503E75 /* ViewController.swift in Sources */,
+				6E3BE19A29E5DD010060199C /* RecoveryOTPViewController.swift in Sources */,
+				6E3BE19229E497460060199C /* DOBPickerViewController.swift in Sources */,
 				6E04FA0329D212BE00503E75 /* AppDelegate.swift in Sources */,
+				6E04FA4E29D4622500503E75 /* OnboardingViewController.swift in Sources */,
+				6EDBB63A29D6C6FE00DA91C1 /* PhoneNumberViewController.swift in Sources */,
 				6E04FA0529D212BE00503E75 /* SceneDelegate.swift in Sources */,
+				6E3BE19429E5DC0D0060199C /* ProfilePictureViewController.swift in Sources */,
+				6E3BE19629E5DC2E0060199C /* SignInViewController.swift in Sources */,
+				6E04FA4C29D459E500503E75 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,17 +457,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Swéy/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Swéy";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sweyApp.swey.Swe-y";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sweyApp.swey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -316,17 +485,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Swéy/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Swéy";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sweyApp.swey.Swe-y";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sweyApp.swey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -346,7 +516,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E04FA1329D212C100503E75 /* Build configuration list for PBXNativeTarget "Swéy" */ = {
+		6E04FA1329D212C100503E75 /* Build configuration list for PBXNativeTarget "Swey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E04FA1429D212C100503E75 /* Debug */,
