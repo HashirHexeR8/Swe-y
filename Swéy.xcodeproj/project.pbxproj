@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6E04FA0329D212BE00503E75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04FA0229D212BE00503E75 /* AppDelegate.swift */; };
 		6E04FA0529D212BE00503E75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04FA0429D212BE00503E75 /* SceneDelegate.swift */; };
-		6E04FA0729D212BE00503E75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04FA0629D212BE00503E75 /* ViewController.swift */; };
 		6E04FA0A29D212BE00503E75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA0829D212BE00503E75 /* Main.storyboard */; };
 		6E04FA0C29D212C100503E75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA0B29D212C100503E75 /* Assets.xcassets */; };
 		6E04FA0F29D212C100503E75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA0D29D212C100503E75 /* LaunchScreen.storyboard */; };
@@ -48,14 +47,19 @@
 		6E3BE19A29E5DD010060199C /* RecoveryOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19929E5DD010060199C /* RecoveryOTPViewController.swift */; };
 		6E3BE19C29E5DD0E0060199C /* SignUpOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19B29E5DD0E0060199C /* SignUpOTPViewController.swift */; };
 		6E3BE19E29E5DD720060199C /* PhoneNumberSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19D29E5DD720060199C /* PhoneNumberSignInViewController.swift */; };
+		6E7F00AC2A0B187500D30F7C /* StoreLanding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7F00AB2A0B187500D30F7C /* StoreLanding.storyboard */; };
+		6EBDD6312A10FFD000AECD19 /* ListingPageProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDD6302A10FFD000AECD19 /* ListingPageProductDTO.swift */; };
+		6EBDD6332A11018900AECD19 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDD6322A11018900AECD19 /* Enums.swift */; };
 		6EDBB63A29D6C6FE00DA91C1 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBB63929D6C6FE00DA91C1 /* PhoneNumberViewController.swift */; };
+		6EEEE5D02A103045007723F0 /* ListingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE5CF2A103045007723F0 /* ListingPageViewController.swift */; };
+		6EEEE5DF2A10DA14007723F0 /* ProductImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE5DD2A10DA14007723F0 /* ProductImageCollectionViewCell.swift */; };
+		6EEEE5E02A10DA14007723F0 /* ProductImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEEE5DE2A10DA14007723F0 /* ProductImageCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6E04F9FF29D212BE00503E75 /* Swey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E04FA0229D212BE00503E75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E04FA0429D212BE00503E75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6E04FA0629D212BE00503E75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6E04FA0929D212BE00503E75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E04FA0B29D212C100503E75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E04FA0E29D212C100503E75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,7 +99,13 @@
 		6E3BE19929E5DD010060199C /* RecoveryOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryOTPViewController.swift; sourceTree = "<group>"; };
 		6E3BE19B29E5DD0E0060199C /* SignUpOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpOTPViewController.swift; sourceTree = "<group>"; };
 		6E3BE19D29E5DD720060199C /* PhoneNumberSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberSignInViewController.swift; sourceTree = "<group>"; };
+		6E7F00AB2A0B187500D30F7C /* StoreLanding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreLanding.storyboard; sourceTree = "<group>"; };
+		6EBDD6302A10FFD000AECD19 /* ListingPageProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPageProductDTO.swift; sourceTree = "<group>"; };
+		6EBDD6322A11018900AECD19 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		6EDBB63929D6C6FE00DA91C1 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
+		6EEEE5CF2A103045007723F0 /* ListingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPageViewController.swift; sourceTree = "<group>"; };
+		6EEEE5DD2A10DA14007723F0 /* ProductImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		6EEEE5DE2A10DA14007723F0 /* ProductImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductImageCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +140,11 @@
 			children = (
 				6E04FA0229D212BE00503E75 /* AppDelegate.swift */,
 				6E04FA0429D212BE00503E75 /* SceneDelegate.swift */,
-				6E04FA0629D212BE00503E75 /* ViewController.swift */,
 				6E04FA4B29D459E500503E75 /* Extensions.swift */,
+				6EBDD6322A11018900AECD19 /* Enums.swift */,
+				6EBDD62F2A10FF9B00AECD19 /* Models */,
 				6E04FA1629D2175B00503E75 /* Onboarding */,
+				6E7F00A82A0B182900D30F7C /* StoreLanding */,
 				6E04FA0829D212BE00503E75 /* Main.storyboard */,
 				6E04FA0B29D212C100503E75 /* Assets.xcassets */,
 				6E04FA0D29D212C100503E75 /* LaunchScreen.storyboard */,
@@ -199,6 +211,41 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		6E7F00A82A0B182900D30F7C /* StoreLanding */ = {
+			isa = PBXGroup;
+			children = (
+				6EEEE5CE2A103014007723F0 /* ViewControllers */,
+				6EEEE5CD2A0F5664007723F0 /* Cells */,
+				6E7F00AB2A0B187500D30F7C /* StoreLanding.storyboard */,
+			);
+			path = StoreLanding;
+			sourceTree = "<group>";
+		};
+		6EBDD62F2A10FF9B00AECD19 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6EBDD6302A10FFD000AECD19 /* ListingPageProductDTO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6EEEE5CD2A0F5664007723F0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6EEEE5DD2A10DA14007723F0 /* ProductImageCollectionViewCell.swift */,
+				6EEEE5DE2A10DA14007723F0 /* ProductImageCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6EEEE5CE2A103014007723F0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6EEEE5CF2A103045007723F0 /* ListingPageViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,6 +307,7 @@
 				6E04FA4529D43DC000503E75 /* DMSans-BoldItalic.ttf in Resources */,
 				6E04FA3829D222C200503E75 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				6E04FA4A29D43DC000503E75 /* DMSans-Italic.ttf in Resources */,
+				6E7F00AC2A0B187500D30F7C /* StoreLanding.storyboard in Resources */,
 				6E04FA3929D222C200503E75 /* Poppins-Black.ttf in Resources */,
 				6E04FA4929D43DC000503E75 /* DMSans-Regular.ttf in Resources */,
 				6E04FA0F29D212C100503E75 /* LaunchScreen.storyboard in Resources */,
@@ -270,6 +318,7 @@
 				6E04FA3529D222C200503E75 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				6E04FA3029D222C200503E75 /* Poppins-ThinItalic.ttf in Resources */,
 				6E04FA2E29D222C200503E75 /* Poppins-Light.ttf in Resources */,
+				6EEEE5E02A10DA14007723F0 /* ProductImageCollectionViewCell.xib in Resources */,
 				6E04FA4829D43DC000503E75 /* DMSans-MediumItalic.ttf in Resources */,
 				6E04FA4729D43DC000503E75 /* DMSans-Bold.ttf in Resources */,
 				6E04FA3E29D222C200503E75 /* Poppins-BlackItalic.ttf in Resources */,
@@ -297,17 +346,20 @@
 			files = (
 				6E3BE19829E5DCF30060199C /* ForgetPasswordViewController.swift in Sources */,
 				6E04FA5029D4627D00503E75 /* SignupViewController.swift in Sources */,
+				6EEEE5D02A103045007723F0 /* ListingPageViewController.swift in Sources */,
 				6E3BE19E29E5DD720060199C /* PhoneNumberSignInViewController.swift in Sources */,
 				6E3BE19C29E5DD0E0060199C /* SignUpOTPViewController.swift in Sources */,
-				6E04FA0729D212BE00503E75 /* ViewController.swift in Sources */,
 				6E3BE19A29E5DD010060199C /* RecoveryOTPViewController.swift in Sources */,
 				6E3BE19229E497460060199C /* DOBPickerViewController.swift in Sources */,
 				6E04FA0329D212BE00503E75 /* AppDelegate.swift in Sources */,
 				6E04FA4E29D4622500503E75 /* OnboardingViewController.swift in Sources */,
+				6EEEE5DF2A10DA14007723F0 /* ProductImageCollectionViewCell.swift in Sources */,
 				6EDBB63A29D6C6FE00DA91C1 /* PhoneNumberViewController.swift in Sources */,
 				6E04FA0529D212BE00503E75 /* SceneDelegate.swift in Sources */,
+				6EBDD6312A10FFD000AECD19 /* ListingPageProductDTO.swift in Sources */,
 				6E3BE19429E5DC0D0060199C /* ProfilePictureViewController.swift in Sources */,
 				6E3BE19629E5DC2E0060199C /* SignInViewController.swift in Sources */,
+				6EBDD6332A11018900AECD19 /* Enums.swift in Sources */,
 				6E04FA4C29D459E500503E75 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
