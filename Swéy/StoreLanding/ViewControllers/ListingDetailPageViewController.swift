@@ -1,48 +1,105 @@
 //
-//  ListingPageViewController.swift
+//  ListingDetailPageViewController.swift
 //  Swey
 //
-//  Created by Muhammad Hashir on 5/14/23.
+//  Created by Muhammad Hashir on 6/5/23.
 //
 
 import UIKit
 
-class ListingPageViewController: UIViewController, UICollectionViewDelegate {
+class ListingDetailPageViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var productImagesCollectionView: UICollectionView!
+    @IBOutlet weak var similarItemsCollectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var productDetailContainer: UIView!
+    @IBOutlet weak var productPriceContainer: UIView!
     
     private var sectionDataSource: [ListingPageProductSectionDTO] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sectionDataSource = createDataSource()
-        
         let nib = UINib(nibName: String(describing: ProductImageCollectionViewCell.self), bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: String(describing: ProductImageCollectionViewCell.self))
+        productImagesCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: ProductImageCollectionViewCell.self))
+        similarItemsCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: ProductImageCollectionViewCell.self))
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "listingItemPriceButton.png")?.draw(in: self.view.bounds)
+
+        if let image = UIGraphicsGetImageFromCurrentImageContext(){
+            UIGraphicsEndImageContext()
+            self.productPriceContainer.backgroundColor = UIColor(patternImage: image)
+        }
+        else {
+            UIGraphicsEndImageContext()
+            debugPrint("Image not available")
+        }
         
-        collectionView.collectionViewLayout = createCompositionalLayout()
+        self.sectionDataSource = createDataSource()
         
-        segmentedControl.addUnderlineForSelectedSegment()
+        self.similarItemsCollectionView.dataSource = self
+        self.similarItemsCollectionView.delegate = self
+        self.productImagesCollectionView.dataSource = self
+        self.productImagesCollectionView.delegate = self
         
-        // Do any additional setup after loading the view.
+        self.similarItemsCollectionView.collectionViewLayout = createCompositionalLayout()
+        self.productImagesCollectionView.collectionViewLayout = createCompositionalLayoutForFullProductImages()
+        
+        self.segmentedControl.addUnderlineForSelectedSegment()
+        self.segmentedControl.changeUnderlinePositionForStartup()
+                
     }
     
-    @IBAction func onFilterButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: FIlterMainViewController.self)) as? FIlterMainViewController
-        vc?.modalPresentationStyle = .overCurrentContext
-        self.present(vc!, animated: true)
+    func updateCollectionViewHeight() {
+        self.similarItemsCollectionView.layoutIfNeeded()
+        self.similarItemsCollectionView.constraints.forEach { constraint in
+            if constraint.identifier == "similarProductsCollectionViewHeightConstraint" {
+                constraint.constant = self.similarItemsCollectionView.contentSize.height
+            }
+        }
     }
     
-    
-    @IBAction func segmentChanged(_ sender: Any) {
+    @IBAction func onSegmentValueChange(_ sender: Any!) {
         self.segmentedControl.changeUnderlinePosition()
+        
+        if self.segmentedControl.selectedSegmentIndex == 0 {
+            self.similarItemsCollectionView.constraints.forEach { constraint in
+                if constraint.identifier == "similarProductsCollectionViewHeightConstraint" {
+                    constraint.constant = 0
+                }
+            }
+        }
+        else {
+            updateCollectionViewHeight()
+        }
+        
+        productDetailContainer.isHidden = self.segmentedControl.selectedSegmentIndex != 0
+        productPriceContainer.isHidden = self.segmentedControl.selectedSegmentIndex != 0
+        similarItemsCollectionView.isHidden = self.segmentedControl.selectedSegmentIndex == 0
+    }
+    
+    @IBAction func onBackButtonTap(_ sender: Any!) {
+        dismiss(animated: true)
+    }
+    
+    func createCompositionalLayoutForFullProductImages() -> UICollectionViewCompositionalLayout {
+        var products: [NSCollectionLayoutItem] = []
+        
+        let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+        productItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 3, bottom: 2, trailing: 3)
+        products.append(productItem)
+        
+        //Group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: products)
+        //Section
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0)
+        section.orthogonalScrollingBehavior = .continuous
+        
+        return UICollectionViewCompositionalLayout(section: section)
     }
     
     func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
@@ -161,56 +218,28 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         
         return [section1, section2, section3, section4, section5]
     }
-    
-    
+
 }
 
-extension ListingPageViewController: UICollectionViewDataSource {
-    
+extension ListingDetailPageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+        
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return sectionDataSource.count
+        return collectionView.tag == 2 ? sectionDataSource.count : 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sectionDataSource[section].products.count
+        return collectionView.tag == 2 ? sectionDataSource[section].products.count : 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ProductImageCollectionViewCell.self), for: indexPath) as! ProductImageCollectionViewCell
-        cell.setupCell(imageName: sectionDataSource[indexPath.section].products[indexPath.row].itemImage)
+        if collectionView.tag == 2 {
+            cell.setupCell(imageName: sectionDataSource[indexPath.section].products[indexPath.row].itemImage)
+        }
+        else {
+            cell.setupCell(imageName: "productDetailFullImage")
+        }
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: ListingDetailPageViewController.self)) as? ListingDetailPageViewController
-        vc?.modalPresentationStyle = .overCurrentContext
-        self.present(vc!, animated: true)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
-        
-        return UIContextMenuConfiguration(identifier: nil, previewProvider: {
-            // Create a preview view controller and return it
-            return PreviewViewController(imageName: "s2p2")
-        })
-    }
-
-    func makeContextMenu() -> UIMenu {
-
-        let rename = UIAction(title: "Rename Pupper", image: UIImage(named: "s1p1")) { action in
-            // Show rename UI
-        }
-
-        // Here we specify the "destructive" attribute to show that it’s destructive in nature
-        let delete = UIAction(title: "Delete Photo", image: UIImage(named: "s1p1"), attributes: .destructive) { action in
-            // Delete this photo 😢
-        }
-
-        // The "title" will show up as an action for opening this menu
-        let edit = UIMenu(title: "Edit...", children: [rename, delete])
-
-        // Create our menu with both the edit menu and the share action
-        return UIMenu(title: "Main Menu", children: [edit])
-    }
 }

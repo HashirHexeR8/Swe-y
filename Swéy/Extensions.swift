@@ -140,3 +140,10 @@ extension UISegmentedControl{
         })
     }
 }
+
+extension UISwitch {
+    func changeSwitchImage() {
+        self.onImage = UIImage(named: "toggleSwitchOn")
+        self.offImage = UIImage(named: "toggleSwitchOff")
+    }
+}

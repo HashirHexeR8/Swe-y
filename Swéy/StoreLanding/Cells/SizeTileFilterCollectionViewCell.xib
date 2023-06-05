@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Medium.ttf">
+            <string>DMSans-Medium</string>
+        </array>
+        <array key="DMSans-Regular.ttf">
+            <string>DMSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SizeTileFilterCollectionViewCell" customModule="Swey" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="122" height="104"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="122" height="104"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCC-aL-qbT">
+                        <rect key="frame" x="0.0" y="0.0" width="122" height="104"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiG-wa-8yL">
+                                <rect key="frame" x="47.666666666666664" y="43.666666666666664" width="26.666666666666664" height="17"/>
+                                <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSw-a7-Vpn">
+                                <rect key="frame" x="5" y="31.666666666666671" width="16" height="17"/>
+                                <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HiG-wa-8yL" firstAttribute="centerX" secondItem="GCC-aL-qbT" secondAttribute="centerX" id="I7p-3G-Yz6"/>
+                            <constraint firstItem="FSw-a7-Vpn" firstAttribute="leading" secondItem="GCC-aL-qbT" secondAttribute="leading" constant="5" id="JNk-2E-2KS"/>
+                            <constraint firstItem="HiG-wa-8yL" firstAttribute="top" secondItem="FSw-a7-Vpn" secondAttribute="bottom" constant="-5" id="MS5-Iq-wWo"/>
+                            <constraint firstItem="HiG-wa-8yL" firstAttribute="centerY" secondItem="GCC-aL-qbT" secondAttribute="centerY" id="May-Uc-UKe"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="GCC-aL-qbT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bDd-So-05t"/>
+                <constraint firstAttribute="bottom" secondItem="GCC-aL-qbT" secondAttribute="bottom" id="g37-X8-akl"/>
+                <constraint firstAttribute="trailing" secondItem="GCC-aL-qbT" secondAttribute="trailing" id="gUq-HH-hwv"/>
+                <constraint firstItem="GCC-aL-qbT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vGA-FG-5Pv"/>
+            </constraints>
+            <size key="customSize" width="122" height="104"/>
+            <point key="canvasLocation" x="73.282442748091597" y="40.140845070422536"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

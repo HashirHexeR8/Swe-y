@@ -48,9 +48,18 @@
 		6E3BE19C29E5DD0E0060199C /* SignUpOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19B29E5DD0E0060199C /* SignUpOTPViewController.swift */; };
 		6E3BE19E29E5DD720060199C /* PhoneNumberSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19D29E5DD720060199C /* PhoneNumberSignInViewController.swift */; };
 		6E7F00AC2A0B187500D30F7C /* StoreLanding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7F00AB2A0B187500D30F7C /* StoreLanding.storyboard */; };
+		6E9B79292A2CF0ED00B6559C /* SizeTileFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B79272A2CF0ED00B6559C /* SizeTileFilterCollectionViewCell.swift */; };
+		6E9B792A2A2CF0ED00B6559C /* SizeTileFilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E9B79282A2CF0ED00B6559C /* SizeTileFilterCollectionViewCell.xib */; };
+		6E9B792E2A2CF61100B6559C /* SizeTileFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B792D2A2CF61100B6559C /* SizeTileFilterViewController.swift */; };
+		6E9B79302A2D0BB600B6559C /* FilterItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B792F2A2D0BB600B6559C /* FilterItemDTO.swift */; };
+		6E9B79322A2D135F00B6559C /* FIlterMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B79312A2D135F00B6559C /* FIlterMainViewController.swift */; };
+		6E9B79342A2D137100B6559C /* CategoryFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B79332A2D137100B6559C /* CategoryFilterViewController.swift */; };
+		6E9B79362A2D138B00B6559C /* PantsSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B79352A2D138B00B6559C /* PantsSizeViewController.swift */; };
+		6E9B79382A2D3CD600B6559C /* ListingDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B79372A2D3CD600B6559C /* ListingDetailPageViewController.swift */; };
 		6EBDD6312A10FFD000AECD19 /* ListingPageProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDD6302A10FFD000AECD19 /* ListingPageProductDTO.swift */; };
 		6EBDD6332A11018900AECD19 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDD6322A11018900AECD19 /* Enums.swift */; };
 		6EDBB63A29D6C6FE00DA91C1 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBB63929D6C6FE00DA91C1 /* PhoneNumberViewController.swift */; };
+		6EDF39E32A2E8B6B00DF04C0 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDF39E22A2E8B6B00DF04C0 /* PreviewViewController.swift */; };
 		6EEEE5D02A103045007723F0 /* ListingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE5CF2A103045007723F0 /* ListingPageViewController.swift */; };
 		6EEEE5DF2A10DA14007723F0 /* ProductImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE5DD2A10DA14007723F0 /* ProductImageCollectionViewCell.swift */; };
 		6EEEE5E02A10DA14007723F0 /* ProductImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEEE5DE2A10DA14007723F0 /* ProductImageCollectionViewCell.xib */; };
@@ -100,9 +109,18 @@
 		6E3BE19B29E5DD0E0060199C /* SignUpOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpOTPViewController.swift; sourceTree = "<group>"; };
 		6E3BE19D29E5DD720060199C /* PhoneNumberSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberSignInViewController.swift; sourceTree = "<group>"; };
 		6E7F00AB2A0B187500D30F7C /* StoreLanding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreLanding.storyboard; sourceTree = "<group>"; };
+		6E9B79272A2CF0ED00B6559C /* SizeTileFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeTileFilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		6E9B79282A2CF0ED00B6559C /* SizeTileFilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SizeTileFilterCollectionViewCell.xib; sourceTree = "<group>"; };
+		6E9B792D2A2CF61100B6559C /* SizeTileFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeTileFilterViewController.swift; sourceTree = "<group>"; };
+		6E9B792F2A2D0BB600B6559C /* FilterItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterItemDTO.swift; sourceTree = "<group>"; };
+		6E9B79312A2D135F00B6559C /* FIlterMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlterMainViewController.swift; sourceTree = "<group>"; };
+		6E9B79332A2D137100B6559C /* CategoryFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterViewController.swift; sourceTree = "<group>"; };
+		6E9B79352A2D138B00B6559C /* PantsSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantsSizeViewController.swift; sourceTree = "<group>"; };
+		6E9B79372A2D3CD600B6559C /* ListingDetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailPageViewController.swift; sourceTree = "<group>"; };
 		6EBDD6302A10FFD000AECD19 /* ListingPageProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPageProductDTO.swift; sourceTree = "<group>"; };
 		6EBDD6322A11018900AECD19 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		6EDBB63929D6C6FE00DA91C1 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
+		6EDF39E22A2E8B6B00DF04C0 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		6EEEE5CF2A103045007723F0 /* ListingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPageViewController.swift; sourceTree = "<group>"; };
 		6EEEE5DD2A10DA14007723F0 /* ProductImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		6EEEE5DE2A10DA14007723F0 /* ProductImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductImageCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -225,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				6EBDD6302A10FFD000AECD19 /* ListingPageProductDTO.swift */,
+				6E9B792F2A2D0BB600B6559C /* FilterItemDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +253,8 @@
 			children = (
 				6EEEE5DD2A10DA14007723F0 /* ProductImageCollectionViewCell.swift */,
 				6EEEE5DE2A10DA14007723F0 /* ProductImageCollectionViewCell.xib */,
+				6E9B79272A2CF0ED00B6559C /* SizeTileFilterCollectionViewCell.swift */,
+				6E9B79282A2CF0ED00B6559C /* SizeTileFilterCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -242,6 +263,12 @@
 			isa = PBXGroup;
 			children = (
 				6EEEE5CF2A103045007723F0 /* ListingPageViewController.swift */,
+				6E9B792D2A2CF61100B6559C /* SizeTileFilterViewController.swift */,
+				6E9B79312A2D135F00B6559C /* FIlterMainViewController.swift */,
+				6E9B79332A2D137100B6559C /* CategoryFilterViewController.swift */,
+				6E9B79352A2D138B00B6559C /* PantsSizeViewController.swift */,
+				6E9B79372A2D3CD600B6559C /* ListingDetailPageViewController.swift */,
+				6EDF39E22A2E8B6B00DF04C0 /* PreviewViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -314,6 +341,7 @@
 				6E04FA3A29D222C200503E75 /* Poppins-Regular.ttf in Resources */,
 				6E04FA3629D222C200503E75 /* Poppins-Medium.ttf in Resources */,
 				6E04FA3429D222C200503E75 /* Poppins-MediumItalic.ttf in Resources */,
+				6E9B792A2A2CF0ED00B6559C /* SizeTileFilterCollectionViewCell.xib in Resources */,
 				6E04FA3129D222C200503E75 /* Poppins-Bold.ttf in Resources */,
 				6E04FA3529D222C200503E75 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				6E04FA3029D222C200503E75 /* Poppins-ThinItalic.ttf in Resources */,
@@ -345,21 +373,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E3BE19829E5DCF30060199C /* ForgetPasswordViewController.swift in Sources */,
+				6E9B792E2A2CF61100B6559C /* SizeTileFilterViewController.swift in Sources */,
 				6E04FA5029D4627D00503E75 /* SignupViewController.swift in Sources */,
 				6EEEE5D02A103045007723F0 /* ListingPageViewController.swift in Sources */,
 				6E3BE19E29E5DD720060199C /* PhoneNumberSignInViewController.swift in Sources */,
 				6E3BE19C29E5DD0E0060199C /* SignUpOTPViewController.swift in Sources */,
+				6E9B79302A2D0BB600B6559C /* FilterItemDTO.swift in Sources */,
 				6E3BE19A29E5DD010060199C /* RecoveryOTPViewController.swift in Sources */,
 				6E3BE19229E497460060199C /* DOBPickerViewController.swift in Sources */,
 				6E04FA0329D212BE00503E75 /* AppDelegate.swift in Sources */,
 				6E04FA4E29D4622500503E75 /* OnboardingViewController.swift in Sources */,
+				6E9B79292A2CF0ED00B6559C /* SizeTileFilterCollectionViewCell.swift in Sources */,
+				6E9B79362A2D138B00B6559C /* PantsSizeViewController.swift in Sources */,
 				6EEEE5DF2A10DA14007723F0 /* ProductImageCollectionViewCell.swift in Sources */,
 				6EDBB63A29D6C6FE00DA91C1 /* PhoneNumberViewController.swift in Sources */,
+				6E9B79342A2D137100B6559C /* CategoryFilterViewController.swift in Sources */,
+				6E9B79322A2D135F00B6559C /* FIlterMainViewController.swift in Sources */,
+				6E9B79382A2D3CD600B6559C /* ListingDetailPageViewController.swift in Sources */,
 				6E04FA0529D212BE00503E75 /* SceneDelegate.swift in Sources */,
 				6EBDD6312A10FFD000AECD19 /* ListingPageProductDTO.swift in Sources */,
 				6E3BE19429E5DC0D0060199C /* ProfilePictureViewController.swift in Sources */,
 				6E3BE19629E5DC2E0060199C /* SignInViewController.swift in Sources */,
 				6EBDD6332A11018900AECD19 /* Enums.swift in Sources */,
+				6EDF39E32A2E8B6B00DF04C0 /* PreviewViewController.swift in Sources */,
 				6E04FA4C29D459E500503E75 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
