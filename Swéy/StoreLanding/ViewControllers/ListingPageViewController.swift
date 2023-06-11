@@ -12,6 +12,45 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var guidView: UIView!
+    @IBOutlet weak var guidTile1: UIView!
+    @IBOutlet weak var guidTile2: UIView!
+    @IBOutlet weak var guidTile3: UIView!
+    @IBOutlet weak var filterSearchBackgroundView: UIView!
+    @IBOutlet weak var cartCountButton: UIButton!
+    @IBOutlet weak var cartButton: UIButton!
+    
+    private var guideTapCount: Int = 0
+    private var blurView: UIVisualEffectView?
+    ///Offset to calculate if there's any change in scroll of tableview
+    private var lastContentOffset: CGFloat = 0
+    ///Flag to show and hide the topFilterView
+    private var isFilterViewHidden: Bool = false {
+        didSet {
+            if isFilterViewHidden {
+                for constraint in segmentedControl.constraints {
+                    if constraint.identifier == "segmentHeightConstraint" {
+                        constraint.constant = 0
+                    }
+                }
+                UIView.animate(withDuration: 0.15) {
+                    self.view.layoutIfNeeded()
+                }
+                
+            }
+            else {
+                //blurView?.effect = .none
+                for constraint in segmentedControl.constraints {
+                    if constraint.identifier == "segmentHeightConstraint" {
+                        constraint.constant = 45
+                    }
+                }
+                UIView.animate(withDuration: 0.15) {
+                    self.view.layoutIfNeeded()
+                }
+            }
+        }
+    }
     
     private var sectionDataSource: [ListingPageProductSectionDTO] = []
     
@@ -30,6 +69,23 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         
         segmentedControl.addUnderlineForSelectedSegment()
         
+        self.guidView.isUserInteractionEnabled = true
+        self.guidView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onGuidViewTap)))
+        
+        self.cartCountButton.clipsToBounds = false
+        self.cartCountButton.layer.shadowColor = UIColor.black.cgColor
+        self.cartCountButton.layer.shadowOpacity = 0.5
+        self.cartCountButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.cartCountButton.layer.shadowRadius = 2
+        self.cartCountButton.layer.masksToBounds = false
+        
+        self.cartButton.clipsToBounds = false
+        self.cartButton.layer.shadowColor = UIColor.black.cgColor
+        self.cartButton.layer.shadowOpacity = 0.5
+        self.cartButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.cartButton.layer.shadowRadius = 2
+        self.cartButton.layer.masksToBounds = false
+        
         // Do any additional setup after loading the view.
     }
     
@@ -45,6 +101,26 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         self.segmentedControl.changeUnderlinePosition()
     }
     
+    @objc func onGuidViewTap(_ sender: Any) {
+        UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            
+            switch self.guideTapCount {
+            case 0:
+                self.guidTile1.isHidden = true
+                self.guidTile2.isHidden = false
+            case 1:
+                self.guidTile2.isHidden = true
+                self.guidTile3.isHidden = false
+            case 2:
+                self.guidTile3.isHidden = true
+                self.guidView.isHidden = true
+            default:
+                self.guidView.isHidden = true
+            }
+        })
+        self.guideTapCount += 1
+    }
+    
     func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
@@ -53,11 +129,43 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
                 return self.createNormalProductSection(sectionIndex: sectionIndex)
             case .verticalProductSection:
                 return self.createVerticalProductSection(sectionIndex: sectionIndex)
+            case .horizontalProductSection:
+                return self.createHorizontalProductSection(sectionIndex: sectionIndex)
             default:
                 return self.createNormalProductSection()
             }
         }
         return layout
+    }
+    
+    func createHorizontalProductSection(sectionIndex: Int) -> NSCollectionLayoutSection {
+        
+        var products: [NSCollectionLayoutItem] = []
+        var verticalProducts: [NSCollectionLayoutItem] = []
+        
+        for product in sectionDataSource[sectionIndex].products.filter({ productItem in productItem.itemType == .verticalGroupItem}) {
+            let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(175), heightDimension: .fractionalHeight(product.itemPriority)))
+            productItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 3, bottom: 2, trailing: 3)
+            products.append(productItem)
+        }
+        
+        for product in sectionDataSource[sectionIndex].products.filter({ productItem in productItem.itemType == .verticalItem}) {
+            let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(191), heightDimension: .fractionalHeight(1)))
+            productItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 3, bottom: 2, trailing: 3)
+            verticalProducts.append(productItem)
+        }
+        
+        let verticalGroupSize = NSCollectionLayoutSize(widthDimension: .absolute(175), heightDimension: .fractionalHeight(1))
+        let verticalGroup = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize, subitems: products)
+        let verticalProductsGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(354))
+        let verticalProductsGroup = NSCollectionLayoutGroup.horizontal(layoutSize: verticalProductsGroupSize, subitems: verticalProducts)
+        let horizontalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(354))
+        let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: horizontalGroupSize, subitems: [verticalGroup, verticalProducts[0], verticalProducts[0], verticalProducts[0]])
+        //Section
+        let section = NSCollectionLayoutSection(group: horizontalGroup)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 10, trailing: 8)
+        section.orthogonalScrollingBehavior = .continuous
+        return section
     }
     
     func createNormalProductSection(sectionIndex: Int) -> NSCollectionLayoutSection {
@@ -137,6 +245,14 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
 
     
     func createDataSource() -> [ListingPageProductSectionDTO] {
+        
+        //Section 1
+        let horizontalProduct1 = ListingPageProductDTO(itemImage: "h1p1", itemType: .verticalGroupItem, itemPriority: 0.5)
+        let horizontalProduct2 = ListingPageProductDTO(itemImage: "h1p2", itemType: .verticalGroupItem, itemPriority: 0.5)
+        let horizontalProduct3 = ListingPageProductDTO(itemImage: "h1p3", itemType: .verticalItem, itemPriority: 0.7)
+        let horizontalProduct4 = ListingPageProductDTO(itemImage: "h1p4", itemType: .verticalItem, itemPriority: 0.8)
+        let horizontalProduct5 = ListingPageProductDTO(itemImage: "h1p5", itemType: .verticalItem, itemPriority: 0.9)
+        let horizontalSection1 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .horizontalProductSection, products: [horizontalProduct1, horizontalProduct2, horizontalProduct3, horizontalProduct4, horizontalProduct5])
         //Section 1
         let product1 = ListingPageProductDTO(itemImage: "s1p1", itemType: .horizontalGroupItem, itemPriority: 0.6)
         let product2 = ListingPageProductDTO(itemImage: "s1p2", itemType: .horizontalGroupItem, itemPriority: 0.4)
@@ -159,13 +275,40 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         let product11 = ListingPageProductDTO(itemImage: "s5p2", itemType: .horizontalGroupItem, itemPriority: 0.4)
         let section5 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product10, product11])
         
-        return [section1, section2, section3, section4, section5]
+        return [horizontalSection1, section1, section2, section3, section4, section5]
     }
     
     
 }
 
 extension ListingPageViewController: UICollectionViewDataSource {
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if scrollView == self.collectionView {
+            self.lastContentOffset = scrollView.contentOffset.y
+            let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview!)
+            if translation.y > 0 {
+            }
+            else {
+                self.isFilterViewHidden = true
+            }
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == self.collectionView {
+            if self.lastContentOffset < scrollView.contentOffset.y {
+                // did move up
+            } else if self.lastContentOffset > scrollView.contentOffset.y {
+                // did move down
+                self.isFilterViewHidden = false
+            }
+            
+            let offsetY = scrollView.contentOffset.y
+            let contentHeight = scrollView.contentSize.height
+            
+        }
+    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sectionDataSource.count
@@ -187,30 +330,49 @@ extension ListingPageViewController: UICollectionViewDataSource {
         vc?.modalPresentationStyle = .overCurrentContext
         self.present(vc!, animated: true)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplayContextMenu configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating?) {
+        DispatchQueue.main.async {
+            if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) {
+                if let view = self.viewByClassName(view: window, className: "_UICutoutShadowView") {
+                    view.isHidden = true
+                }
+            }
+        }
+    }
 
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
         
         return UIContextMenuConfiguration(identifier: nil, previewProvider: {
             // Create a preview view controller and return it
-            return PreviewViewController(imageName: "s2p2")
+            if let indexPath = indexPaths.first {
+                return self.previewProv(imageName: self.sectionDataSource[indexPath.section].products[indexPath.row].itemImage)
+            }
+            return self.previewProv(imageName: "s1p1")
+            
         })
     }
-
-    func makeContextMenu() -> UIMenu {
-
-        let rename = UIAction(title: "Rename Pupper", image: UIImage(named: "s1p1")) { action in
-            // Show rename UI
+    
+    func previewProv(imageName: String) -> UIViewController? {
+        let fontPreviewVC = self.storyboard?.instantiateViewController(
+            withIdentifier: "ProductPreviewViewController") as! ProductPreviewViewController
+        fontPreviewVC.setProductImage(imageName: imageName)
+        fontPreviewVC.modalPresentationStyle = .fullScreen
+        return fontPreviewVC
+    }
+    
+    func viewByClassName(view: UIView, className: String) -> UIView? {
+        let name = NSStringFromClass(type(of: view))
+        if name == className {
+            return view
         }
-
-        // Here we specify the "destructive" attribute to show that it’s destructive in nature
-        let delete = UIAction(title: "Delete Photo", image: UIImage(named: "s1p1"), attributes: .destructive) { action in
-            // Delete this photo 😢
+        else {
+            for subview in view.subviews {
+                if let view = viewByClassName(view: subview, className: className) {
+                    return view
+                }
+            }
         }
-
-        // The "title" will show up as an action for opening this menu
-        let edit = UIMenu(title: "Edit...", children: [rename, delete])
-
-        // Create our menu with both the edit menu and the share action
-        return UIMenu(title: "Main Menu", children: [edit])
+        return nil
     }
 }

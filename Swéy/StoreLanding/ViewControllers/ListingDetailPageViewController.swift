@@ -14,6 +14,7 @@ class ListingDetailPageViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var productDetailContainer: UIView!
     @IBOutlet weak var productPriceContainer: UIView!
+    @IBOutlet weak var sweyCartButton: UIButton!
     
     private var sectionDataSource: [ListingPageProductSectionDTO] = []
     
@@ -23,18 +24,6 @@ class ListingDetailPageViewController: UIViewController {
         let nib = UINib(nibName: String(describing: ProductImageCollectionViewCell.self), bundle: nil)
         productImagesCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: ProductImageCollectionViewCell.self))
         similarItemsCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: ProductImageCollectionViewCell.self))
-        
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "listingItemPriceButton.png")?.draw(in: self.view.bounds)
-
-        if let image = UIGraphicsGetImageFromCurrentImageContext(){
-            UIGraphicsEndImageContext()
-            self.productPriceContainer.backgroundColor = UIColor(patternImage: image)
-        }
-        else {
-            UIGraphicsEndImageContext()
-            debugPrint("Image not available")
-        }
         
         self.sectionDataSource = createDataSource()
         
@@ -48,6 +37,13 @@ class ListingDetailPageViewController: UIViewController {
         
         self.segmentedControl.addUnderlineForSelectedSegment()
         self.segmentedControl.changeUnderlinePositionForStartup()
+                
+        self.sweyCartButton.clipsToBounds = false
+        self.sweyCartButton.layer.shadowColor = UIColor.blue.cgColor
+        self.sweyCartButton.layer.shadowOpacity = 0.5
+        self.sweyCartButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.sweyCartButton.layer.shadowRadius = 4
+        self.sweyCartButton.layer.masksToBounds = false
                 
     }
     
@@ -77,6 +73,13 @@ class ListingDetailPageViewController: UIViewController {
         productDetailContainer.isHidden = self.segmentedControl.selectedSegmentIndex != 0
         productPriceContainer.isHidden = self.segmentedControl.selectedSegmentIndex != 0
         similarItemsCollectionView.isHidden = self.segmentedControl.selectedSegmentIndex == 0
+    }
+    
+    @IBAction func onChatButtonTap (_ sender: Any!) {
+        let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: ChatViewController.self)) as? ChatViewController
+        vc?.modalPresentationStyle = .overCurrentContext
+        self.present(vc!, animated: true)
     }
     
     @IBAction func onBackButtonTap(_ sender: Any!) {
