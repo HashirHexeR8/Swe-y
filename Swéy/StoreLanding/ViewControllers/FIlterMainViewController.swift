@@ -20,7 +20,7 @@ class FIlterMainViewController: UIViewController {
         super.viewDidLoad()
         
         // Create a blur effect
-        let blurEffect = UIBlurEffect(style: .extraLight)
+        let blurEffect = UIBlurEffect(style: .dark)
         
         // Create a visual effect view with the blur effect
         let blurView = UIVisualEffectView(effect: blurEffect)

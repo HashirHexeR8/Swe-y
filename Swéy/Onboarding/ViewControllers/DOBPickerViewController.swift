@@ -14,7 +14,7 @@ class DOBPickerViewController: UIViewController {
         
         self.view.backgroundColor = .clear
         // 2
-        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffect = UIBlurEffect(style: .extraLight)
         // 3
         let blurView = UIVisualEffectView(effect: blurEffect)
         // 4
