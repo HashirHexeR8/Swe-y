@@ -17,7 +17,7 @@ class SizeTileFilterViewController: UIViewController {
         super.viewDidLoad()
         
         // Create a blur effect
-        let blurEffect = UIBlurEffect(style: .extraLight)
+        let blurEffect = UIBlurEffect(style: .systemThinMaterialDark)
         
         // Create a visual effect view with the blur effect
         let blurView = UIVisualEffectView(effect: blurEffect)
@@ -65,6 +65,12 @@ class SizeTileFilterViewController: UIViewController {
         section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
         
         return section
+    }
+    
+    
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.segmentedControl.addUnderlineForSelectedSegment()
     }
 
 }

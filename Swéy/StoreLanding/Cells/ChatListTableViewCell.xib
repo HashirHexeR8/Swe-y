@@ -4,8 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="onboardingViewControllerBackground"/>
                         <constraints>
                             <constraint firstItem="e2o-XN-eae" firstAttribute="leading" secondItem="bAk-fh-vX7" secondAttribute="leading" constant="30" id="0Ha-T2-yPo"/>
                             <constraint firstItem="yJ7-p1-poR" firstAttribute="leading" secondItem="e2o-XN-eae" secondAttribute="trailing" constant="30" id="5i2-KV-KzF"/>
@@ -61,6 +61,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="onboardingViewControllerBackground"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="bAk-fh-vX7" secondAttribute="bottom" id="arZ-FJ-hdC"/>
                     <constraint firstItem="bAk-fh-vX7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cse-U7-18q"/>
@@ -79,8 +80,8 @@
     </objects>
     <resources>
         <image name="userProfile" width="46" height="46"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="onboardingViewControllerBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

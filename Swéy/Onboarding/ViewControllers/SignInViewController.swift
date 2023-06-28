@@ -11,6 +11,8 @@ class SignInViewController: UIViewController {
 
     @IBOutlet weak var lblForgetPassword: UILabel!
     
+    @IBOutlet weak var checkBoxButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,9 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onUserPhoneNumberTap(_ sender: Any) {
+        checkBoxButton.isSelected = !checkBoxButton.isSelected
+    }
     @objc func onTapForgetPassword(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: ForgetPasswordViewController.self)) as? ForgetPasswordViewController
         vc?.modalPresentationStyle = .fullScreen

@@ -9,12 +9,16 @@ import UIKit
 
 class PhoneNumberSignInViewController: UIViewController {
 
+    @IBOutlet weak var checkBoxButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onUserPhoneNumberTap(_ sender: Any) {
+        checkBoxButton.isSelected = !checkBoxButton.isSelected
+    }
     @IBAction func onBackButtonTap(_ sender: Any) {
         dismiss(animated: true)
     }

@@ -8,7 +8,10 @@
 import UIKit
 
 class SignupViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var checkBoxButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,7 +28,10 @@ class SignupViewController: UIViewController {
         self.present(vc!, animated: true)
     }
     
-
+    @IBAction func onUserPhoneNumberTap(_ sender: Any) {
+        checkBoxButton.isSelected = !checkBoxButton.isSelected
+    }
+    
     /*
     // MARK: - Navigation
 

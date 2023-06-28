@@ -18,7 +18,7 @@ class CategoryFilterViewController: UIViewController {
         super.viewDidLoad()
         
         // Create a blur effect
-        let blurEffect = UIBlurEffect(style: .extraLight)
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
         
         // Create a visual effect view with the blur effect
         let blurView = UIVisualEffectView(effect: blurEffect)

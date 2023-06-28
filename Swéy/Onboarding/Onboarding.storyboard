@@ -3,7 +3,7 @@
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -151,35 +151,51 @@
                                 <rect key="frame" x="0.0" y="118" width="430" height="205"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lVV-Eu-spp">
-                                        <rect key="frame" x="137.66666666666666" y="0.0" width="154.99999999999997" height="72"/>
+                                        <rect key="frame" x="137.66666666666666" y="0.0" width="154.99999999999997" height="66"/>
                                         <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Please complete the required information, and then press the Next button" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T9W-ye-yrc">
-                                        <rect key="frame" x="86.666666666666657" y="90" width="256.66666666666674" height="59"/>
+                                        <rect key="frame" x="86.666666666666657" y="84" width="256.66666666666674" height="59"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                         <color key="textColor" red="0.38039215686274508" green="0.38823529411764707" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="752" text="Use Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koR-cr-5Lv">
-                                        <rect key="frame" x="159.66666666666666" y="189" width="110.99999999999997" height="16"/>
-                                        <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBL-LN-nF3">
+                                        <rect key="frame" x="135" y="183" width="160" height="22"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="752" text="Use Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koR-cr-5Lv">
+                                                <rect key="frame" x="0.0" y="0.0" width="110.66666666666667" height="22"/>
+                                                <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFX-iW-Wwz">
+                                                <rect key="frame" x="110.66666666666664" y="0.0" width="49.333333333333329" height="22"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="checkboxUnchecked"/>
+                                                <state key="selected" image="checkBoxChecked"/>
+                                                <connections>
+                                                    <action selector="onUserPhoneNumberTap:" destination="6n5-ro-0xh" eventType="touchUpInside" id="dlM-H1-eWA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="HJk-j7-kXN"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" name="onboardingViewControllerBackground"/>
                                 <constraints>
-                                    <constraint firstItem="koR-cr-5Lv" firstAttribute="centerX" secondItem="58W-VH-YVs" secondAttribute="centerX" id="2vp-4M-axr"/>
-                                    <constraint firstItem="koR-cr-5Lv" firstAttribute="centerX" secondItem="58W-VH-YVs" secondAttribute="centerX" id="5dN-P6-Knl"/>
                                     <constraint firstItem="T9W-ye-yrc" firstAttribute="top" relation="lessThanOrEqual" secondItem="lVV-Eu-spp" secondAttribute="bottom" constant="18" id="FL7-fo-NxV"/>
                                     <constraint firstItem="lVV-Eu-spp" firstAttribute="top" secondItem="58W-VH-YVs" secondAttribute="top" id="Se7-Gl-zKu"/>
-                                    <constraint firstItem="koR-cr-5Lv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="T9W-ye-yrc" secondAttribute="bottom" constant="10" id="Yiv-Od-tiE"/>
+                                    <constraint firstItem="XBL-LN-nF3" firstAttribute="top" relation="lessThanOrEqual" secondItem="T9W-ye-yrc" secondAttribute="bottom" constant="40" id="Tzk-YF-KkH"/>
                                     <constraint firstItem="lVV-Eu-spp" firstAttribute="centerX" secondItem="58W-VH-YVs" secondAttribute="centerX" id="akb-oW-BFR"/>
-                                    <constraint firstItem="koR-cr-5Lv" firstAttribute="top" relation="lessThanOrEqual" secondItem="T9W-ye-yrc" secondAttribute="bottom" constant="40" id="hg5-K8-F8H"/>
                                     <constraint firstItem="T9W-ye-yrc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lVV-Eu-spp" secondAttribute="bottom" constant="5" id="jdl-7P-EFg"/>
-                                    <constraint firstAttribute="bottom" secondItem="koR-cr-5Lv" secondAttribute="bottom" id="ttH-q5-9WT"/>
+                                    <constraint firstItem="XBL-LN-nF3" firstAttribute="centerX" secondItem="58W-VH-YVs" secondAttribute="centerX" id="nYf-rI-1Rs"/>
+                                    <constraint firstItem="XBL-LN-nF3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="T9W-ye-yrc" secondAttribute="bottom" constant="10" id="wgr-xp-EeH"/>
+                                    <constraint firstAttribute="bottom" secondItem="XBL-LN-nF3" secondAttribute="bottom" id="zRc-ZC-bLO"/>
                                     <constraint firstItem="T9W-ye-yrc" firstAttribute="centerX" secondItem="58W-VH-YVs" secondAttribute="centerX" id="zS5-9r-NuT"/>
                                 </constraints>
                             </view>
@@ -208,7 +224,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r9I-Zv-zVN">
-                                        <rect key="frame" x="79" y="37" width="256" height="19"/>
+                                        <rect key="frame" x="79" y="37" width="256" height="18.666666666666671"/>
                                         <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
@@ -264,7 +280,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="beT-Dh-ww2">
-                                        <rect key="frame" x="79" y="37" width="256" height="18.333333333333329"/>
+                                        <rect key="frame" x="79" y="37" width="256" height="18.666666666666671"/>
                                         <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" textContentType="username"/>
@@ -320,7 +336,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TwD-yI-Tcs">
-                                        <rect key="frame" x="79" y="37" width="256" height="18"/>
+                                        <rect key="frame" x="79" y="37" width="256" height="18.666666666666671"/>
                                         <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" textContentType="date-time"/>
@@ -441,6 +457,9 @@
                             <constraint firstItem="TYi-uP-TOt" firstAttribute="width" secondItem="IUy-nZ-IZL" secondAttribute="width" multiplier="0.639535" id="zOg-V4-FOd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="checkBoxButton" destination="wFX-iW-Wwz" id="jii-no-Rjv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fp-fc-CEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -469,7 +488,7 @@
                                 <rect key="frame" x="0.0" y="356" width="430" height="139.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AvK-Ox-a04">
-                                        <rect key="frame" x="89" y="0.0" width="252" height="80.333333333333329"/>
+                                        <rect key="frame" x="89.000000000000014" y="0.0" width="252.33333333333337" height="80.333333333333329"/>
                                         <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -528,7 +547,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcJ-EI-pXh">
-                                        <rect key="frame" x="79" y="37" width="221" height="19"/>
+                                        <rect key="frame" x="79" y="37" width="221" height="18.666666666666671"/>
                                         <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
@@ -606,7 +625,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qT7-mh-I6X">
-                                        <rect key="frame" x="79" y="37" width="256" height="19"/>
+                                        <rect key="frame" x="79" y="37" width="256" height="18.666666666666671"/>
                                         <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" textContentType="username"/>
@@ -814,30 +833,31 @@
                                 <rect key="frame" x="0.0" y="113.00000000000001" width="344" height="214.33333333333337"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sht-Gm-0Rq">
-                                <rect key="frame" x="145" y="445.66666666666669" width="140" height="20"/>
+                                <rect key="frame" x="135" y="445.66666666666669" width="160" height="22"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foe-Bv-LtS">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="110.66666666666667" height="22"/>
                                         <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iq0-f5-geZ">
-                                        <rect key="frame" x="120" y="0.0" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="W1T-h8-Eka"/>
-                                            <constraint firstAttribute="width" constant="20" id="YWu-j2-w3S"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="passwordFieldIcon"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38w-A7-9NE">
+                                        <rect key="frame" x="110.66666666666664" y="0.0" width="49.333333333333329" height="22"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="checkboxUnchecked"/>
+                                        <state key="selected" image="checkBoxChecked"/>
+                                        <connections>
+                                            <action selector="onUserPhoneNumberTap:" destination="J1l-SS-9Y7" eventType="touchUpInside" id="1fo-EE-xtf"/>
+                                            <action selector="onUserPhoneNumberTap:" destination="6n5-ro-0xh" eventType="touchUpInside" id="ILT-aB-A9o"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="9Rn-wm-WQb"/>
+                                    <constraint firstAttribute="width" constant="160" id="9Rn-wm-WQb"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oeM-JH-6Fb" userLabel="emailUsernameFieldContainer">
-                                <rect key="frame" x="43" y="485.66666666666669" width="344" height="88.666666666666686"/>
+                                <rect key="frame" x="43" y="487.66666666666669" width="344" height="88.666666666666686"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nameFieldIcon" translatesAutoresizingMaskIntoConstraints="NO" id="oU9-jc-3uJ">
                                         <rect key="frame" x="20" y="35.333333333333314" width="18" height="18"/>
@@ -893,7 +913,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J30-5c-9kq" userLabel="passwordFieldContainer">
-                                <rect key="frame" x="43" y="584.33333333333337" width="344" height="88.333333333333371"/>
+                                <rect key="frame" x="43" y="586.33333333333337" width="344" height="88.333333333333371"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwordFieldIcon" translatesAutoresizingMaskIntoConstraints="NO" id="T2L-Zk-81Y" userLabel="userNameFieldIcon">
                                         <rect key="frame" x="20" y="35" width="18" height="18"/>
@@ -968,7 +988,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot your password?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXv-Yg-Sp1">
-                                <rect key="frame" x="146" y="677.66666666666663" width="138" height="17"/>
+                                <rect key="frame" x="146" y="679.66666666666663" width="138" height="17"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1010,6 +1030,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkBoxButton" destination="38w-A7-9NE" id="NNL-Rm-ETy"/>
                         <outlet property="lblForgetPassword" destination="TXv-Yg-Sp1" id="crA-Bh-Aev"/>
                     </connections>
                 </viewController>
@@ -1062,30 +1083,32 @@
                                 <rect key="frame" x="0.0" y="113.00000000000001" width="344" height="214.33333333333337"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3S-OB-jCq">
-                                <rect key="frame" x="145" y="445.66666666666669" width="140" height="20"/>
+                                <rect key="frame" x="135" y="445.66666666666669" width="160" height="22"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnD-OG-GYZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="110.66666666666667" height="22"/>
                                         <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMu-QF-6Bv">
-                                        <rect key="frame" x="120" y="0.0" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="Up2-t8-qF3"/>
-                                            <constraint firstAttribute="width" constant="20" id="gq6-S3-qm9"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="passwordFieldIcon"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfg-RS-WrU">
+                                        <rect key="frame" x="110.66666666666664" y="0.0" width="49.333333333333329" height="22"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="checkboxUnchecked"/>
+                                        <state key="selected" image="checkBoxChecked"/>
+                                        <connections>
+                                            <action selector="onUserPhoneNumberTap:" destination="Y02-g0-eOo" eventType="touchUpInside" id="Or8-z5-18r"/>
+                                            <action selector="onUserPhoneNumberTap:" destination="6n5-ro-0xh" eventType="touchUpInside" id="T4V-36-Et3"/>
+                                            <action selector="onUserPhoneNumberTap:" destination="J1l-SS-9Y7" eventType="touchUpInside" id="gmV-2Z-RtT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="PJp-tI-Ma9"/>
+                                    <constraint firstAttribute="width" constant="160" id="PJp-tI-Ma9"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JM5-RZ-LbD" userLabel="countryCodeFieldContainer">
-                                <rect key="frame" x="43" y="485.66666666666669" width="344" height="88.666666666666686"/>
+                                <rect key="frame" x="43" y="487.66666666666669" width="344" height="88.666666666666686"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="countryCodeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XHC-Gq-3j8">
                                         <rect key="frame" x="20" y="35.333333333333314" width="18" height="18"/>
@@ -1163,7 +1186,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSh-PG-ArE" userLabel="phoneNumberFieldContainer">
-                                <rect key="frame" x="43" y="584.33333333333337" width="344" height="88.333333333333371"/>
+                                <rect key="frame" x="43" y="586.33333333333337" width="344" height="88.333333333333371"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneNumberIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vdZ-6p-1wa" userLabel="userNameFieldIcon">
                                         <rect key="frame" x="20" y="35" width="18" height="18"/>
@@ -1286,6 +1309,9 @@
                             <constraint firstItem="eSh-PG-ArE" firstAttribute="top" secondItem="JM5-RZ-LbD" secondAttribute="bottom" constant="10" id="tPw-uA-MoI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="checkBoxButton" destination="jfg-RS-WrU" id="9dH-PF-yJr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DB3-3T-Y0h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1746,7 +1772,7 @@
                                 <rect key="frame" x="0.0" y="113" width="430" height="233"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Az-nl-5cR">
-                                <rect key="frame" x="199" y="861" width="32" height="17"/>
+                                <rect key="frame" x="199.33333333333334" y="861" width="31.666666666666657" height="17"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Skip?">
                                         <attributes>
@@ -1888,6 +1914,8 @@
     </scenes>
     <resources>
         <image name="backButton" width="23" height="14"/>
+        <image name="checkBoxChecked" width="20" height="20"/>
+        <image name="checkboxUnchecked" width="20" height="20"/>
         <image name="countryCodeIcon" width="17" height="17"/>
         <image name="dateFieldIcon" width="16.333333969116211" height="18"/>
         <image name="dropdownIcon" width="9.3333330154418945" height="5.6666665077209473"/>
@@ -1903,10 +1931,10 @@
         <image name="recoveryScreenIllustration" width="266" height="286"/>
         <image name="signInIllustration" width="247" height="233.33332824707031"/>
         <namedColor name="onboardingFieldBackground">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94900000095367432" blue="0.94900000095367432" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="onboardingFieldBorderColor">
-            <color red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.45100000500679016" green="0.45100000500679016" blue="0.45100000500679016" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="onboardingViewControllerBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

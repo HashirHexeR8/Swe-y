@@ -221,6 +221,11 @@ class ListingDetailPageViewController: UIViewController {
         
         return [section1, section2, section3, section4, section5]
     }
+    
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.segmentedControl.addUnderlineForSelectedSegment()
+    }
 
 }
 

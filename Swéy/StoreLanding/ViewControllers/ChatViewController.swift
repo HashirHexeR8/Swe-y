@@ -23,7 +23,7 @@ class ChatViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         // Create a blur effect
-        let blurEffect = UIBlurEffect(style: .extraLight)
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
         
         // Create a visual effect view with the blur effect
         let chatBlurView = UIVisualEffectView(effect: blurEffect)
@@ -50,6 +50,16 @@ class ChatViewController: UIViewController {
         self.tableView.dataSource = self
         
         self.mainBackgroundBlur.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onBackgroundTap)))
+        
+        let dragDownGesture = UISwipeGestureRecognizer(target: self, action:#selector(didSwipeDown))
+        dragDownGesture.direction = .down
+        dragDownGesture.cancelsTouchesInView = true
+        self.view.addGestureRecognizer(dragDownGesture)
+        
+    }
+    
+    @objc func didSwipeDown(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     
     @objc func onBackgroundTap(_ sender: Any) {

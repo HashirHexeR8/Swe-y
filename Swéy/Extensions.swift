@@ -84,7 +84,7 @@ extension UISegmentedControl{
     func removeBorder(){
         weak var color: CGColor?
         
-        color = UIColor.white.cgColor
+        color = UIColor(named: "onboardingViewControllerBackground")?.cgColor
         
         let backgroundImage = UIImage.getColoredRectImageWith(color: color!, andSize: self.bounds.size)
         self.setBackgroundImage(backgroundImage, for: .normal, barMetrics: .default)
