@@ -12,6 +12,7 @@ class ChatListTableViewCell: UITableViewCell {
     @IBOutlet weak var userProfile: UIImageView!
     @IBOutlet weak var userMessage: UILabel!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var chatCheckBox: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

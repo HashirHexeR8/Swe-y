@@ -25,14 +25,14 @@ class ChatViewController: UIViewController {
         // Create a blur effect
         let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
         
-        // Create a visual effect view with the blur effect
-        let chatBlurView = UIVisualEffectView(effect: blurEffect)
-        
-        // Set the frame to cover the entire view
-        chatBlurView.frame = chatBackgroundBlur.bounds
-        
-        // Add the visual effect view as a subview
-        chatBackgroundBlur.addSubview(chatBlurView)
+//        // Create a visual effect view with the blur effect
+//        let chatBlurView = UIVisualEffectView(effect: blurEffect)
+//
+//        // Set the frame to cover the entire view
+//        chatBlurView.frame = chatBackgroundBlur.bounds
+//
+//        // Add the visual effect view as a subview
+//        chatBackgroundBlur.addSubview(chatBlurView)
         
         // Create a visual effect view with the blur effect
         let mainBackgroundBlurView = UIVisualEffectView(effect: blurEffect)
@@ -90,6 +90,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
             cell.userProfile.image = UIImage(named: "chatUser1")
             cell.userName.text = "Marcia"
             cell.userMessage.text = "Really? That’s great. We will do watch….."
+            cell.chatCheckBox.isSelected = true
         case 1:
             cell.userProfile.image = UIImage(named: "chatUser2")
             cell.userName.text = "Faith"
@@ -98,6 +99,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
             cell.userProfile.image = UIImage(named: "chatUser3")
             cell.userName.text = "Shirley"
             cell.userMessage.text = "Really? That’s great. We will do watch….."
+            cell.chatCheckBox.isSelected = true
         }
         return cell
     }

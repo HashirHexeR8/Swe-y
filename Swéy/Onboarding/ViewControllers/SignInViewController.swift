@@ -10,15 +10,23 @@ import UIKit
 class SignInViewController: UIViewController {
 
     @IBOutlet weak var lblForgetPassword: UILabel!
-    
     @IBOutlet weak var checkBoxButton: UIButton!
+    @IBOutlet weak var lblSignUpButton: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // Do any additional setup after loading the view.
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapForgetPassword))
         lblForgetPassword.addGestureRecognizer(tapGesture)
-        // Do any additional setup after loading the view.
+        
+        let range = ("Don’t Have an account? Signup" as NSString).range(of: "Signup")
+
+        let mutableAttributedString = NSMutableAttributedString.init(string: "Don’t Have an account? Signup")
+        
+        let attributes:[NSAttributedString.Key : Any] = [.font : UIFont(name: "Poppins-Bold", size: 12.0)]
+        mutableAttributedString.addAttributes(attributes, range: range)
+        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "onboardingLabelButtonColor"), range: range)
+        lblSignUpButton.attributedText = mutableAttributedString
     }
     
     @IBAction func onUserPhoneNumberTap(_ sender: Any) {

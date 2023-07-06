@@ -96,7 +96,11 @@ extension UISegmentedControl{
         self.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
         self.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(red: 67/255, green: 129/255, blue: 244/255, alpha: 1.0)], for: .selected)
     }
-
+    
+    func changeBackgroundForAppearanceSwitch() {
+        removeBorder()
+    }
+    
     func addUnderlineForSelectedSegment(){
         removeBorder()
         let underlineWidth: CGFloat = (self.bounds.size.width / CGFloat(self.numberOfSegments)) - (self.bounds.size.width/13)

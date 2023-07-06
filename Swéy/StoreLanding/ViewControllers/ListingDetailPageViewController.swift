@@ -36,7 +36,6 @@ class ListingDetailPageViewController: UIViewController {
         self.productImagesCollectionView.collectionViewLayout = createCompositionalLayoutForFullProductImages()
         
         self.segmentedControl.addUnderlineForSelectedSegment()
-        self.segmentedControl.changeUnderlinePositionForStartup()
                 
         self.sweyCartButton.clipsToBounds = false
         self.sweyCartButton.layer.shadowColor = UIColor.blue.cgColor
@@ -224,7 +223,7 @@ class ListingDetailPageViewController: UIViewController {
     
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.segmentedControl.addUnderlineForSelectedSegment()
+        self.segmentedControl.changeBackgroundForAppearanceSwitch()
     }
 
 }

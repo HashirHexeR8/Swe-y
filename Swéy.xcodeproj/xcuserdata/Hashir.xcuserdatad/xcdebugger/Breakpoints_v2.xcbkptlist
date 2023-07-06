@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "27B8237F-525E-40F9-BF41-35C37208E7B6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swe&#x301;y/StoreLanding/ViewControllers/ChatViewController.swift"
@@ -18,13 +18,45 @@
             endingLineNumber = "70"
             landmarkName = "onLinkButtonTap(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "27B8237F-525E-40F9-BF41-35C37208E7B6 - 923f315dcdcd151b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.ChatViewController.onLinkButtonTap(Any) -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "63">
+               </Location>
+               <Location
+                  uuid = "27B8237F-525E-40F9-BF41-35C37208E7B6 - 8dc87740ec05d5cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Swey.ChatViewController.onLinkButtonTap(Any) -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "70C3392B-F69F-4164-A967-9C55B1CDA35C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swe&#x301;y/StoreLanding/ViewControllers/ChatViewController.swift"

@@ -17,6 +17,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var guidTile2: UIView!
     @IBOutlet weak var guidTile3: UIView!
     @IBOutlet weak var filterSearchBackgroundView: UIView!
+    @IBOutlet weak var filterSearchBackgroundBlurView: UIView!
     @IBOutlet weak var cartCountButton: UIButton!
     @IBOutlet weak var cartButton: UIButton!
     
@@ -86,7 +87,6 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         self.cartButton.layer.shadowRadius = 2
         self.cartButton.layer.masksToBounds = false
         
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func onFilterButtonTap(_ sender: Any) {
@@ -279,7 +279,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.segmentedControl.addUnderlineForSelectedSegment()
+        self.segmentedControl.changeBackgroundForAppearanceSwitch()
     }
     
 }

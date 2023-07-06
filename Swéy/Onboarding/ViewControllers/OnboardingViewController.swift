@@ -9,11 +9,21 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
+    @IBOutlet weak var lblSignInLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let range = ("Already have an account? Signin" as NSString).range(of: "Signin")
+
+        let mutableAttributedString = NSMutableAttributedString.init(string: "Already have an account? Signin")
+        
+        let attributes:[NSAttributedString.Key : Any] = [.font : UIFont(name: "Poppins-Bold", size: 12.0)]
+        mutableAttributedString.addAttributes(attributes, range: range)
+        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "onboardingLabelButtonColor"), range: range)
+        lblSignInLabel.attributedText = mutableAttributedString
         
     }
     

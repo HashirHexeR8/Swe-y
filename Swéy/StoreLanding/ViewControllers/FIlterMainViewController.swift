@@ -48,8 +48,8 @@ class FIlterMainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            UIView.animate(withDuration: 0.2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            UIView.animate(withDuration: 0.15) {
                 self.backgroundBlurView.alpha = 1.0
             }
         }

@@ -41,18 +41,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2F-le-tpT">
-                                <rect key="frame" x="114.66666666666669" y="861" width="201" height="17"/>
+                                <rect key="frame" x="115.33333333333333" y="861" width="199.66666666666669" height="17"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Already have an account? ">
+                                    <fragment content="Already have an account? Signin">
                                         <attributes>
+                                            <color key="NSColor" name="onboardingSignInButtonColor"/>
                                             <font key="NSFont" size="12" name="Poppins-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Signin">
-                                        <attributes>
-                                            <font key="NSFont" size="12" name="Poppins-Bold"/>
-                                            <font key="NSOriginalFont" size="12" name="Poppins-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -60,7 +54,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Go-zK-EnR">
-                                <rect key="frame" x="77.666666666666686" y="768.33333333333337" width="275" height="74.666666666666629"/>
+                                <rect key="frame" x="77.666666666666686" y="774.33333333333337" width="275" height="74.666666666666629"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,7 +80,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="E75-GT-Sxe" secondAttribute="trailing" constant="10" id="eic-we-rPY"/>
                             <constraint firstItem="Dv5-TD-IsH" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.39" id="f0i-fR-Nd7"/>
                             <constraint firstItem="E75-GT-Sxe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="gbz-OM-sBK"/>
-                            <constraint firstItem="N2F-le-tpT" firstAttribute="top" secondItem="5Go-zK-EnR" secondAttribute="bottom" constant="18" id="heL-Ih-zJZ"/>
+                            <constraint firstItem="N2F-le-tpT" firstAttribute="top" secondItem="5Go-zK-EnR" secondAttribute="bottom" constant="12" id="heL-Ih-zJZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Dv5-TD-IsH" secondAttribute="trailing" id="ja3-WG-pcw"/>
                             <constraint firstItem="Dv5-TD-IsH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jqZ-KR-tUD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cZo-sC-3Iq" secondAttribute="trailing" constant="10" id="mYy-VF-SuJ"/>
@@ -94,6 +88,9 @@
                             <constraint firstItem="Dv5-TD-IsH" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="yL1-M7-7aR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblSignInLabel" destination="N2F-le-tpT" id="Zwm-wI-rWi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,18 +105,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLw-jO-FNR">
-                                <rect key="frame" x="114.66666666666669" y="861" width="201" height="17"/>
+                                <rect key="frame" x="115.33333333333333" y="861" width="199.66666666666669" height="17"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Already have an account? ">
+                                    <fragment content="Already have an account? Signin">
                                         <attributes>
+                                            <color key="NSColor" name="onboardingSignInButtonColor"/>
                                             <font key="NSFont" size="12" name="Poppins-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Signin">
-                                        <attributes>
-                                            <font key="NSFont" size="12" name="Poppins-Bold"/>
-                                            <font key="NSOriginalFont" size="12" name="Poppins-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -459,6 +450,7 @@
                     </view>
                     <connections>
                         <outlet property="checkBoxButton" destination="wFX-iW-Wwz" id="jii-no-Rjv"/>
+                        <outlet property="lblSignInLabel" destination="wLw-jO-FNR" id="3CO-iG-Vqi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fp-fc-CEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -969,20 +961,12 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngT-Cg-XRz">
-                                <rect key="frame" x="119.66666666666669" y="861" width="191" height="17"/>
+                                <rect key="frame" x="120.33333333333333" y="861" width="189.66666666666669" height="17"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Don’t Have an account? ">
+                                    <fragment content="Don’t Have an account? Signup">
                                         <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" name="onboardingSignInButtonColor"/>
                                             <font key="NSFont" size="12" name="Poppins-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Signup">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="12" name="Poppins-Bold"/>
-                                            <font key="NSOriginalFont" size="12" name="Poppins-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -1048,6 +1032,7 @@
                     <connections>
                         <outlet property="checkBoxButton" destination="38w-A7-9NE" id="NNL-Rm-ETy"/>
                         <outlet property="lblForgetPassword" destination="TXv-Yg-Sp1" id="crA-Bh-Aev"/>
+                        <outlet property="lblSignUpButton" destination="ngT-Cg-XRz" id="NY0-4X-182"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwQ-2e-FGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1951,6 +1936,9 @@
         </namedColor>
         <namedColor name="onboardingFieldBorderColor">
             <color red="0.45100000500679016" green="0.45100000500679016" blue="0.45100000500679016" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="onboardingSignInButtonColor">
+            <color red="0.38039215686274508" green="0.38823529411764707" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="onboardingViewControllerBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

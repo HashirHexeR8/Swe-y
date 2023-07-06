@@ -6,6 +6,7 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Poppins-Bold.ttf</string>
 		<string>Poppins-Black.ttf</string>
 		<string>Poppins-BlackItalic.ttf</string>
 		<string>Poppins-BlackBold.ttf</string>

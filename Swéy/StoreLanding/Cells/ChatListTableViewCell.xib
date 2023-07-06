@@ -39,7 +39,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marcia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJ7-p1-poR">
                                 <rect key="frame" x="124.00000000000001" y="23" width="52.666666666666671" height="21"/>
                                 <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="16"/>
-                                <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" name="chatUserNameLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Really? That’s great. We will do watch….." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfH-1x-phT">
@@ -79,6 +79,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="chatCheckBox" destination="na9-Vy-gEg" id="FX6-rs-rME"/>
                 <outlet property="userMessage" destination="XfH-1x-phT" id="otJ-3j-uep"/>
                 <outlet property="userName" destination="yJ7-p1-poR" id="M8t-Kz-6aE"/>
                 <outlet property="userProfile" destination="e2o-XN-eae" id="6dC-50-Rkg"/>
@@ -90,6 +91,9 @@
         <image name="chatCheckBoxChecked" width="16" height="16"/>
         <image name="chatCheckBoxUnchecked" width="16" height="16"/>
         <image name="userProfile" width="46" height="46"/>
+        <namedColor name="chatUserNameLabelColor">
+            <color red="0.16862745098039217" green="0.16862745098039217" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="onboardingViewControllerBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
