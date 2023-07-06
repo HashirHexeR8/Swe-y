@@ -26,10 +26,12 @@ class FIlterMainViewController: UIViewController {
         let blurView = UIVisualEffectView(effect: blurEffect)
         
         // Set the frame to cover the entire view
-        blurView.frame = backgroundBlurView.bounds
+        blurView.frame = self.backgroundBlurView.bounds
         
         // Add the visual effect view as a subview
-        backgroundBlurView.addSubview(blurView)
+        self.backgroundBlurView.addSubview(blurView)
+        
+        self.backgroundBlurView.alpha = 0.0
         
         mySizeSwitch.changeSwitchImage()
         newItemSwitch.changeSwitchImage()
@@ -43,6 +45,14 @@ class FIlterMainViewController: UIViewController {
         
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            UIView.animate(withDuration: 0.2) {
+                self.backgroundBlurView.alpha = 1.0
+            }
+        }
     }
     
     @IBAction func onBackButtonTap(_ sender: Any!) {
