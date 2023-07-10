@@ -10,6 +10,7 @@ import UIKit
 class OnboardingViewController: UIViewController {
     
     @IBOutlet weak var lblSignInLabel: UILabel!
+    @IBOutlet weak var signUpButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,21 @@ class OnboardingViewController: UIViewController {
         mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "onboardingLabelButtonColor"), range: range)
         lblSignInLabel.attributedText = mutableAttributedString
         
+        self.signUpButton.clipsToBounds = false
+        self.signUpButton.layer.shadowColor = UIColor.blue.cgColor
+        self.signUpButton.layer.shadowOpacity = 0.5
+        self.signUpButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.signUpButton.layer.shadowRadius = 4
+        self.signUpButton.layer.masksToBounds = false
+        
+        let signupTapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapSignup))
+        lblSignInLabel.addGestureRecognizer(signupTapGesture)
+    }
+    
+    @objc func onTapSignup(sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: SignInViewController.self)) as? SignInViewController
+        vc?.modalPresentationStyle = .fullScreen
+        self.present(vc!, animated: true)
     }
     
     @IBAction func onGetStartedButtonTap(_ sender: Any) {

@@ -81,7 +81,7 @@ extension UIImage{
 }
 
 extension UISegmentedControl{
-    func removeBorder(){
+    func removeBorder() {
         weak var color: CGColor?
         
         color = UIColor(named: "onboardingViewControllerBackground")?.cgColor
@@ -101,7 +101,7 @@ extension UISegmentedControl{
         removeBorder()
     }
     
-    func addUnderlineForSelectedSegment(){
+    func addUnderlineForSelectedSegment() {
         removeBorder()
         let underlineWidth: CGFloat = (self.bounds.size.width / CGFloat(self.numberOfSegments)) - (self.bounds.size.width/13)
         let underlineHeight: CGFloat = 2
@@ -116,7 +116,7 @@ extension UISegmentedControl{
         self.addSubview(underline)
     }
 
-    func changeUnderlinePosition(){
+    func changeUnderlinePosition() {
         
         guard let underline = self.viewWithTag(1) else {return}
         
@@ -150,4 +150,38 @@ extension UISwitch {
         self.onImage = UIImage(named: "toggleSwitchOn")
         self.offImage = UIImage(named: "toggleSwitchOff")
     }
+}
+
+extension UITextField{
+
+        @IBInspectable var doneAccessory: Bool{
+            get{
+                return self.doneAccessory
+            }
+            set (hasDone) {
+                if hasDone{
+                    addDoneButtonOnKeyboard()
+                }
+            }
+        }
+
+        func addDoneButtonOnKeyboard()
+        {
+            let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+            doneToolbar.barStyle = .default
+
+            let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+            let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+
+            let items = [flexSpace, done]
+            doneToolbar.items = items
+            doneToolbar.sizeToFit()
+
+            self.inputAccessoryView = doneToolbar
+        }
+
+        @objc func doneButtonAction() {
+            self.resignFirstResponder()
+        }
+
 }

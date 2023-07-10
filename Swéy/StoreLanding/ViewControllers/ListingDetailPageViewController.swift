@@ -15,6 +15,7 @@ class ListingDetailPageViewController: UIViewController {
     @IBOutlet weak var productDetailContainer: UIView!
     @IBOutlet weak var productPriceContainer: UIView!
     @IBOutlet weak var sweyCartButton: UIButton!
+    @IBOutlet weak var backButtonView: UIView!
     
     private var sectionDataSource: [ListingPageProductSectionDTO] = []
     
@@ -43,6 +44,9 @@ class ListingDetailPageViewController: UIViewController {
         self.sweyCartButton.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.sweyCartButton.layer.shadowRadius = 4
         self.sweyCartButton.layer.masksToBounds = false
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onbackButtonViewTap))
+        backButtonView.addGestureRecognizer(tapGesture)
                 
     }
     
@@ -53,6 +57,10 @@ class ListingDetailPageViewController: UIViewController {
                 constraint.constant = self.similarItemsCollectionView.contentSize.height
             }
         }
+    }
+    
+    @objc func onbackButtonViewTap(_ sender: Any) {
+        dismiss(animated: true)
     }
     
     @IBAction func onSegmentValueChange(_ sender: Any!) {
@@ -89,7 +97,7 @@ class ListingDetailPageViewController: UIViewController {
         var products: [NSCollectionLayoutItem] = []
         
         let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-        productItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 3, bottom: 2, trailing: 3)
+        productItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 0, bottom: 2, trailing: 0)
         products.append(productItem)
         
         //Group
@@ -98,7 +106,7 @@ class ListingDetailPageViewController: UIViewController {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: products)
         //Section
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         section.orthogonalScrollingBehavior = .continuous
         
         return UICollectionViewCompositionalLayout(section: section)
