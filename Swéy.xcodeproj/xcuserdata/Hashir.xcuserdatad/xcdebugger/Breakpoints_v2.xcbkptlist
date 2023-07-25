@@ -7,47 +7,62 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "27B8237F-525E-40F9-BF41-35C37208E7B6"
+            uuid = "60B824A0-601A-4121-A9D1-98E1CD85F09E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Swe&#x301;y/StoreLanding/ViewControllers/ChatViewController.swift"
+            filePath = "Swe&#x301;y/StoreLanding/ViewControllers/ListingDetailPageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "onLinkButtonTap(_:)"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "swipedRight(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "27B8237F-525E-40F9-BF41-35C37208E7B6 - 923f315dcdcd151b"
+                  uuid = "60B824A0-601A-4121-A9D1-98E1CD85F09E - d5c5ea2c946cabe2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Swey.ChatViewController.onLinkButtonTap(Any) -&gt; ()"
+                  symbolName = "Swey.ListingDetailPageViewController.swipedRight(Any) -&gt; ()"
                   moduleName = "Swey"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ChatViewController.swift"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ListingDetailPageViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "63">
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "65">
                </Location>
                <Location
-                  uuid = "27B8237F-525E-40F9-BF41-35C37208E7B6 - 8dc87740ec05d5cc"
+                  uuid = "60B824A0-601A-4121-A9D1-98E1CD85F09E - adb3dec345efa621"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Swey.ChatViewController.onLinkButtonTap(Any) -&gt; ()"
+                  symbolName = "Swey.ListingDetailPageViewController.swipedRight(__C.UISwipeGestureRecognizer) -&gt; ()"
                   moduleName = "Swey"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ChatViewController.swift"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ListingDetailPageViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "40">
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  uuid = "60B824A0-601A-4121-A9D1-98E1CD85F09E - adb3dec345efa6e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.ListingDetailPageViewController.swipedRight(__C.UISwipeGestureRecognizer) -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ListingDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "65">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -55,16 +70,79 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "70C3392B-F69F-4164-A967-9C55B1CDA35C"
+            uuid = "7E926577-F7D9-4657-935F-44906FB1E85C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Swe&#x301;y/StoreLanding/ViewControllers/ChatViewController.swift"
+            filePath = "Swe&#x301;y/StoreLanding/ViewControllers/ListingDetailPageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "onLinkButtonTap(_:)"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "swipedLeft(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7E926577-F7D9-4657-935F-44906FB1E85C - 9a59dfbf6661ae4f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.ListingDetailPageViewController.swipedLeft(Any) -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ListingDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  uuid = "7E926577-F7D9-4657-935F-44906FB1E85C - 3a0b4dceb2f158c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.ListingDetailPageViewController.swipedLeft(__C.UISwipeGestureRecognizer) -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ListingDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  uuid = "7E926577-F7D9-4657-935F-44906FB1E85C - 3a0b4dceb2f154a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.ListingDetailPageViewController.swipedLeft(__C.UISwipeGestureRecognizer) -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ListingDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "65">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "101683EF-0778-444C-AF5B-CB5492FF35C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swe&#x301;y/StoreLanding/ViewControllers/ListingDetailPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "gestureRecognizer(_:shouldBeRequiredToFailBy:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

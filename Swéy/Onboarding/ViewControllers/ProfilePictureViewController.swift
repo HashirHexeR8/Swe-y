@@ -22,7 +22,7 @@ class ProfilePictureViewController: UIViewController {
     @IBAction func onImageButtonTap(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: SignInViewController.self)) as? SignInViewController
         vc?.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
 

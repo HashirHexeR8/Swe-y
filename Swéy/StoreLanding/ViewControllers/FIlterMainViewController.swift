@@ -15,24 +15,35 @@ class FIlterMainViewController: UIViewController {
     @IBOutlet weak var localItemsSwitch: UISwitch!
     @IBOutlet weak var categoryView: UIView!
     @IBOutlet weak var sizeFilterView: UIView!
+    @IBOutlet weak var pannableView: UIView!
+    
+    private var originalViewPosition = CGPoint(x: 0.0, y: 0.0)
+    
+    lazy var blurredView: UIView = {
+            // 1. create container view
+            let containerView = UIView()
+            // 2. create custom blur view
+            let blurEffect = UIBlurEffect(style: .light)
+            let customBlurEffectView = CustomVisualEffectView(effect: blurEffect, intensity: 0.2)
+            customBlurEffectView.frame = self.view.bounds
+            // 3. create semi-transparent black view
+            let dimmedView = UIView()
+            dimmedView.backgroundColor = .black.withAlphaComponent(0.6)
+            dimmedView.frame = self.view.bounds
+            
+            // 4. add both as subviews
+            containerView.addSubview(customBlurEffectView)
+            containerView.addSubview(dimmedView)
+            return containerView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Create a blur effect
-        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        blurredView.frame = self.backgroundBlurView.bounds
         
-        // Create a visual effect view with the blur effect
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        
-        // Set the frame to cover the entire view
-        blurView.frame = self.backgroundBlurView.bounds
-        
-        // Add the visual effect view as a subview
-        self.backgroundBlurView.addSubview(blurView)
-        
-        self.backgroundBlurView.alpha = 0.0
-        
+        self.backgroundBlurView.addSubview(blurredView)
+                
         mySizeSwitch.changeSwitchImage()
         newItemSwitch.changeSwitchImage()
         localItemsSwitch.changeSwitchImage()
@@ -43,19 +54,48 @@ class FIlterMainViewController: UIViewController {
         let sizeTapGesture = UITapGestureRecognizer(target: self, action: #selector(onSizeFilterTap))
         sizeFilterView.addGestureRecognizer(sizeTapGesture)
         
+        let onBlurViewTap = UITapGestureRecognizer(target: self, action: #selector(onBlueViewTap))
+        backgroundBlurView.addGestureRecognizer(onBlurViewTap)
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerHandler(_:)))
+        self.view.addGestureRecognizer(panGesture)
+        
+        self.originalViewPosition = self.pannableView.frame.origin
 
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            UIView.animate(withDuration: 0.15) {
-                self.backgroundBlurView.alpha = 1.0
+    @IBAction func panGestureRecognizerHandler(_ sender: UIPanGestureRecognizer) {
+        let touchPoint = sender.location(in: view?.window)
+        let direction = sender.velocity(in: view?.window)
+        var initialTouchPoint = CGPoint.zero
+
+        switch sender.state {
+        case .began:
+            initialTouchPoint = touchPoint
+        case .changed:
+            if touchPoint.y > initialTouchPoint.y && touchPoint.y > self.pannableView.frame.origin.y {
+                pannableView.frame.origin.y = touchPoint.y - initialTouchPoint.y
             }
+        case .ended, .cancelled:
+            if touchPoint.y - initialTouchPoint.y > 600 {
+                dismiss(animated: true, completion: nil)
+            }
+            else if direction.y > 0.0 {
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.pannableView.frame = CGRect(x: self.originalViewPosition.x, y: self.originalViewPosition.y, width: self.pannableView.frame.size.width, height: self.pannableView.frame.size.height)
+                })
+            }
+        default:
+            break
         }
     }
     
     @IBAction func onBackButtonTap(_ sender: Any!) {
+        dismiss(animated: true)
+    }
+    
+    @objc func onBlueViewTap(_ sender: Any!) {
         dismiss(animated: true)
     }
     

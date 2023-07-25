@@ -16,6 +16,13 @@ class ChatListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onCellTap))
+        self.contentView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func onCellTap(_ sender: Any) {
+        chatCheckBox.isSelected = !chatCheckBox.isSelected
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -44,7 +44,7 @@ class PhoneNumberSignInViewController: UIViewController {
     
     @IBAction func onNextButtonTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: ListingPageViewController.self)) as? ListingPageViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "StoreLandingNavigationController" ) as? UINavigationController
         vc?.modalPresentationStyle = .fullScreen
         self.present(vc!, animated: true)
     }

@@ -41,7 +41,7 @@ class SignUpOTPViewController: UIViewController {
     @IBAction func onVerifyButtonTap(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: ProfilePictureViewController.self)) as? ProfilePictureViewController
         vc?.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
 
     /*

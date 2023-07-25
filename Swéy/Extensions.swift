@@ -68,7 +68,7 @@ extension UIColor {
 
 extension UIImage{
 
-    class func getColoredRectImageWith(color: CGColor, andSize size: CGSize) -> UIImage{
+    class func getColoredRectImageWith(color: CGColor, andSize size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         let graphicsContext = UIGraphicsGetCurrentContext()
         graphicsContext?.setFillColor(color)
@@ -76,7 +76,7 @@ extension UIImage{
         graphicsContext?.fill(rectangle)
         let rectangleImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return rectangleImage!
+        return rectangleImage
     }
 }
 
@@ -84,7 +84,7 @@ extension UISegmentedControl{
     func removeBorder() {
         weak var color: CGColor?
         
-        color = UIColor(named: "onboardingViewControllerBackground")?.cgColor
+        color = UIColor.clear.cgColor
         
         let backgroundImage = UIImage.getColoredRectImageWith(color: color!, andSize: self.bounds.size)
         self.setBackgroundImage(backgroundImage, for: .normal, barMetrics: .default)

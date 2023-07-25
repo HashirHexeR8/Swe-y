@@ -7,15 +7,20 @@
 
 import UIKit
 
-class ListingDetailPageViewController: UIViewController {
+class ListingDetailPageViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var productImagesCollectionView: UICollectionView!
     @IBOutlet weak var similarItemsCollectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var productDetailContainer: UIView!
     @IBOutlet weak var productPriceContainer: UIView!
+    @IBOutlet weak var productInfoContainer: UIView!
+    @IBOutlet weak var lblProductDetail: UILabel!
     @IBOutlet weak var sweyCartButton: UIButton!
+    @IBOutlet weak var cartButton: UIButton!
     @IBOutlet weak var backButtonView: UIView!
+    @IBOutlet weak var productPriceButton: UIStackView!
+    @IBOutlet weak var deliveryPriceButton: UIButton!
     
     private var sectionDataSource: [ListingPageProductSectionDTO] = []
     
@@ -37,17 +42,37 @@ class ListingDetailPageViewController: UIViewController {
         self.productImagesCollectionView.collectionViewLayout = createCompositionalLayoutForFullProductImages()
         
         self.segmentedControl.addUnderlineForSelectedSegment()
-                
+        
         self.sweyCartButton.clipsToBounds = false
-        self.sweyCartButton.layer.shadowColor = UIColor.blue.cgColor
+        self.sweyCartButton.layer.shadowColor = UIColor(red: 0, green: 0.4745098039215686, blue: 1, alpha: 0.65).cgColor
         self.sweyCartButton.layer.shadowOpacity = 0.5
-        self.sweyCartButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        self.sweyCartButton.layer.shadowRadius = 4
+        self.sweyCartButton.layer.shadowOffset = CGSize(width: 0, height: 8)
+        self.sweyCartButton.layer.shadowRadius = 10
         self.sweyCartButton.layer.masksToBounds = false
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onbackButtonViewTap))
         backButtonView.addGestureRecognizer(tapGesture)
-                
+        
+//        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipedRight(_: )))
+//        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+//        swipeRight.delegate = self
+//        self.productInfoContainer.addGestureRecognizer(swipeRight)
+//
+//        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipedLeft(_: )))
+//        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+//        swipeLeft.delegate = self
+//        self.productInfoContainer.addGestureRecognizer(swipeLeft)
+        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        
+        let viewTapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapProductPrice))
+        productPriceButton.addGestureRecognizer(viewTapGesture)
+        
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
     func updateCollectionViewHeight() {
@@ -59,8 +84,26 @@ class ListingDetailPageViewController: UIViewController {
         }
     }
     
+    @objc func swipedRight(_ sender: UISwipeGestureRecognizer) {
+        if self.segmentedControl.selectedSegmentIndex != 0 {
+            self.segmentedControl.selectedSegmentIndex -= 1
+            self.onSegmentValueChange(self.segmentedControl)
+        }
+    }
+
+    @objc func swipedLeft(_ sender: UISwipeGestureRecognizer) {
+        if self.segmentedControl.selectedSegmentIndex != 1 {
+            self.segmentedControl.selectedSegmentIndex += 1
+            self.onSegmentValueChange(self.segmentedControl)
+        }
+    }
+    
+    @objc func onTapProductPrice(_ sender: Any) {
+        self.deliveryPriceButton.isHidden = false
+    }
+    
     @objc func onbackButtonViewTap(_ sender: Any) {
-        dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func onSegmentValueChange(_ sender: Any!) {
@@ -86,11 +129,20 @@ class ListingDetailPageViewController: UIViewController {
         let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: String(describing: ChatViewController.self)) as? ChatViewController
         vc?.modalPresentationStyle = .overCurrentContext
+        vc?.modalTransitionStyle = .crossDissolve
         self.present(vc!, animated: true)
     }
     
     @IBAction func onBackButtonTap(_ sender: Any!) {
-        dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onSweyCartButton(_ sender: Any!) {
+        sweyCartButton.isSelected = !sweyCartButton.isSelected
+    }
+    
+    @IBAction func onCartButton(_ sender: Any!) {
+        cartButton.isSelected = !cartButton.isSelected
     }
     
     func createCompositionalLayoutForFullProductImages() -> UICollectionViewCompositionalLayout {
@@ -107,7 +159,7 @@ class ListingDetailPageViewController: UIViewController {
         //Section
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-        section.orthogonalScrollingBehavior = .continuous
+        section.orthogonalScrollingBehavior = .paging
         
         return UICollectionViewCompositionalLayout(section: section)
     }
@@ -252,7 +304,12 @@ extension ListingDetailPageViewController: UICollectionViewDelegate, UICollectio
             cell.setupCell(imageName: sectionDataSource[indexPath.section].products[indexPath.row].itemImage)
         }
         else {
-            cell.setupCell(imageName: "productDetailFullImage")
+            if indexPath.row == 0 {
+                cell.setupCell(imageName: "productDetailFullImage")
+            }
+            else {
+                cell.setupCell(imageName: "productDetailNormal")
+            }
         }
         return cell
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uGC-Hs-GZp">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -88,6 +88,7 @@
                             <constraint firstItem="Dv5-TD-IsH" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="yL1-M7-7aR"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QPQ-Ej-oud"/>
                     <connections>
                         <outlet property="lblSignInLabel" destination="N2F-le-tpT" id="Zwm-wI-rWi"/>
                         <outlet property="signUpButton" destination="5Go-zK-EnR" id="UGJ-oy-H2p"/>
@@ -95,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="4"/>
+            <point key="canvasLocation" x="679.53488372093022" y="3.8626609442060089"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="2jz-hK-nOu">
@@ -469,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fp-fc-CEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869" y="4"/>
+            <point key="canvasLocation" x="1766.5116279069766" y="3.8626609442060089"/>
         </scene>
         <!--Phone Number View Controller-->
         <scene sceneID="58n-g8-rsn">
@@ -695,10 +696,13 @@
                             <constraint firstItem="DHW-xp-4Di" firstAttribute="top" secondItem="AQK-rH-amL" secondAttribute="bottom" constant="20" id="vfD-IL-wcT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nextButton" destination="GlQ-JC-bMt" id="UGv-Sc-Smj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chR-Ox-1hp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692.5581395348836" y="3.8626609442060089"/>
+            <point key="canvasLocation" x="2591.1627906976746" y="3.8626609442060089"/>
         </scene>
         <!--Profile Picture View Controller-->
         <scene sceneID="gVf-tb-tY8">
@@ -795,7 +799,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w13-9N-tIP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2641" y="4"/>
+            <point key="canvasLocation" x="3538.6046511627906" y="3.8626609442060089"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="GTF-0b-ATQ">
@@ -1061,7 +1065,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwQ-2e-FGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3561" y="4"/>
+            <point key="canvasLocation" x="4459.5348837209303" y="3.8626609442060089"/>
         </scene>
         <!--Phone Number Sign In View Controller-->
         <scene sceneID="g2E-dN-Eah">
@@ -1947,6 +1951,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uv5-Aw-9GK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1693" y="796"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nRr-Et-YPn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="uGC-Hs-GZp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jwk-az-iQp">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="tlB-nb-9Zx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B9m-ug-2Re" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-219.06976744186045" y="3.8626609442060089"/>
         </scene>
     </scenes>
     <resources>

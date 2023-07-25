@@ -16,6 +16,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var guidTile1: UIView!
     @IBOutlet weak var guidTile2: UIView!
     @IBOutlet weak var guidTile3: UIView!
+    @IBOutlet weak var filterSearchViewContainer: UIView!
     @IBOutlet weak var filterSearchBackgroundView: UIView!
     @IBOutlet weak var filterSearchBackgroundBlurView: UIView!
     @IBOutlet weak var cartCountButton: UIButton!
@@ -38,12 +39,30 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
                     self.view.layoutIfNeeded()
                 }
                 
+                for constraint in filterSearchViewContainer.constraints {
+                    if constraint.identifier == "heightConstraint" {
+                        constraint.constant = 50
+                    }
+                }
+                UIView.animate(withDuration: 0.15) {
+                    self.view.layoutIfNeeded()
+                }
+                
             }
             else {
                 //blurView?.effect = .none
                 for constraint in segmentedControl.constraints {
                     if constraint.identifier == "segmentHeightConstraint" {
                         constraint.constant = 45
+                    }
+                }
+                UIView.animate(withDuration: 0.15) {
+                    self.view.layoutIfNeeded()
+                }
+                
+                for constraint in filterSearchViewContainer.constraints {
+                    if constraint.identifier == "heightConstraint" {
+                        constraint.constant = 70
                     }
                 }
                 UIView.animate(withDuration: 0.15) {
@@ -93,6 +112,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: String(describing: FIlterMainViewController.self)) as? FIlterMainViewController
         vc?.modalPresentationStyle = .overCurrentContext
+        vc?.modalTransitionStyle = .crossDissolve
         self.present(vc!, animated: true)
     }
     
@@ -331,7 +351,7 @@ extension ListingPageViewController: UICollectionViewDataSource {
         let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: String(describing: ListingDetailPageViewController.self)) as? ListingDetailPageViewController
         vc?.modalPresentationStyle = .overCurrentContext
-        self.present(vc!, animated: true)
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplayContextMenu configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionAnimating?) {

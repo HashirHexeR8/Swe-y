@@ -27,10 +27,10 @@ class OnboardingViewController: UIViewController {
         lblSignInLabel.attributedText = mutableAttributedString
         
         self.signUpButton.clipsToBounds = false
-        self.signUpButton.layer.shadowColor = UIColor.blue.cgColor
+        self.signUpButton.layer.shadowColor = UIColor(red: 0, green: 0.4745098039215686, blue: 1, alpha: 0.65).cgColor
         self.signUpButton.layer.shadowOpacity = 0.5
-        self.signUpButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        self.signUpButton.layer.shadowRadius = 4
+        self.signUpButton.layer.shadowOffset = CGSize(width: 0, height: 8)
+        self.signUpButton.layer.shadowRadius = 10
         self.signUpButton.layer.masksToBounds = false
         
         let signupTapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapSignup))
@@ -40,13 +40,13 @@ class OnboardingViewController: UIViewController {
     @objc func onTapSignup(sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: SignInViewController.self)) as? SignInViewController
         vc?.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func onGetStartedButtonTap(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: SignupViewController.self)) as? SignupViewController
         vc?.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
 

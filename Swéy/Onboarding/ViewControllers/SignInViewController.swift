@@ -30,10 +30,10 @@ class SignInViewController: UIViewController {
         lblSignUpButton.attributedText = mutableAttributedString
         
         self.signInButton.clipsToBounds = false
-        self.signInButton.layer.shadowColor = UIColor.blue.cgColor
+        self.signInButton.layer.shadowColor = UIColor(red: 0, green: 0.4745098039215686, blue: 1, alpha: 0.65).cgColor
         self.signInButton.layer.shadowOpacity = 0.5
-        self.signInButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        self.signInButton.layer.shadowRadius = 4
+        self.signInButton.layer.shadowOffset = CGSize(width: 0, height: 8)
+        self.signInButton.layer.shadowRadius = 10
         self.signInButton.layer.masksToBounds = false
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -46,7 +46,7 @@ class SignInViewController: UIViewController {
     @objc func onTapSignup(sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: SignupViewController.self)) as? SignupViewController
         vc?.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -70,7 +70,7 @@ class SignInViewController: UIViewController {
     @objc func onTapForgetPassword(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: ForgetPasswordViewController.self)) as? ForgetPasswordViewController
         vc?.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func onBackButtonTap(_ sender: Any) {
@@ -80,7 +80,7 @@ class SignInViewController: UIViewController {
     @IBAction func onNextButtonTap(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: PhoneNumberSignInViewController.self)) as? PhoneNumberSignInViewController
         vc?.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
 

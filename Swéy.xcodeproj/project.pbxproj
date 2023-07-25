@@ -10,7 +10,6 @@
 		6E04FA0329D212BE00503E75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04FA0229D212BE00503E75 /* AppDelegate.swift */; };
 		6E04FA0529D212BE00503E75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04FA0429D212BE00503E75 /* SceneDelegate.swift */; };
 		6E04FA0A29D212BE00503E75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA0829D212BE00503E75 /* Main.storyboard */; };
-		6E04FA0C29D212C100503E75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA0B29D212C100503E75 /* Assets.xcassets */; };
 		6E04FA0F29D212C100503E75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA0D29D212C100503E75 /* LaunchScreen.storyboard */; };
 		6E04FA1929D2179300503E75 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA1829D2179300503E75 /* Onboarding.storyboard */; };
 		6E04FA2D29D222C200503E75 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA1B29D222C100503E75 /* Poppins-ExtraBoldItalic.ttf */; };
@@ -62,6 +61,8 @@
 		6E9B79382A2D3CD600B6559C /* ListingDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B79372A2D3CD600B6559C /* ListingDetailPageViewController.swift */; };
 		6EBDD6312A10FFD000AECD19 /* ListingPageProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDD6302A10FFD000AECD19 /* ListingPageProductDTO.swift */; };
 		6EBDD6332A11018900AECD19 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDD6322A11018900AECD19 /* Enums.swift */; };
+		6ECE0C652A641016007958D4 /* CustomBlurViewEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECE0C642A641016007958D4 /* CustomBlurViewEffect.swift */; };
+		6ECE0C672A649184007958D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ECE0C662A649184007958D4 /* Assets.xcassets */; };
 		6EDBB63A29D6C6FE00DA91C1 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBB63929D6C6FE00DA91C1 /* PhoneNumberViewController.swift */; };
 		6EDF39E32A2E8B6B00DF04C0 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDF39E22A2E8B6B00DF04C0 /* PreviewViewController.swift */; };
 		6EEEE5D02A103045007723F0 /* ListingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE5CF2A103045007723F0 /* ListingPageViewController.swift */; };
@@ -74,7 +75,6 @@
 		6E04FA0229D212BE00503E75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E04FA0429D212BE00503E75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6E04FA0929D212BE00503E75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6E04FA0B29D212C100503E75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E04FA0E29D212C100503E75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E04FA1029D212C100503E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E04FA1829D2179300503E75 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
@@ -127,6 +127,8 @@
 		6E9B79372A2D3CD600B6559C /* ListingDetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailPageViewController.swift; sourceTree = "<group>"; };
 		6EBDD6302A10FFD000AECD19 /* ListingPageProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPageProductDTO.swift; sourceTree = "<group>"; };
 		6EBDD6322A11018900AECD19 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		6ECE0C642A641016007958D4 /* CustomBlurViewEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBlurViewEffect.swift; sourceTree = "<group>"; };
+		6ECE0C662A649184007958D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EDBB63929D6C6FE00DA91C1 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
 		6EDF39E22A2E8B6B00DF04C0 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		6EEEE5CF2A103045007723F0 /* ListingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPageViewController.swift; sourceTree = "<group>"; };
@@ -164,15 +166,16 @@
 		6E04FA0129D212BE00503E75 /* Swéy */ = {
 			isa = PBXGroup;
 			children = (
+				6ECE0C662A649184007958D4 /* Assets.xcassets */,
 				6E04FA0229D212BE00503E75 /* AppDelegate.swift */,
 				6E04FA0429D212BE00503E75 /* SceneDelegate.swift */,
 				6E04FA4B29D459E500503E75 /* Extensions.swift */,
 				6EBDD6322A11018900AECD19 /* Enums.swift */,
+				6ECE0C642A641016007958D4 /* CustomBlurViewEffect.swift */,
 				6EBDD62F2A10FF9B00AECD19 /* Models */,
 				6E04FA1629D2175B00503E75 /* Onboarding */,
 				6E7F00A82A0B182900D30F7C /* StoreLanding */,
 				6E04FA0829D212BE00503E75 /* Main.storyboard */,
-				6E04FA0B29D212C100503E75 /* Assets.xcassets */,
 				6E04FA0D29D212C100503E75 /* LaunchScreen.storyboard */,
 				6E04FA1029D212C100503E75 /* Info.plist */,
 				6E04FA1A29D2229900503E75 /* Fonts */,
@@ -369,11 +372,11 @@
 				6E04FA3229D222C200503E75 /* Poppins-SemiBold.ttf in Resources */,
 				6E04FA3729D222C200503E75 /* Poppins-Thin.ttf in Resources */,
 				6E04FA4629D43DC000503E75 /* DMSans-Medium.ttf in Resources */,
-				6E04FA0C29D212C100503E75 /* Assets.xcassets in Resources */,
 				6E04FA3B29D222C200503E75 /* Poppins-ExtraLight.ttf in Resources */,
 				6E04FA3329D222C200503E75 /* Poppins-Italic.ttf in Resources */,
 				6E04FA0A29D212BE00503E75 /* Main.storyboard in Resources */,
 				6E04FA1929D2179300503E75 /* Onboarding.storyboard in Resources */,
+				6ECE0C672A649184007958D4 /* Assets.xcassets in Resources */,
 				6E04FA2D29D222C200503E75 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E3BE19829E5DCF30060199C /* ForgetPasswordViewController.swift in Sources */,
+				6ECE0C652A641016007958D4 /* CustomBlurViewEffect.swift in Sources */,
 				6E9B792E2A2CF61100B6559C /* SizeTileFilterViewController.swift in Sources */,
 				6E04FA5029D4627D00503E75 /* SignupViewController.swift in Sources */,
 				6EEEE5D02A103045007723F0 /* ListingPageViewController.swift in Sources */,
@@ -558,7 +562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 97KF2LZHQ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Swéy/Info.plist";
@@ -591,7 +595,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 97KF2LZHQ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Swéy/Info.plist";
