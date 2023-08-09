@@ -16,6 +16,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var guidTile1: UIView!
     @IBOutlet weak var guidTile2: UIView!
     @IBOutlet weak var guidTile3: UIView!
+    @IBOutlet weak var topViewContainer: UIView!
     @IBOutlet weak var filterSearchViewContainer: UIView!
     @IBOutlet weak var filterSearchBackgroundView: UIView!
     @IBOutlet weak var filterSearchBackgroundBlurView: UIView!
@@ -23,9 +24,14 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var cartButton: UIButton!
     
     private var guideTapCount: Int = 0
-    private var blurView: UIVisualEffectView?
     ///Offset to calculate if there's any change in scroll of tableview
     private var lastContentOffset: CGFloat = 0
+    
+    lazy var blurredView: UIView = {
+        return UIView()
+    } ()
+    
+    
     ///Flag to show and hide the topFilterView
     private var isFilterViewHidden: Bool = false {
         didSet {
@@ -33,6 +39,11 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
                 for constraint in segmentedControl.constraints {
                     if constraint.identifier == "segmentHeightConstraint" {
                         constraint.constant = 0
+                    }
+                }
+                for constraint in topViewContainer.constraints {
+                    if constraint.identifier == "viewHeightConstraint" {
+                        constraint.constant = 110
                     }
                 }
                 UIView.animate(withDuration: 0.15) {
@@ -47,13 +58,20 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
                 UIView.animate(withDuration: 0.15) {
                     self.view.layoutIfNeeded()
                 }
-                
+                self.topViewContainer.backgroundColor = UIColor(named: "onboardingViewControllerBackground")?.withAlphaComponent(0.0)
+                self.filterSearchBackgroundBlurView.isHidden = false
+                self.blurredView.frame = self.filterSearchBackgroundBlurView.bounds
             }
             else {
                 //blurView?.effect = .none
                 for constraint in segmentedControl.constraints {
                     if constraint.identifier == "segmentHeightConstraint" {
                         constraint.constant = 45
+                    }
+                }
+                for constraint in topViewContainer.constraints {
+                    if constraint.identifier == "viewHeightConstraint" {
+                        constraint.constant = 175
                     }
                 }
                 UIView.animate(withDuration: 0.15) {
@@ -68,6 +86,9 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
                 UIView.animate(withDuration: 0.15) {
                     self.view.layoutIfNeeded()
                 }
+                self.topViewContainer.backgroundColor = UIColor(named: "onboardingViewControllerBackground")?.withAlphaComponent(1.0)
+                self.filterSearchBackgroundBlurView.isHidden = true
+                self.blurredView.frame = self.filterSearchBackgroundBlurView.bounds
             }
         }
     }
@@ -105,6 +126,16 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         self.cartButton.layer.shadowOffset = CGSize(width: 2, height: 2)
         self.cartButton.layer.shadowRadius = 2
         self.cartButton.layer.masksToBounds = false
+        
+        
+        // Create a blur effect
+        let blurEffect = UIBlurEffect(style: .light)
+        // Create a visual effect view with the blur effect
+        blurredView = CustomVisualEffectView(effect: blurEffect, intensity: 0.2)
+        // Set the frame to cover the entire view
+        blurredView.frame = filterSearchBackgroundBlurView.bounds
+        // Add the visual effect view as a subview
+        filterSearchBackgroundBlurView.addSubview(blurredView)
         
     }
     
@@ -183,7 +214,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: horizontalGroupSize, subitems: [verticalGroup, verticalProducts[0], verticalProducts[0], verticalProducts[0]])
         //Section
         let section = NSCollectionLayoutSection(group: horizontalGroup)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 10, trailing: 8)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 120, leading: 8, bottom: 10, trailing: 8)
         section.orthogonalScrollingBehavior = .continuous
         return section
     }
@@ -311,6 +342,7 @@ extension ListingPageViewController: UICollectionViewDataSource {
             self.lastContentOffset = scrollView.contentOffset.y
             let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview!)
             if translation.y > 0 {
+                self.isFilterViewHidden = false
             }
             else {
                 self.isFilterViewHidden = true
@@ -322,7 +354,9 @@ extension ListingPageViewController: UICollectionViewDataSource {
         if scrollView == self.collectionView {
             if self.lastContentOffset < scrollView.contentOffset.y {
                 // did move up
-            } else if self.lastContentOffset > scrollView.contentOffset.y {
+                self.isFilterViewHidden = true
+            }
+            else if self.lastContentOffset > scrollView.contentOffset.y {
                 // did move down
                 self.isFilterViewHidden = false
             }

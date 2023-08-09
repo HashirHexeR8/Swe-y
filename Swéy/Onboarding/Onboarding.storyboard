@@ -796,6 +796,9 @@
                             <constraint firstItem="KqQ-c0-cLh" firstAttribute="height" secondItem="aZH-Km-7wp" secondAttribute="height" multiplier="0.0804721" id="tQ6-i3-VSl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chooseImageButton" destination="KqQ-c0-cLh" id="eqd-nL-Ats"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w13-9N-tIP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1343,6 +1346,7 @@
                     </view>
                     <connections>
                         <outlet property="checkBoxButton" destination="jfg-RS-WrU" id="9dH-PF-yJr"/>
+                        <outlet property="nextButton" destination="fII-Za-Z8Q" id="FKl-as-xXK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DB3-3T-Y0h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1676,6 +1680,9 @@
                             <constraint firstItem="vtj-ol-a2p" firstAttribute="centerX" secondItem="Xhk-Hf-UmI" secondAttribute="centerX" id="z4E-XI-NQQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="verifyButton" destination="vtj-ol-a2p" id="8fk-Ly-lPn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeC-Zu-Z9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

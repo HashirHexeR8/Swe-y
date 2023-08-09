@@ -9,10 +9,18 @@ import UIKit
 
 class ProfilePictureViewController: UIViewController {
 
+    @IBOutlet weak var chooseImageButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.chooseImageButton.clipsToBounds = false
+        self.chooseImageButton.layer.shadowColor = UIColor(red: 0, green: 0.4745098039215686, blue: 1, alpha: 0.65).cgColor
+        self.chooseImageButton.layer.shadowOpacity = 0.5
+        self.chooseImageButton.layer.shadowOffset = CGSize(width: 0, height: 8)
+        self.chooseImageButton.layer.shadowRadius = 10
+        self.chooseImageButton.layer.masksToBounds = false
     }
     
     @IBAction func onBackButtonTap(_ sender: Any) {

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductDetailCollectionViewCell" customModule="Swey" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="460" height="105"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="460" height="105"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqc-eS-8kT">
+                        <rect key="frame" x="0.0" y="0.0" width="460" height="105"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRl-NZ-w4W">
+                                <rect key="frame" x="35" y="0.0" width="390" height="105"/>
+                                <string key="text">The Nike Varsity Compete TR 3 gives you stability and traction during lifts or agility drills. Durable construction from top to bottom stands up to the rigors of training in the gym...</string>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="13"/>
+                                <color key="textColor" name="storeLandingTextColorSet"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dRl-NZ-w4W" secondAttribute="bottom" id="bhx-hK-ue8"/>
+                            <constraint firstAttribute="trailing" secondItem="dRl-NZ-w4W" secondAttribute="trailing" constant="35" id="dZ2-Qd-SrE"/>
+                            <constraint firstItem="dRl-NZ-w4W" firstAttribute="top" secondItem="mqc-eS-8kT" secondAttribute="top" id="pE3-Pj-hwS"/>
+                            <constraint firstItem="dRl-NZ-w4W" firstAttribute="leading" secondItem="mqc-eS-8kT" secondAttribute="leading" constant="35" id="pLb-Uk-RpH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="mqc-eS-8kT" secondAttribute="trailing" id="3PH-DR-RyK"/>
+                <constraint firstItem="mqc-eS-8kT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="unx-24-C2c"/>
+                <constraint firstItem="mqc-eS-8kT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vSz-4n-eka"/>
+                <constraint firstAttribute="bottom" secondItem="mqc-eS-8kT" secondAttribute="bottom" id="wCm-7g-CeG"/>
+            </constraints>
+            <size key="customSize" width="460" height="105"/>
+            <point key="canvasLocation" x="178.62595419847327" y="38.380281690140848"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="storeLandingTextColorSet">
+            <color red="0.16899999976158142" green="0.16899999976158142" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

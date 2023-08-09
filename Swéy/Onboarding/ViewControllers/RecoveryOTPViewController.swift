@@ -8,11 +8,20 @@
 import UIKit
 
 class RecoveryOTPViewController: UIViewController {
+    
+    @IBOutlet weak var verifyButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.verifyButton.clipsToBounds = false
+        self.verifyButton.layer.shadowColor = UIColor(red: 0, green: 0.4745098039215686, blue: 1, alpha: 0.65).cgColor
+        self.verifyButton.layer.shadowOpacity = 0.5
+        self.verifyButton.layer.shadowOffset = CGSize(width: 0, height: 8)
+        self.verifyButton.layer.shadowRadius = 10
+        self.verifyButton.layer.masksToBounds = false
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)

@@ -7,15 +7,14 @@
 
 import UIKit
 
-class ListingDetailPageViewController: UIViewController, UIGestureRecognizerDelegate {
+class ListingDetailPageViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var productImagesCollectionView: UICollectionView!
-    @IBOutlet weak var similarItemsCollectionView: UICollectionView!
+    @IBOutlet weak var similarItemsCollectionView: CustomCollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var productDetailContainer: UIView!
     @IBOutlet weak var productPriceContainer: UIView!
     @IBOutlet weak var productInfoContainer: UIView!
-    @IBOutlet weak var lblProductDetail: UILabel!
     @IBOutlet weak var sweyCartButton: UIButton!
     @IBOutlet weak var cartButton: UIButton!
     @IBOutlet weak var backButtonView: UIView!
@@ -30,6 +29,8 @@ class ListingDetailPageViewController: UIViewController, UIGestureRecognizerDele
         let nib = UINib(nibName: String(describing: ProductImageCollectionViewCell.self), bundle: nil)
         productImagesCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: ProductImageCollectionViewCell.self))
         similarItemsCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: ProductImageCollectionViewCell.self))
+        let productDetailNib = UINib(nibName: String(describing: ProductDetailCollectionViewCell.self), bundle: nil)
+        similarItemsCollectionView.register(productDetailNib, forCellWithReuseIdentifier: String(describing: ProductDetailCollectionViewCell.self))
         
         self.sectionDataSource = createDataSource()
         
@@ -53,26 +54,25 @@ class ListingDetailPageViewController: UIViewController, UIGestureRecognizerDele
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onbackButtonViewTap))
         backButtonView.addGestureRecognizer(tapGesture)
         
-//        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipedRight(_: )))
-//        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
-//        swipeRight.delegate = self
-//        self.productInfoContainer.addGestureRecognizer(swipeRight)
-//
-//        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipedLeft(_: )))
-//        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
-//        swipeLeft.delegate = self
-//        self.productInfoContainer.addGestureRecognizer(swipeLeft)
         
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipedRight(_: )))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        self.similarItemsCollectionView.addGestureRecognizer(swipeRight)
+
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipedLeft(_: )))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        self.similarItemsCollectionView.addGestureRecognizer(swipeLeft)
+                
         let viewTapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapProductPrice))
         productPriceButton.addGestureRecognizer(viewTapGesture)
         
     }
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
+    func scrollToTop() {
+        let topOffset = CGPoint(x: 0, y: 0)
+        UIView.animate(withDuration: 1) {
+            self.scrollView.setContentOffset(topOffset, animated: true)
+        }
     }
     
     func updateCollectionViewHeight() {
@@ -108,21 +108,14 @@ class ListingDetailPageViewController: UIViewController, UIGestureRecognizerDele
     
     @IBAction func onSegmentValueChange(_ sender: Any!) {
         self.segmentedControl.changeUnderlinePosition()
+    
+        self.similarItemsCollectionView.reloadData()
+        updateCollectionViewHeight()
         
         if self.segmentedControl.selectedSegmentIndex == 0 {
-            self.similarItemsCollectionView.constraints.forEach { constraint in
-                if constraint.identifier == "similarProductsCollectionViewHeightConstraint" {
-                    constraint.constant = 0
-                }
-            }
+            self.scrollToTop()
         }
-        else {
-            updateCollectionViewHeight()
-        }
-        
-        productDetailContainer.isHidden = self.segmentedControl.selectedSegmentIndex != 0
         productPriceContainer.isHidden = self.segmentedControl.selectedSegmentIndex != 0
-        similarItemsCollectionView.isHidden = self.segmentedControl.selectedSegmentIndex == 0
     }
     
     @IBAction func onChatButtonTap (_ sender: Any!) {
@@ -167,16 +160,42 @@ class ListingDetailPageViewController: UIViewController, UIGestureRecognizerDele
     func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
-            switch self.sectionDataSource[sectionIndex].sectionType {
-            case .normalProductSection:
-                return self.createNormalProductSection(sectionIndex: sectionIndex)
-            case .verticalProductSection:
-                return self.createVerticalProductSection(sectionIndex: sectionIndex)
-            default:
-                return self.createNormalProductSection()
+            if self.segmentedControl.selectedSegmentIndex == 0 {
+                return self.createProductDetailSection()
             }
+            else {
+                switch self.sectionDataSource[sectionIndex].sectionType {
+                case .normalProductSection:
+                    return self.createNormalProductSection(sectionIndex: sectionIndex)
+                case .verticalProductSection:
+                    return self.createVerticalProductSection(sectionIndex: sectionIndex)
+                default:
+                    return self.createNormalProductSection()
+                }
+            }
+            
+            
         }
         return layout
+    }
+    
+    func createProductDetailSection() -> NSCollectionLayoutSection {
+        
+        var products: [NSCollectionLayoutItem] = []
+        
+        let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+        productItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        products.append(productItem)
+        
+        //Group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(110))
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: products)
+        //Section
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        return section
     }
     
     func createNormalProductSection(sectionIndex: Int) -> NSCollectionLayoutSection {
@@ -291,27 +310,36 @@ class ListingDetailPageViewController: UIViewController, UIGestureRecognizerDele
 extension ListingDetailPageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return collectionView.tag == 2 ? sectionDataSource.count : 1
+        return collectionView.tag == 2 ? (self.segmentedControl?.selectedSegmentIndex == 1 ? sectionDataSource.count : 1) : 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView.tag == 2 ? sectionDataSource[section].products.count : 3
+        return collectionView.tag == 2 ? (self.segmentedControl?.selectedSegmentIndex == 1 ? sectionDataSource[section].products.count : 1) : 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ProductImageCollectionViewCell.self), for: indexPath) as! ProductImageCollectionViewCell
+        
         if collectionView.tag == 2 {
-            cell.setupCell(imageName: sectionDataSource[indexPath.section].products[indexPath.row].itemImage)
+            if self.segmentedControl.selectedSegmentIndex == 0 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ProductDetailCollectionViewCell.self), for: indexPath) as! ProductDetailCollectionViewCell
+                return cell
+            }
+            else {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ProductImageCollectionViewCell.self), for: indexPath) as! ProductImageCollectionViewCell
+                cell.setupCell(imageName: sectionDataSource[indexPath.section].products[indexPath.row].itemImage)
+                return cell
+            }
         }
         else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ProductImageCollectionViewCell.self), for: indexPath) as! ProductImageCollectionViewCell
             if indexPath.row == 0 {
                 cell.setupCell(imageName: "productDetailFullImage")
             }
             else {
                 cell.setupCell(imageName: "productDetailNormal")
             }
+            return cell
         }
-        return cell
     }
     
 }

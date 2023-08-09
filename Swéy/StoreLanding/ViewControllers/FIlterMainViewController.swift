@@ -35,7 +35,7 @@ class FIlterMainViewController: UIViewController {
             containerView.addSubview(customBlurEffectView)
             containerView.addSubview(dimmedView)
             return containerView
-    }()
+    } ()
 
     override func viewDidLoad() {
         super.viewDidLoad()
