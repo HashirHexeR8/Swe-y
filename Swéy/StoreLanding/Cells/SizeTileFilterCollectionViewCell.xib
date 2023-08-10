@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,23 +25,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="122" height="104"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCC-aL-qbT">
+                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCC-aL-qbT">
                         <rect key="frame" x="0.0" y="0.0" width="122" height="104"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiG-wa-8yL">
-                                <rect key="frame" x="47.666666666666664" y="43.666666666666664" width="26.666666666666664" height="17"/>
-                                <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="13"/>
+                                <rect key="frame" x="46.666666666666664" y="43" width="28.999999999999993" height="18.333333333333329"/>
+                                <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSw-a7-Vpn">
-                                <rect key="frame" x="5" y="31.666666666666671" width="16" height="17"/>
+                                <rect key="frame" x="5" y="31" width="16" height="17"/>
                                 <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HiG-wa-8yL" firstAttribute="centerX" secondItem="GCC-aL-qbT" secondAttribute="centerX" id="I7p-3G-Yz6"/>
                             <constraint firstItem="FSw-a7-Vpn" firstAttribute="leading" secondItem="GCC-aL-qbT" secondAttribute="leading" constant="5" id="JNk-2E-2KS"/>
@@ -60,12 +59,11 @@
                 <constraint firstItem="GCC-aL-qbT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vGA-FG-5Pv"/>
             </constraints>
             <size key="customSize" width="122" height="104"/>
+            <connections>
+                <outlet property="sizeCountry" destination="FSw-a7-Vpn" id="6M3-LE-5kE"/>
+                <outlet property="sizeText" destination="HiG-wa-8yL" id="8NH-RF-sOw"/>
+            </connections>
             <point key="canvasLocation" x="73.282442748091597" y="40.140845070422536"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

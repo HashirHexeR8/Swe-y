@@ -89,5 +89,10 @@ extension SizeTileFilterViewController: UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: SizeTileFilterCollectionViewCell.self), for: indexPath) as! SizeTileFilterCollectionViewCell
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! SizeTileFilterCollectionViewCell
+        cell.isFilterSelected = !cell.isFilterSelected
+    }
 
 }
