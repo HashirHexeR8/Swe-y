@@ -83,7 +83,7 @@ class ChatViewController: UIViewController {
                 })
             }
         default:
-            break
+            dismiss(animated: true, completion: nil)
         }
     }
     

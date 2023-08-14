@@ -44,7 +44,7 @@ class PhoneNumberViewController: UIViewController {
     }
     
     @IBAction func onBackButtonTap(_ sender: Any) {
-        dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func onSendCodeButtonTap(_ sender: Any) {

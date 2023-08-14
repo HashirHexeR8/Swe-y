@@ -47,7 +47,7 @@ class PhoneNumberSignInViewController: UIViewController {
         checkBoxButton.isSelected = !checkBoxButton.isSelected
     }
     @IBAction func onBackButtonTap(_ sender: Any) {
-        dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func onNextButtonTap(_ sender: Any) {

@@ -87,7 +87,7 @@ class FIlterMainViewController: UIViewController {
                 })
             }
         default:
-            break
+            dismiss(animated: true, completion: nil)
         }
     }
     

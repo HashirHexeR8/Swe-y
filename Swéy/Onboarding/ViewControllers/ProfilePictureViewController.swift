@@ -24,7 +24,7 @@ class ProfilePictureViewController: UIViewController {
     }
     
     @IBAction func onBackButtonTap(_ sender: Any) {
-        dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func onImageButtonTap(_ sender: Any) {

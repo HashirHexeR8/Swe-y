@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="QuickPayUserCollectionViewCell" customModule="Swey" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="115" height="136"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="115" height="136"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zm-hk-dQR">
+                        <rect key="frame" x="0.0" y="0.0" width="115" height="136"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="80D-RF-eky">
+                                <rect key="frame" x="28" y="20" width="59" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="CSp-Nt-ZRb"/>
+                                    <constraint firstAttribute="width" constant="59" id="y2H-QA-dFX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hw-Jb-yRx">
+                                <rect key="frame" x="37.666666666666671" y="91" width="39.666666666666671" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Hw-Jb-yRx" firstAttribute="centerX" secondItem="4zm-hk-dQR" secondAttribute="centerX" id="5Le-j1-mw8"/>
+                            <constraint firstItem="80D-RF-eky" firstAttribute="centerX" secondItem="4zm-hk-dQR" secondAttribute="centerX" id="ALk-nH-vGy"/>
+                            <constraint firstItem="0Hw-Jb-yRx" firstAttribute="top" secondItem="80D-RF-eky" secondAttribute="bottom" constant="12" id="ldt-im-60J"/>
+                            <constraint firstItem="80D-RF-eky" firstAttribute="top" secondItem="4zm-hk-dQR" secondAttribute="top" constant="20" id="vfu-Py-QPh"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="4zm-hk-dQR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0vu-ed-Kfx"/>
+                <constraint firstAttribute="trailing" secondItem="4zm-hk-dQR" secondAttribute="trailing" id="HhF-2G-NZa"/>
+                <constraint firstAttribute="bottom" secondItem="4zm-hk-dQR" secondAttribute="bottom" id="XfP-YU-djn"/>
+                <constraint firstItem="4zm-hk-dQR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="oQj-cT-LJl"/>
+            </constraints>
+            <size key="customSize" width="115" height="136"/>
+            <point key="canvasLocation" x="-17.557251908396946" y="76.760563380281695"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="userProfile" width="46" height="46"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

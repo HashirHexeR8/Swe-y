@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @IBOutlet weak var checkBoxButton: UIButton!
@@ -40,6 +40,13 @@ class SignupViewController: UIViewController {
         
         let signupTapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapSignup))
         lblSignInLabel.addGestureRecognizer(signupTapGesture)
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
     @objc func onTapSignup(sender: Any) {
@@ -64,7 +71,7 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func onBackButtonTap(_ sender: Any) {
-        dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func onSignupButtonTap(_ sender: Any) {

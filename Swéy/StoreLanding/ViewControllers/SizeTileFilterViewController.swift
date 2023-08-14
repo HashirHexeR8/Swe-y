@@ -47,6 +47,7 @@ class SizeTileFilterViewController: UIViewController {
     
     @IBAction func segmentChanged(_ sender: Any) {
         self.segmentedControl.changeUnderlinePosition()
+        self.collectionView.reloadData()
     }
     
     func createNormalProductSection(sectionIndex: Int) -> NSCollectionLayoutSection {
@@ -87,6 +88,14 @@ extension SizeTileFilterViewController: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: SizeTileFilterCollectionViewCell.self), for: indexPath) as! SizeTileFilterCollectionViewCell
+        switch self.segmentedControl.selectedSegmentIndex {
+        case 1:
+            cell.sizeCountry.text = "UK"
+        case 2:
+            cell.sizeCountry.text = "US"
+        default:
+            cell.sizeCountry.text = "EU"
+        }
         return cell
     }
     

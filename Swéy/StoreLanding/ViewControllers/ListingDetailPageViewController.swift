@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListingDetailPageViewController: UIViewController {
+class ListingDetailPageViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var productImagesCollectionView: UICollectionView!
@@ -66,6 +66,13 @@ class ListingDetailPageViewController: UIViewController {
         let viewTapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapProductPrice))
         productPriceButton.addGestureRecognizer(viewTapGesture)
         
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
     func scrollToTop() {
