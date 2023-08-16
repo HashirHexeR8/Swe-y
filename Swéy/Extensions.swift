@@ -103,12 +103,20 @@ extension UISegmentedControl{
     
     func addUnderlineForSelectedSegment() {
         removeBorder()
-        let underlineWidth: CGFloat = (self.bounds.size.width / CGFloat(self.numberOfSegments)) - (self.bounds.size.width/13)
+        
+        var underlineWidth: CGFloat = (self.bounds.size.width / CGFloat(self.numberOfSegments)) - (self.bounds.size.width/13)
+        
         let underlineHeight: CGFloat = 2
-        let underlineXPosition = CGFloat(selectedSegmentIndex * Int(underlineWidth)) + 9000/self.bounds.width
+        var underlineXPosition = CGFloat(selectedSegmentIndex * Int(underlineWidth)) + 9000/self.bounds.width
+        
+        if self.widthForSegment(at: self.selectedSegmentIndex) > 0.0 {
+            underlineWidth = self.widthForSegment(at: self.selectedSegmentIndex) - 10.0
+            underlineXPosition = 10.0
+        }
+        
 
-        let underLineYPosition = 39.0
-        let underlineFrame = CGRect(x: underlineXPosition, y: 38, width: underlineWidth, height: underlineHeight)
+        let underLineYPosition = self.bounds.maxY - 3.0
+        let underlineFrame = CGRect(x: underlineXPosition, y: underLineYPosition, width: underlineWidth, height: underlineHeight)
         let underline = UIView(frame: underlineFrame)
         underline.backgroundColor = UIColor(hexString: "#0079FF")
         underline.layer.cornerRadius = 2
@@ -129,7 +137,22 @@ extension UISegmentedControl{
         } else if (self.bounds.width > 385) {
             divisor = 39
         }
-        let underlineFinalXPosition = ((self.bounds.width / CGFloat(self.numberOfSegments)) * CGFloat(selectedSegmentIndex)) + CGFloat(self.bounds.width)/divisor
+        
+        var underlineWidth: CGFloat = (self.bounds.size.width / CGFloat(self.numberOfSegments)) - (self.bounds.size.width/13)
+        if self.widthForSegment(at: self.selectedSegmentIndex) > 0.0 {
+            underlineWidth = self.widthForSegment(at: self.selectedSegmentIndex) - 10.0
+            underline.frame.size.width = underlineWidth
+        }
+        
+        var underlineFinalXPosition = ((self.bounds.width / CGFloat(self.numberOfSegments)) * CGFloat(selectedSegmentIndex)) + CGFloat(self.bounds.width)/divisor
+        
+        if self.selectedSegmentIndex - 1 >= 0 {
+            var underLinePosition = self.widthForSegment(at: self.selectedSegmentIndex - 1)
+            if underLinePosition > 0.0 {
+                underlineFinalXPosition = underLinePosition + 8.0
+            }
+        }
+        
         
         UIView.animate(withDuration: 0.1, animations: {
             underline.frame.origin.x = underlineFinalXPosition

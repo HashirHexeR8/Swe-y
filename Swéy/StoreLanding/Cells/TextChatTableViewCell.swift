@@ -55,6 +55,7 @@ class TextChatTableViewCell: UITableViewCell {
         self.edgeConstraint.isActive = false
         self.edgeConstraint = self.containerView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -12.0)
         self.edgeConstraint.isActive = true
+        self.containerView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner, .layerMaxXMaxYCorner]
     }
     
     func setupIncomingMessage() {
@@ -64,6 +65,7 @@ class TextChatTableViewCell: UITableViewCell {
         self.edgeConstraint.isActive = false
         self.edgeConstraint = self.containerView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 12.0)
         self.edgeConstraint.isActive = true
+        self.containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner]
     }
     
 }

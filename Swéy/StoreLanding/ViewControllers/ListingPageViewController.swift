@@ -8,14 +8,18 @@
 import UIKit
 
 class ListingPageViewController: UIViewController, UICollectionViewDelegate {
+    
+    required init?(coder: NSCoder) {
+        fatalError("Coder not allowed to be called from storyboard.")
+    }
+    
+    required init?(coder: NSCoder, scrollDelegate: ScrollDirectionDelegate) {
+        scrollDirectionDelegate = scrollDelegate
+        super.init(coder: coder)
+    }
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var filterButton: UIButton!
-    @IBOutlet weak var guidView: UIView!
-    @IBOutlet weak var guidTile1: UIView!
-    @IBOutlet weak var guidTile2: UIView!
-    @IBOutlet weak var guidTile3: UIView!
     @IBOutlet weak var topViewContainer: UIView!
     @IBOutlet weak var filterSearchViewContainer: UIView!
     @IBOutlet weak var filterSearchBackgroundView: UIView!
@@ -23,7 +27,6 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var cartCountButton: UIButton!
     @IBOutlet weak var cartButton: UIButton!
     
-    private var guideTapCount: Int = 0
     ///Offset to calculate if there's any change in scroll of tableview
     private var lastContentOffset: CGFloat = 0
     
@@ -31,19 +34,17 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         return UIView()
     } ()
     
+    private var scrollDirectionDelegate: ScrollDirectionDelegate?
+    
     
     ///Flag to show and hide the topFilterView
     private var isFilterViewHidden: Bool = false {
         didSet {
+            self.scrollDirectionDelegate?.onViewScrolled(didScrollUp: isFilterViewHidden)
             if isFilterViewHidden {
-                for constraint in segmentedControl.constraints {
-                    if constraint.identifier == "segmentHeightConstraint" {
-                        constraint.constant = 0
-                    }
-                }
                 for constraint in topViewContainer.constraints {
                     if constraint.identifier == "viewHeightConstraint" {
-                        constraint.constant = 110
+                        constraint.constant = 50
                     }
                 }
                 UIView.animate(withDuration: 0.15) {
@@ -63,15 +64,9 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
                 self.blurredView.frame = self.filterSearchBackgroundBlurView.bounds
             }
             else {
-                //blurView?.effect = .none
-                for constraint in segmentedControl.constraints {
-                    if constraint.identifier == "segmentHeightConstraint" {
-                        constraint.constant = 45
-                    }
-                }
                 for constraint in topViewContainer.constraints {
                     if constraint.identifier == "viewHeightConstraint" {
-                        constraint.constant = 175
+                        constraint.constant = 70
                     }
                 }
                 UIView.animate(withDuration: 0.15) {
@@ -108,11 +103,6 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         
         collectionView.collectionViewLayout = createCompositionalLayout()
         
-        segmentedControl.addUnderlineForSelectedSegment()
-        
-        self.guidView.isUserInteractionEnabled = true
-        self.guidView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onGuidViewTap)))
-        
         self.cartCountButton.clipsToBounds = false
         self.cartCountButton.layer.shadowColor = UIColor.black.cgColor
         self.cartCountButton.layer.shadowOpacity = 0.5
@@ -145,31 +135,6 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         vc?.modalPresentationStyle = .overCurrentContext
         vc?.modalTransitionStyle = .crossDissolve
         self.present(vc!, animated: true)
-    }
-    
-    
-    @IBAction func segmentChanged(_ sender: Any) {
-        self.segmentedControl.changeUnderlinePosition()
-    }
-    
-    @objc func onGuidViewTap(_ sender: Any) {
-        UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
-            
-            switch self.guideTapCount {
-            case 0:
-                self.guidTile1.isHidden = true
-                self.guidTile2.isHidden = false
-            case 1:
-                self.guidTile2.isHidden = true
-                self.guidTile3.isHidden = false
-            case 2:
-                self.guidTile3.isHidden = true
-                self.guidView.isHidden = true
-            default:
-                self.guidView.isHidden = true
-            }
-        })
-        self.guideTapCount += 1
     }
     
     func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
@@ -214,7 +179,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: horizontalGroupSize, subitems: [verticalGroup, verticalProducts[0], verticalProducts[0], verticalProducts[0]])
         //Section
         let section = NSCollectionLayoutSection(group: horizontalGroup)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 120, leading: 8, bottom: 10, trailing: 8)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 70 , leading: 8, bottom: 10, trailing: 8)
         section.orthogonalScrollingBehavior = .continuous
         return section
     }
@@ -327,10 +292,6 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         let section5 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product10, product11])
         
         return [horizontalSection1, section1, section2, section3, section4, section5]
-    }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.segmentedControl.changeBackgroundForAppearanceSwitch()
     }
     
 }

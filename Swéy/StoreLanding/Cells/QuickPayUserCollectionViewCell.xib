@@ -4,62 +4,67 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Bold.ttf">
+            <string>DMSans-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="QuickPayUserCollectionViewCell" customModule="Swey" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="115" height="136"/>
+            <rect key="frame" x="0.0" y="0.0" width="151" height="136"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="115" height="136"/>
+                <rect key="frame" x="0.0" y="0.0" width="151" height="136"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zm-hk-dQR">
-                        <rect key="frame" x="0.0" y="0.0" width="115" height="136"/>
+                        <rect key="frame" x="37.666666666666664" y="30" width="75.666666666666686" height="76"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="80D-RF-eky">
-                                <rect key="frame" x="28" y="20" width="59" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="CSp-Nt-ZRb"/>
-                                    <constraint firstAttribute="width" constant="59" id="y2H-QA-dFX"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatUser2" translatesAutoresizingMaskIntoConstraints="NO" id="80D-RF-eky">
+                                <rect key="frame" x="11.333333333333336" y="5" width="53.000000000000007" height="53"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hw-Jb-yRx">
-                                <rect key="frame" x="37.666666666666671" y="91" width="39.666666666666671" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="25.666666666666671" y="57.999999999999993" width="24.666666666666671" height="12.666666666666664"/>
+                                <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="9.6000003814697266"/>
+                                <color key="textColor" name="chatUserNameLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="onboardingViewControllerBackground"/>
                         <constraints>
                             <constraint firstItem="0Hw-Jb-yRx" firstAttribute="centerX" secondItem="4zm-hk-dQR" secondAttribute="centerX" id="5Le-j1-mw8"/>
                             <constraint firstItem="80D-RF-eky" firstAttribute="centerX" secondItem="4zm-hk-dQR" secondAttribute="centerX" id="ALk-nH-vGy"/>
-                            <constraint firstItem="0Hw-Jb-yRx" firstAttribute="top" secondItem="80D-RF-eky" secondAttribute="bottom" constant="12" id="ldt-im-60J"/>
-                            <constraint firstItem="80D-RF-eky" firstAttribute="top" secondItem="4zm-hk-dQR" secondAttribute="top" constant="20" id="vfu-Py-QPh"/>
+                            <constraint firstItem="0Hw-Jb-yRx" firstAttribute="top" secondItem="80D-RF-eky" secondAttribute="bottom" id="Pr4-C3-2FK"/>
+                            <constraint firstItem="80D-RF-eky" firstAttribute="height" secondItem="4zm-hk-dQR" secondAttribute="height" multiplier="0.7" id="SRf-wM-nFm"/>
+                            <constraint firstAttribute="width" secondItem="4zm-hk-dQR" secondAttribute="height" multiplier="120:120" id="qSp-MX-XED"/>
+                            <constraint firstItem="80D-RF-eky" firstAttribute="top" secondItem="4zm-hk-dQR" secondAttribute="top" constant="5" id="vfu-Py-QPh"/>
+                            <constraint firstItem="80D-RF-eky" firstAttribute="width" secondItem="4zm-hk-dQR" secondAttribute="width" multiplier="0.7" id="vrH-Nv-ReS"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="4zm-hk-dQR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0vu-ed-Kfx"/>
-                <constraint firstAttribute="trailing" secondItem="4zm-hk-dQR" secondAttribute="trailing" id="HhF-2G-NZa"/>
-                <constraint firstAttribute="bottom" secondItem="4zm-hk-dQR" secondAttribute="bottom" id="XfP-YU-djn"/>
-                <constraint firstItem="4zm-hk-dQR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="oQj-cT-LJl"/>
+                <constraint firstItem="4zm-hk-dQR" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Ne7-cH-vds"/>
+                <constraint firstItem="4zm-hk-dQR" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="OMH-YJ-cLu"/>
             </constraints>
-            <size key="customSize" width="115" height="136"/>
-            <point key="canvasLocation" x="-17.557251908396946" y="76.760563380281695"/>
+            <size key="customSize" width="151" height="136"/>
+            <point key="canvasLocation" x="-45.038167938931295" y="76.760563380281695"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="userProfile" width="46" height="46"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="chatUser2" width="52.333332061767578" height="50"/>
+        <namedColor name="chatUserNameLabelColor">
+            <color red="0.16899999976158142" green="0.16899999976158142" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="onboardingViewControllerBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

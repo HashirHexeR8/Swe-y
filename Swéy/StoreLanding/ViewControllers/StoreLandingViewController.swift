@@ -7,17 +7,23 @@
 
 import UIKit
 
-class StoreLandingViewController: UIViewController {
+class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, PageChangeDelegate {
     
     @IBOutlet weak var embededViewContainer: UIView!
     @IBOutlet weak var topViewContainer: UIView!
     @IBOutlet weak var topContainerBackgroundView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var guidView: UIView!
+    @IBOutlet weak var guidTile1: UIView!
+    @IBOutlet weak var guidTile2: UIView!
+    @IBOutlet weak var guidTile3: UIView!
     
     lazy var blurredView: UIView = {
         return UIView()
     } ()
     
+    ///Guide View Tap Count.
+    private var guideTapCount: Int = 0
     ///Flag to show and hide the topFilterView
     private var isSegmentControlHidden: Bool = false {
         didSet {
@@ -77,28 +83,62 @@ class StoreLandingViewController: UIViewController {
         segmentedControl.addUnderlineForSelectedSegment()
 
         ///Embedding PageViewController to the VC.
-        var vc: UIViewController = self.storyboard?.instantiateViewController(withIdentifier: String(describing: StoreMainPageViewController.self)) as! StoreMainPageViewController
+        var vc: UIViewController = self.storyboard?.instantiateViewController(identifier: String(describing: StoreMainPageViewController.self)) { coder in
+            StoreMainPageViewController(coder: coder, scrollDelegate: self, pagerDelegate: self)
+        } as! StoreMainPageViewController
         
         addChild(vc)
 
         self.embededViewContainer.addSubview(vc.view)
-        vc.view.frame = view.bounds
+        vc.view.frame = embededViewContainer.bounds
         vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
         vc.didMove(toParent: self)
         
         // Create a blur effect
         let blurEffect = UIBlurEffect(style: .light)
-        // Create a visual effect view with the blur effect
         blurredView = CustomVisualEffectView(effect: blurEffect, intensity: 0.2)
-        // Set the frame to cover the entire view
         blurredView.frame = topContainerBackgroundView.bounds
-        // Add the visual effect view as a subview
         topContainerBackgroundView.addSubview(blurredView)
+        
+        self.guidView.isUserInteractionEnabled = true
+        self.guidView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onGuidViewTap)))
+    }
+    
+    @objc func onGuidViewTap(_ sender: Any) {
+        UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            
+            switch self.guideTapCount {
+            case 0:
+                self.guidTile1.isHidden = true
+                self.guidTile2.isHidden = false
+            case 1:
+                self.guidTile2.isHidden = true
+                self.guidTile3.isHidden = false
+            case 2:
+                self.guidTile3.isHidden = true
+                self.guidView.isHidden = true
+            default:
+                self.guidView.isHidden = true
+            }
+        })
+        self.guideTapCount += 1
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.segmentedControl.changeBackgroundForAppearanceSwitch()
     }
     
     @IBAction func segmentChanged(_ sender: Any) {
         self.segmentedControl.changeUnderlinePosition()
     }
-
+    
+    func onViewScrolled(didScrollUp: Bool) {
+        self.isSegmentControlHidden = didScrollUp
+    }
+    
+    func onPageChanged(selectedPage: Int) {
+        self.segmentedControl.selectedSegmentIndex = selectedPage
+        self.segmentChanged(self.segmentedControl)
+    }
 }

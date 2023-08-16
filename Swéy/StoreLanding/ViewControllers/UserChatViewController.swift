@@ -11,6 +11,7 @@ class UserChatViewController: UIViewController {
     
     @IBOutlet weak var usersCollectionView: UICollectionView!
     @IBOutlet weak var chatTableView: UITableView!
+    @IBOutlet weak var chatSegmentedControl: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +23,36 @@ class UserChatViewController: UIViewController {
         self.chatTableView.delegate = self
         self.chatTableView.dataSource = self
         
+        let chatSize = ("All Chats" as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "DMSans-Bold", size: 12.0)])
+        let shoppingChatSize = ("Friends Shopping Carts" as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "DMSans-Bold", size: 12.0)])
+        let fontAttributes = [NSAttributedString.Key.font: self.chatSegmentedControl.titleTextAttributes(for: .selected)]
+        self.chatSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Poppins-Medium", size: 12.0)], for: .normal)
+        self.chatSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "DMSans-Bold", size: 12.0)], for: .selected)
+        self.chatSegmentedControl.setWidth(chatSize.width + 25.0, forSegmentAt: 0)
+        self.chatSegmentedControl.setWidth(shoppingChatSize.width + 30.0, forSegmentAt: 1)
+        self.chatSegmentedControl.addUnderlineForSelectedSegment()
+        
         let userProfileCellNib = UINib(nibName: String(describing: QuickPayUserCollectionViewCell.self), bundle: nil)
         self.usersCollectionView.register(userProfileCellNib, forCellWithReuseIdentifier: String(describing: QuickPayUserCollectionViewCell.self))
 
         let chatMessageCellNib = UINib(nibName: String(describing: ChatMessageTableViewCell.self), bundle: nil)
         self.chatTableView.register(chatMessageCellNib, forCellReuseIdentifier: String(describing: ChatMessageTableViewCell.self))
+    }
+    
+    @IBAction func onSegmentValueChanged() {
+        self.chatSegmentedControl.changeUnderlinePosition()
+    }
+    
+    @IBAction func onTapAdd(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: CreateChatOptionsViewController.self)) as? CreateChatOptionsViewController
+        vc?.modalPresentationStyle = .overCurrentContext
+        vc?.modalTransitionStyle = .crossDissolve
+        self.present(vc!, animated: true)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.chatSegmentedControl.changeBackgroundForAppearanceSwitch()
     }
 
 }

@@ -7,10 +7,23 @@
 
 import UIKit
 
-class StoreMainPageViewController: UIPageViewController, UIPageViewControllerDataSource {
+class StoreMainPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
+    
+    required init?(coder: NSCoder) {
+        fatalError("Storyboard Init not allowed")
+    }
+    
+    required init?(coder: NSCoder, scrollDelegate: ScrollDirectionDelegate, pagerDelegate: PageChangeDelegate) {
+        scrollDirectionDelegate = scrollDelegate
+        pageChangeDelegate = pagerDelegate
+        super.init(coder: coder)
+    }
+    
+    private var pageChangeDelegate: PageChangeDelegate?
+    private var scrollDirectionDelegate: ScrollDirectionDelegate?
     private (set) lazy var viewControllersList: [UIViewController] = {
-        return [storyboard?.instantiateViewController(withIdentifier: String(describing: ListingPageViewController.self)) as! UIViewController, storyboard?.instantiateViewController(withIdentifier: String(describing: UserChatViewController.self)) as! UIViewController]
+        getViewControllers()
     } ()
     
     override func viewDidLoad() {
@@ -19,8 +32,19 @@ class StoreMainPageViewController: UIPageViewController, UIPageViewControllerDat
         // Do any additional setup after loading the view.
         
         dataSource = self
+        delegate = self
         
         setViewControllers([viewControllersList[0]], direction: .forward, animated: true)
+    }
+    
+    func getViewControllers() -> [UIViewController] {
+        let listingViewController = storyboard?.instantiateViewController(identifier: String(describing: ListingPageViewController.self)) { coder in
+            ListingPageViewController.init(coder: coder, scrollDelegate: self.scrollDirectionDelegate!)
+        } as! UIViewController
+        
+        let chatViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: UserChatViewController.self)) as! UIViewController
+        
+        return [listingViewController, chatViewController]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -50,6 +74,16 @@ class StoreMainPageViewController: UIPageViewController, UIPageViewControllerDat
         }
         
         return viewControllersList[nextIndex]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            if let vc = pageViewController.viewControllers?.first {
+                if let indexOfCurrentController = viewControllersList.firstIndex(of: vc) {
+                    self.pageChangeDelegate?.onPageChanged(selectedPage: indexOfCurrentController)
+                }
+            }
+        }
     }
     
 
