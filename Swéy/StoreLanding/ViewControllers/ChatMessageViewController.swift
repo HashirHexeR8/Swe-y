@@ -11,6 +11,51 @@ class ChatMessageViewController: UIViewController {
     
     @IBOutlet weak var chatsTableView: UITableView!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var attachmentViewContainer: UIView!
+    @IBOutlet weak var attachmentCancelButton: UIButton!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    
+    private var isAttachmentViewVisible: Bool = false {
+        didSet {
+            if isAttachmentViewVisible {
+                
+                UIView.animate(withDuration: 0.12) {
+                    for attachmentViewConstraint in self.attachmentViewContainer.constraints {
+                        if attachmentViewConstraint.identifier == "attachmentButtonStackHeightConstraint" {
+                            attachmentViewConstraint.constant = self.view.frame.height * 0.25
+                        }
+                    }
+                    
+                    for buttonConstraint in self.attachmentCancelButton.constraints {
+                        if buttonConstraint.identifier == "cancelButtonHeightConstraint" {
+                            buttonConstraint.constant = 50.0
+                        }
+                    }
+                    self.attachmentViewContainer.isHidden = false
+                    self.attachmentCancelButton.isHidden = false
+                }
+            }
+            else {
+                
+                UIView.animate(withDuration: 0.12) {
+                    for attachmentViewConstraint in self.attachmentViewContainer.constraints {
+                        if attachmentViewConstraint.identifier == "attachmentButtonStackHeightConstraint" {
+                            attachmentViewConstraint.constant = 0.0
+                        }
+                    }
+                    
+                    for buttonConstraint in self.attachmentCancelButton.constraints {
+                        if buttonConstraint.identifier == "cancelButtonHeightConstraint" {
+                            buttonConstraint.constant = 0.0
+                        }
+                    }
+                    
+                    self.attachmentViewContainer.isHidden = true
+                    self.attachmentCancelButton.isHidden = true
+                }
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +64,24 @@ class ChatMessageViewController: UIViewController {
         self.chatsTableView.delegate = self
         self.chatsTableView.dataSource = self
         
+        self.attachmentViewContainer.cornerRadius = 10.0
+        self.attachmentViewContainer.clipsToBounds = true
+        self.attachmentViewContainer.layer.shadowColor = UIColor.black.cgColor
+        self.attachmentViewContainer.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.attachmentViewContainer.layer.shadowOpacity = 0.5
+        self.attachmentViewContainer.layer.shadowRadius = 10.0
+        self.attachmentViewContainer.layer.masksToBounds = false
+        
         let textMessageNib = UINib(nibName: String(describing: TextChatTableViewCell.self), bundle: nil)
         self.chatsTableView.register(textMessageNib, forCellReuseIdentifier: String(describing: TextChatTableViewCell.self))
     }
     
     @IBAction func onBackButtonTap(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+    
+    @IBAction func onAttachmentCancelButtonTap(_ sender: Any) {
+        self.isAttachmentViewVisible = !self.isAttachmentViewVisible
     }
 
 }

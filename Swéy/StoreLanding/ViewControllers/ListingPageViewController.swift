@@ -137,6 +137,13 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         self.present(vc!, animated: true)
     }
     
+    @IBAction func onCartButtonTap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "SweyCart", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: CartViewController.self)) as? CartViewController
+        vc?.modalPresentationStyle = .fullScreen
+        self.present(vc!, animated: true)
+    }
+    
     func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             

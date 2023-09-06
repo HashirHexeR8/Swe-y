@@ -163,6 +163,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="listingCart"/>
+                                        <connections>
+                                            <action selector="onCartButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BXr-9E-6Z3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iei-oA-lvX">
                                         <rect key="frame" x="54" y="0.0" width="28" height="28"/>
@@ -227,7 +230,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6Z-i9-7H7">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qD9-k8-2rE">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qD9-k8-2rE" userLabel="innerContainerView">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aco-4v-D5S" userLabel="topView">
@@ -702,7 +705,7 @@
                                 <rect key="frame" x="33.666666666666657" y="489" width="108" height="38"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Pay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uI9-Hf-qdN">
-                                        <rect key="frame" x="24" y="10.666666666666686" width="60" height="17"/>
+                                        <rect key="frame" x="23.999999999999996" y="10.666666666666686" width="59.666666666666657" height="17"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1185,10 +1188,10 @@
                                 <color key="backgroundColor" name="onboardingViewControllerBackground"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lnu-zy-iYf" userLabel="chatViewContainer">
-                                <rect key="frame" x="15" y="757" width="363" height="56"/>
+                                <rect key="frame" x="12" y="762" width="369" height="56"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYN-Wf-Xvf">
-                                        <rect key="frame" x="320" y="10.666666666666629" width="35" height="35"/>
+                                        <rect key="frame" x="326" y="10.666666666666629" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="hTy-5C-I0c"/>
                                             <constraint firstAttribute="width" constant="35" id="pww-Pc-SGB"/>
@@ -1201,6 +1204,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="addAttachmentButton"/>
                                         <connections>
+                                            <action selector="onAttachmentCancelButtonTap:" destination="R2l-tL-cfd" eventType="touchUpInside" id="AcL-2u-kJj"/>
                                             <action selector="onLinkButtonTap:" destination="Z3D-y0-n9c" eventType="touchUpInside" id="Nt1-iI-icu"/>
                                         </connections>
                                     </button>
@@ -1213,7 +1217,7 @@
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xGr-Nk-P0S">
-                                        <rect key="frame" x="49" y="0.0" width="261" height="56"/>
+                                        <rect key="frame" x="49" y="0.0" width="267" height="56"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1240,25 +1244,153 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqG-WT-PI5">
+                                <rect key="frame" x="12" y="818" width="369" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" identifier="cancelButtonHeightConstraint" id="lzh-y2-Jpw"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="cancelBtnIcon" imagePlacement="trailing" title="Cancel" imagePadding="3">
+                                    <fontDescription key="titleFontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                    <color key="baseForegroundColor" red="0.32156862749999998" green="0.45098039220000002" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WO-Ed-P0i">
+                                <rect key="frame" x="12" y="828" width="369" height="0.0"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HOn-AF-s5a">
+                                        <rect key="frame" x="0.0" y="0.0" width="369" height="0.0"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="El0-jX-aA8">
+                                                <rect key="frame" x="0.0" y="0.0" width="92.333333333333329" height="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="cameraBtnIcon">
+                                                    <backgroundConfiguration key="background" cornerRadius="0.0">
+                                                        <color key="backgroundColor" name="chatAttachmentFButtonBackground"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYV-B4-oFS">
+                                                <rect key="frame" x="92.333333333333343" y="0.0" width="92.333333333333343" height="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="photoBtnIcon">
+                                                    <backgroundConfiguration key="background" cornerRadius="0.0">
+                                                        <color key="backgroundColor" name="chatAttachmentSButtonBackground"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDM-Ra-tU2">
+                                                <rect key="frame" x="184.66666666666666" y="0.0" width="91.999999999999972" height="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="trasnferMoneyIcon">
+                                                    <backgroundConfiguration key="background" cornerRadius="0.0">
+                                                        <color key="backgroundColor" name="chatAttachmentFButtonBackground"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AA0-zM-dym">
+                                                <rect key="frame" x="276.66666666666669" y="0.0" width="92.333333333333314" height="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="locationIcon">
+                                                    <backgroundConfiguration key="background" cornerRadius="0.0">
+                                                        <color key="backgroundColor" name="chatAttachmentSButtonBackground"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pgh-YS-pTn">
+                                        <rect key="frame" x="0.0" y="0.0" width="369" height="0.0"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-1s-eAM">
+                                                <rect key="frame" x="0.0" y="0.0" width="92.333333333333329" height="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="fileBtnIcon">
+                                                    <backgroundConfiguration key="background" cornerRadius="0.0">
+                                                        <color key="backgroundColor" name="chatAttachmentFButtonBackground"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vf-eI-Aub">
+                                                <rect key="frame" x="92.333333333333343" y="0.0" width="92.333333333333343" height="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="gifBtnIcon">
+                                                    <backgroundConfiguration key="background" cornerRadius="0.0">
+                                                        <color key="backgroundColor" name="chatAttachmentSButtonBackground"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ml4-Du-4qc">
+                                                <rect key="frame" x="184.66666666666666" y="0.0" width="91.999999999999972" height="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="eViteIcon">
+                                                    <backgroundConfiguration key="background" cornerRadius="0.0">
+                                                        <color key="backgroundColor" name="chatAttachmentFButtonBackground"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea1-s9-0Ok">
+                                                <rect key="frame" x="276.66666666666669" y="0.0" width="92.333333333333314" height="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="optionsBtnIcon">
+                                                    <backgroundConfiguration key="background" cornerRadius="0.0">
+                                                        <color key="backgroundColor" name="chatAttachmentSButtonBackground"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="HOn-AF-s5a" secondAttribute="trailing" id="CvY-Wo-Ycg"/>
+                                    <constraint firstItem="pgh-YS-pTn" firstAttribute="leading" secondItem="6WO-Ed-P0i" secondAttribute="leading" id="Fer-Pq-aQ8"/>
+                                    <constraint firstItem="HOn-AF-s5a" firstAttribute="height" secondItem="6WO-Ed-P0i" secondAttribute="height" multiplier="0.49" id="RwT-Um-vmi"/>
+                                    <constraint firstAttribute="bottom" secondItem="pgh-YS-pTn" secondAttribute="bottom" id="S3r-xZ-XBr"/>
+                                    <constraint firstAttribute="trailing" secondItem="pgh-YS-pTn" secondAttribute="trailing" id="WVs-27-WTf"/>
+                                    <constraint firstAttribute="height" identifier="attachmentButtonStackHeightConstraint" id="cNR-ax-BrN"/>
+                                    <constraint firstItem="pgh-YS-pTn" firstAttribute="height" secondItem="6WO-Ed-P0i" secondAttribute="height" multiplier="0.49" id="dhv-c6-H6G"/>
+                                    <constraint firstItem="HOn-AF-s5a" firstAttribute="leading" secondItem="6WO-Ed-P0i" secondAttribute="leading" id="jaW-ia-q3i"/>
+                                    <constraint firstItem="HOn-AF-s5a" firstAttribute="top" secondItem="6WO-Ed-P0i" secondAttribute="top" id="mem-AF-rtQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PpG-90-w0t"/>
                         <color key="backgroundColor" name="onboardingViewControllerBackground"/>
                         <constraints>
                             <constraint firstItem="Imq-Qa-bMF" firstAttribute="top" secondItem="PpG-90-w0t" secondAttribute="top" id="47a-M1-LDn"/>
+                            <constraint firstItem="PpG-90-w0t" firstAttribute="trailing" secondItem="6WO-Ed-P0i" secondAttribute="trailing" constant="12" id="5oq-o8-hPk"/>
                             <constraint firstItem="Imq-Qa-bMF" firstAttribute="leading" secondItem="PpG-90-w0t" secondAttribute="leading" id="CZR-Ao-daB"/>
-                            <constraint firstItem="PpG-90-w0t" firstAttribute="bottom" secondItem="Lnu-zy-iYf" secondAttribute="bottom" constant="5" id="JL4-26-O34"/>
-                            <constraint firstItem="PpG-90-w0t" firstAttribute="trailing" secondItem="Lnu-zy-iYf" secondAttribute="trailing" constant="15" id="Jgj-al-3pF"/>
+                            <constraint firstItem="6WO-Ed-P0i" firstAttribute="top" secondItem="Lnu-zy-iYf" secondAttribute="bottom" constant="10" id="Gz7-G7-vZA"/>
+                            <constraint firstItem="PpG-90-w0t" firstAttribute="trailing" secondItem="Lnu-zy-iYf" secondAttribute="trailing" constant="12" id="Jgj-al-3pF"/>
                             <constraint firstItem="Smp-ga-B7U" firstAttribute="top" secondItem="Imq-Qa-bMF" secondAttribute="bottom" id="Mir-qb-CFZ"/>
                             <constraint firstItem="Smp-ga-B7U" firstAttribute="leading" secondItem="PpG-90-w0t" secondAttribute="leading" id="RmG-rk-25x"/>
                             <constraint firstItem="PpG-90-w0t" firstAttribute="bottom" secondItem="Smp-ga-B7U" secondAttribute="bottom" id="SpD-Ic-NcN"/>
                             <constraint firstItem="PpG-90-w0t" firstAttribute="trailing" secondItem="Imq-Qa-bMF" secondAttribute="trailing" id="adE-tt-ilf"/>
-                            <constraint firstItem="Lnu-zy-iYf" firstAttribute="leading" secondItem="PpG-90-w0t" secondAttribute="leading" constant="15" id="s99-Gz-Kh7"/>
+                            <constraint firstItem="6WO-Ed-P0i" firstAttribute="leading" secondItem="PpG-90-w0t" secondAttribute="leading" constant="12" id="kEU-Of-EZ3"/>
+                            <constraint firstItem="PpG-90-w0t" firstAttribute="trailing" secondItem="nqG-WT-PI5" secondAttribute="trailing" constant="12" id="rhh-bJ-3t2"/>
+                            <constraint firstItem="nqG-WT-PI5" firstAttribute="top" secondItem="6WO-Ed-P0i" secondAttribute="bottom" constant="-10" id="rsi-6w-Pfa"/>
+                            <constraint firstItem="Lnu-zy-iYf" firstAttribute="leading" secondItem="PpG-90-w0t" secondAttribute="leading" constant="12" id="s99-Gz-Kh7"/>
                             <constraint firstItem="PpG-90-w0t" firstAttribute="trailing" secondItem="Smp-ga-B7U" secondAttribute="trailing" id="twZ-rt-OgJ"/>
+                            <constraint firstItem="nqG-WT-PI5" firstAttribute="leading" secondItem="PpG-90-w0t" secondAttribute="leading" constant="12" id="vFC-kj-2Cd"/>
+                            <constraint firstItem="PpG-90-w0t" firstAttribute="bottom" secondItem="nqG-WT-PI5" secondAttribute="bottom" id="xIE-Ro-YvU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="attachmentCancelButton" destination="nqG-WT-PI5" id="zPR-P3-dG1"/>
+                        <outlet property="attachmentViewContainer" destination="6WO-Ed-P0i" id="qqE-pi-gSA"/>
                         <outlet property="backButton" destination="u6W-Zd-Qz8" id="DEY-iK-a1c"/>
                         <outlet property="chatsTableView" destination="Smp-ga-B7U" id="619-M0-a6U"/>
+                        <outlet property="heightConstraint" destination="cNR-ax-BrN" id="RRo-v7-Fxk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ESS-Yx-IWd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1320,7 +1452,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jod-Qg-xJ2">
-                                                <rect key="frame" x="24.999999999999989" y="413" width="48.333333333333343" height="17"/>
+                                                <rect key="frame" x="24.999999999999989" y="413" width="48.333333333333357" height="17"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" name="chatUserNameLabelColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2649,6 +2781,8 @@
         <image name="applyFilterButton" width="330" height="75"/>
         <image name="backButton" width="23" height="14"/>
         <image name="btnOptionsIcon" width="14" height="3"/>
+        <image name="cameraBtnIcon" width="21.666666030883789" height="19.666666030883789"/>
+        <image name="cancelBtnIcon" width="20" height="20"/>
         <image name="cartActivated" width="25" height="25"/>
         <image name="cartButton" width="58" height="58"/>
         <image name="cartChat" width="82" height="66"/>
@@ -2659,8 +2793,11 @@
         <image name="convertButton" width="28" height="28"/>
         <image name="countBackground" width="28" height="28"/>
         <image name="deliveryIcon" width="21" height="12.666666984558105"/>
+        <image name="eViteIcon" width="18.666666030883789" height="21.666666030883789"/>
+        <image name="fileBtnIcon" width="21.666666030883789" height="21.666666030883789"/>
         <image name="filterCloseButton" width="13.333333015441895" height="13.333333015441895"/>
         <image name="filterIcon" width="30.333333969116211" height="17.333333969116211"/>
+        <image name="gifBtnIcon" width="21.666666030883789" height="21.666666030883789"/>
         <image name="guidtileBottom" width="236" height="50"/>
         <image name="icNextButton" width="5" height="8"/>
         <image name="linkbutton" width="23" height="34"/>
@@ -2668,9 +2805,12 @@
         <image name="listingDetailCart" width="30" height="30"/>
         <image name="listingDetailCartButton" width="83" height="38"/>
         <image name="listingItemPriceButton" width="286" height="66"/>
+        <image name="locationIcon" width="19" height="23"/>
         <image name="newChatBtn" width="78" height="76.666664123535156"/>
         <image name="newGroup" width="58" height="58"/>
+        <image name="optionsBtnIcon" width="19" height="4.3333334922790527"/>
         <image name="optionsMenu" width="14" height="3"/>
+        <image name="photoBtnIcon" width="21.666666030883789" height="21.666666030883789"/>
         <image name="previewChatButton" width="64" height="64"/>
         <image name="priceBox" width="110" height="49.666667938232422"/>
         <image name="quickPay" width="70" height="70"/>
@@ -2680,8 +2820,15 @@
         <image name="shareButton" width="70.333335876464844" height="70"/>
         <image name="shareListingItemIcon" width="26.333333969116211" height="23.333333969116211"/>
         <image name="sweyCartActivated" width="83" height="38"/>
+        <image name="trasnferMoneyIcon" width="34" height="28.333333969116211"/>
         <image name="tutorialTile" width="236" height="50"/>
         <image name="userProfile" width="46" height="46"/>
+        <namedColor name="chatAttachmentFButtonBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="chatAttachmentSButtonBackground">
+            <color red="0.9649999737739563" green="0.9649999737739563" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="chatBackgroundColor">
             <color red="0.86699998378753662" green="0.88999998569488525" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -20,5 +20,224 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "30A3E263-1838-4034-B851-EA49E5AA3E2E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swe&#x301;y/SweyCart/ViewControllers/CartViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "updateCollectionViewHeight()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "30A3E263-1838-4034-B851-EA49E5AA3E2E - 3a4e2ba448a406c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.CartViewController.updateCollectionViewHeight() -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/ViewControllers/CartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "556">
+               </Location>
+               <Location
+                  uuid = "30A3E263-1838-4034-B851-EA49E5AA3E2E - e6bcec022f6ffacb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSLayoutConstraint) -&gt; () in Swey.CartViewController.updateCollectionViewHeight() -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/ViewControllers/CartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "30A3E263-1838-4034-B851-EA49E5AA3E2E - e6bcec022f6ffacb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSLayoutConstraint) -&gt; () in Swey.CartViewController.updateCollectionViewHeight() -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/ViewControllers/CartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "761C60D8-4E0C-4F12-B71F-D82AE9E5D361"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swe&#x301;y/SweyCart/ViewControllers/CartViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "updateCollectionViewHeight()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "761C60D8-4E0C-4F12-B71F-D82AE9E5D361 - 24da23af4e7475b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.CartViewController.tableView(_: __C.UITableView, numberOfRowsInSection: Swift.Int) -&gt; Swift.Int"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/ViewControllers/CartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "45">
+               </Location>
+               <Location
+                  uuid = "761C60D8-4E0C-4F12-B71F-D82AE9E5D361 - e6bcec022f6ffb2c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSLayoutConstraint) -&gt; () in Swey.CartViewController.updateCollectionViewHeight() -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/ViewControllers/CartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "718">
+               </Location>
+               <Location
+                  uuid = "761C60D8-4E0C-4F12-B71F-D82AE9E5D361 - e6bcec022f6ffb2c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSLayoutConstraint) -&gt; () in Swey.CartViewController.updateCollectionViewHeight() -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/ViewControllers/CartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "664">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "839CE77A-E399-4F1C-93C7-04596D0C5616"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swe&#x301;y/SweyCart/ViewControllers/CartViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "updateCollectionViewHeight()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "839CE77A-E399-4F1C-93C7-04596D0C5616 - e6bcec022f6ffaea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSLayoutConstraint) -&gt; () in Swey.CartViewController.updateCollectionViewHeight() -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/ViewControllers/CartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "922">
+               </Location>
+               <Location
+                  uuid = "839CE77A-E399-4F1C-93C7-04596D0C5616 - 3a4e2ba448a406e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.CartViewController.updateCollectionViewHeight() -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/ViewControllers/CartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "839CE77A-E399-4F1C-93C7-04596D0C5616 - e6bcec022f6ffacb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSLayoutConstraint) -&gt; () in Swey.CartViewController.updateCollectionViewHeight() -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/ViewControllers/CartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "839CE77A-E399-4F1C-93C7-04596D0C5616 - 3a4e2ba448a406e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.CartViewController.updateCollectionViewHeight() -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/ViewControllers/CartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "839CE77A-E399-4F1C-93C7-04596D0C5616 - e6bcec022f6ffacb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSLayoutConstraint) -&gt; () in Swey.CartViewController.updateCollectionViewHeight() -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/ViewControllers/CartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
