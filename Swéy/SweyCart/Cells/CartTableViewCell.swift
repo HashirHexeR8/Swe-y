@@ -8,6 +8,8 @@
 import UIKit
 
 class CartTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var productImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
