@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Bold.ttf">
+            <string>DMSans-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajo-a4-Qke">
+                                <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7p-sc-zrU">
+                                        <rect key="frame" x="335" y="16" width="38" height="28"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="filterCloseButton"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4d-L6-9Nl">
+                                        <rect key="frame" x="20" y="18.333333333333329" width="121" height="23.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="d4d-L6-9Nl" firstAttribute="centerY" secondItem="ajo-a4-Qke" secondAttribute="centerY" id="CyY-d4-GkF"/>
+                                    <constraint firstAttribute="trailing" secondItem="L7p-sc-zrU" secondAttribute="trailing" constant="20" id="KpX-jS-koF"/>
+                                    <constraint firstItem="d4d-L6-9Nl" firstAttribute="leading" secondItem="ajo-a4-Qke" secondAttribute="leading" constant="20" id="TNs-yH-08b"/>
+                                    <constraint firstItem="L7p-sc-zrU" firstAttribute="centerY" secondItem="ajo-a4-Qke" secondAttribute="centerY" id="g0x-Fp-Qzk"/>
+                                    <constraint firstAttribute="height" constant="60" id="iRd-xv-fRa"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jF3-38-COQ">
+                                <rect key="frame" x="0.0" y="119" width="393" height="603"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcq-ry-IQh">
+                                <rect key="frame" x="0.0" y="722" width="393" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAA-0I-17E">
+                                        <rect key="frame" x="49" y="27.666666666666629" width="295" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="2gT-hc-GKM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Upload Products" backgroundImage="onboardingButtonBackground">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="cAA-0I-17E" firstAttribute="centerY" secondItem="zcq-ry-IQh" secondAttribute="centerY" id="EF3-TR-cQV"/>
+                                    <constraint firstAttribute="height" constant="130" id="Gfp-MY-QXf"/>
+                                    <constraint firstItem="cAA-0I-17E" firstAttribute="width" secondItem="zcq-ry-IQh" secondAttribute="width" multiplier="0.75" id="bF0-4r-gbV"/>
+                                    <constraint firstItem="cAA-0I-17E" firstAttribute="centerX" secondItem="zcq-ry-IQh" secondAttribute="centerX" id="x7N-MB-Sor"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zcq-ry-IQh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0Rq-3H-8Bm"/>
+                            <constraint firstItem="zcq-ry-IQh" firstAttribute="top" secondItem="jF3-38-COQ" secondAttribute="bottom" id="9Xe-OB-eBp"/>
+                            <constraint firstItem="zcq-ry-IQh" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="DGV-0I-yVs"/>
+                            <constraint firstItem="ajo-a4-Qke" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="G2c-Hg-VDE"/>
+                            <constraint firstItem="jF3-38-COQ" firstAttribute="top" secondItem="ajo-a4-Qke" secondAttribute="bottom" id="MF4-zy-qnl"/>
+                            <constraint firstItem="jF3-38-COQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Xfq-DS-VO7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jF3-38-COQ" secondAttribute="trailing" id="fnR-Z6-uF4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zcq-ry-IQh" secondAttribute="trailing" id="t4H-e2-9TP"/>
+                            <constraint firstItem="ajo-a4-Qke" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xDO-lg-1jg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ajo-a4-Qke" secondAttribute="trailing" id="znR-CL-evS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="110.68702290076335" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="filterCloseButton" width="13.333333015441895" height="13.333333015441895"/>
+        <image name="onboardingButtonBackground" width="297" height="75"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -713,6 +713,60 @@
             </objects>
             <point key="canvasLocation" x="2144.2748091603053" y="3.5211267605633805"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="OQ1-LX-czy">
+            <objects>
+                <viewController id="YcT-x1-DTN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oeY-z0-Rla">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPx-WD-2Sz">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="110.66666666666667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRh-it-nwP">
+                                        <rect key="frame" x="30" y="57.666666666666657" width="30" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="biK-PJ-uzn"/>
+                                            <constraint firstAttribute="height" constant="25" id="xHC-jE-cTa"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="backButtonWhite"/>
+                                        <connections>
+                                            <action selector="onBackButtonTap" destination="BKU-6g-3vx" eventType="touchUpInside" id="3xr-bw-wWi"/>
+                                            <action selector="onBackButtonTap" destination="OrT-NH-Mwj" eventType="touchUpInside" id="geL-8t-TIc"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Card" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akM-UP-D4o">
+                                        <rect key="frame" x="75" y="58.999999999999993" width="85" height="22.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="paymentTopBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="akM-UP-D4o" firstAttribute="leading" secondItem="rRh-it-nwP" secondAttribute="trailing" constant="15" id="NnP-Us-4Xl"/>
+                                    <constraint firstAttribute="bottom" secondItem="rRh-it-nwP" secondAttribute="bottom" constant="28" id="UrA-wp-aRB"/>
+                                    <constraint firstItem="rRh-it-nwP" firstAttribute="leading" secondItem="SPx-WD-2Sz" secondAttribute="leading" constant="30" id="hyu-jk-33j"/>
+                                    <constraint firstItem="akM-UP-D4o" firstAttribute="centerY" secondItem="rRh-it-nwP" secondAttribute="centerY" id="p1B-r8-lUP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Z4-RX-j4q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SPx-WD-2Sz" firstAttribute="top" secondItem="oeY-z0-Rla" secondAttribute="top" id="Z00-zE-PAI"/>
+                            <constraint firstItem="6Z4-RX-j4q" firstAttribute="trailing" secondItem="SPx-WD-2Sz" secondAttribute="trailing" id="bSF-8L-xtX"/>
+                            <constraint firstItem="SPx-WD-2Sz" firstAttribute="height" secondItem="oeY-z0-Rla" secondAttribute="height" multiplier="0.12989" id="i9l-BW-UT2"/>
+                            <constraint firstItem="SPx-WD-2Sz" firstAttribute="leading" secondItem="oeY-z0-Rla" secondAttribute="leading" id="kwt-fh-1Ah"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vvb-Iv-XLR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3227" y="4"/>
+        </scene>
         <!--Transfer Confirmation View Controller-->
         <scene sceneID="K99-AI-Vk7">
             <objects>
@@ -896,7 +950,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lk2-UN-bOO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3197.709923664122" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="4331" y="4"/>
         </scene>
     </scenes>
     <resources>

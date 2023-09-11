@@ -92,6 +92,9 @@
 		6EEEE5D02A103045007723F0 /* ListingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE5CF2A103045007723F0 /* ListingPageViewController.swift */; };
 		6EEEE5DF2A10DA14007723F0 /* ProductImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE5DD2A10DA14007723F0 /* ProductImageCollectionViewCell.swift */; };
 		6EEEE5E02A10DA14007723F0 /* ProductImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEEE5DE2A10DA14007723F0 /* ProductImageCollectionViewCell.xib */; };
+		6EFFE01F2AADCE8E00E39501 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EFFE01E2AADCE8E00E39501 /* Profile.storyboard */; };
+		6EFFE0252AAE01DA00E39501 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFE0232AAE01DA00E39501 /* SettingsTableViewCell.swift */; };
+		6EFFE0262AAE01DA00E39501 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EFFE0242AAE01DA00E39501 /* SettingsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +185,9 @@
 		6EEEE5CF2A103045007723F0 /* ListingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPageViewController.swift; sourceTree = "<group>"; };
 		6EEEE5DD2A10DA14007723F0 /* ProductImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		6EEEE5DE2A10DA14007723F0 /* ProductImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		6EFFE01E2AADCE8E00E39501 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		6EFFE0232AAE01DA00E39501 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		6EFFE0242AAE01DA00E39501 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +231,7 @@
 				6E04FA1629D2175B00503E75 /* Onboarding */,
 				6E7F00A82A0B182900D30F7C /* StoreLanding */,
 				6EEE55F62A9B96FD002A5506 /* SweyCart */,
+				6EFFE01D2AADCDFE00E39501 /* Profile */,
 				6E04FA0829D212BE00503E75 /* Main.storyboard */,
 				6E04FA0D29D212C100503E75 /* LaunchScreen.storyboard */,
 				6E04FA1029D212C100503E75 /* Info.plist */,
@@ -384,6 +391,24 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		6EFFE01D2AADCDFE00E39501 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				6EFFE0202AAE006600E39501 /* Cells */,
+				6EFFE01E2AADCE8E00E39501 /* Profile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		6EFFE0202AAE006600E39501 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6EFFE0232AAE01DA00E39501 /* SettingsTableViewCell.swift */,
+				6EFFE0242AAE01DA00E39501 /* SettingsTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -460,6 +485,7 @@
 				6E04FA3529D222C200503E75 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				6E82A37D2A880A57000447AB /* QuickPayUserCollectionViewCell.xib in Resources */,
 				6EEE56002A9E7D5A002A5506 /* CartTableViewCell.xib in Resources */,
+				6EFFE01F2AADCE8E00E39501 /* Profile.storyboard in Resources */,
 				6E04FA3029D222C200503E75 /* Poppins-ThinItalic.ttf in Resources */,
 				6E04FA2E29D222C200503E75 /* Poppins-Light.ttf in Resources */,
 				6EEEE5E02A10DA14007723F0 /* ProductImageCollectionViewCell.xib in Resources */,
@@ -479,6 +505,7 @@
 				6E04FA1929D2179300503E75 /* Onboarding.storyboard in Resources */,
 				6ECE0C672A649184007958D4 /* Assets.xcassets in Resources */,
 				6E82A3892A890AE9000447AB /* TextChatTableViewCell.xib in Resources */,
+				6EFFE0262AAE01DA00E39501 /* SettingsTableViewCell.xib in Resources */,
 				6E04FA2D29D222C200503E75 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +543,7 @@
 				6E6597872A2FC36A004ADE35 /* ProductPreviewViewController.swift in Sources */,
 				6E9B79292A2CF0ED00B6559C /* SizeTileFilterCollectionViewCell.swift in Sources */,
 				6E9B79362A2D138B00B6559C /* PantsSizeViewController.swift in Sources */,
+				6EFFE0252AAE01DA00E39501 /* SettingsTableViewCell.swift in Sources */,
 				6EEEE5DF2A10DA14007723F0 /* ProductImageCollectionViewCell.swift in Sources */,
 				6EDBB63A29D6C6FE00DA91C1 /* PhoneNumberViewController.swift in Sources */,
 				6E9B79342A2D137100B6559C /* CategoryFilterViewController.swift in Sources */,
