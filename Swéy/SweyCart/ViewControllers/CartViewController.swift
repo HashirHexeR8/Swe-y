@@ -45,6 +45,14 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.present(vc!, animated: true)
     }
     
+    @IBAction func onShareButtonTap () {
+        let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: ChatViewController.self)) as? ChatViewController
+        vc?.modalPresentationStyle = .overCurrentContext
+        vc?.modalTransitionStyle = .crossDissolve
+        self.present(vc!, animated: true)
+    }
+    
     func updateCollectionViewHeight() {
         self.cartTableView.layoutIfNeeded()
         self.cartTableView.constraints.forEach { constraint in

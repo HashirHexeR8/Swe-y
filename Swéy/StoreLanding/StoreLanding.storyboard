@@ -810,53 +810,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMD-IZ-jj4" userLabel="topViewContainer">
-                                <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXF-up-iLU" userLabel="quickPayContainer">
+                                <rect key="frame" x="0.0" y="59" width="393" height="200"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Pay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-Nf-WMR">
-                                        <rect key="frame" x="19.999999999999993" y="13" width="122.33333333333331" height="34"/>
-                                        <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="26"/>
-                                        <color key="textColor" name="onboardingLabelButtonColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2B-uM-888">
-                                        <rect key="frame" x="325" y="6" width="48" height="48"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMD-IZ-jj4" userLabel="topViewContainer">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Pay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-Nf-WMR">
+                                                <rect key="frame" x="19.999999999999993" y="13" width="122.33333333333331" height="34"/>
+                                                <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="26"/>
+                                                <color key="textColor" name="onboardingLabelButtonColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2B-uM-888">
+                                                <rect key="frame" x="325" y="6" width="48" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="6UV-8Z-rSo"/>
+                                                    <constraint firstAttribute="width" constant="48" id="ebd-jY-Ixm"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="btnOptionsIcon"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="btnOptionsIcon">
+                                                    <backgroundConfiguration key="background" cornerRadius="45">
+                                                        <color key="backgroundColor" name="storeLandingSearchBackground"/>
+                                                        <color key="strokeColor" name="storeLandingSearchBackground"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="onboardingViewControllerBackground"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="6UV-8Z-rSo"/>
-                                            <constraint firstAttribute="width" constant="48" id="ebd-jY-Ixm"/>
+                                            <constraint firstItem="Qme-Nf-WMR" firstAttribute="centerY" secondItem="CMD-IZ-jj4" secondAttribute="centerY" id="C8K-mI-E4g"/>
+                                            <constraint firstItem="Qme-Nf-WMR" firstAttribute="leading" secondItem="CMD-IZ-jj4" secondAttribute="leading" constant="20" id="Z5D-qm-bLu"/>
+                                            <constraint firstAttribute="trailing" secondItem="t2B-uM-888" secondAttribute="trailing" constant="20" id="qjk-CR-8Ht"/>
+                                            <constraint firstItem="t2B-uM-888" firstAttribute="centerY" secondItem="CMD-IZ-jj4" secondAttribute="centerY" id="sEN-mC-ZiO"/>
+                                            <constraint firstAttribute="height" constant="60" id="wDe-8u-6pu"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="btnOptionsIcon"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="btnOptionsIcon">
-                                            <backgroundConfiguration key="background" cornerRadius="45">
-                                                <color key="backgroundColor" name="storeLandingSearchBackground"/>
-                                                <color key="strokeColor" name="storeLandingSearchBackground"/>
-                                            </backgroundConfiguration>
-                                        </buttonConfiguration>
-                                    </button>
+                                    </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xgS-Zx-Bjs">
+                                        <rect key="frame" x="0.0" y="70" width="393" height="130"/>
+                                        <color key="backgroundColor" name="onboardingViewControllerBackground"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bzo-O4-zCx">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" name="onboardingViewControllerBackground"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="Qme-Nf-WMR" firstAttribute="centerY" secondItem="CMD-IZ-jj4" secondAttribute="centerY" id="C8K-mI-E4g"/>
-                                    <constraint firstItem="Qme-Nf-WMR" firstAttribute="leading" secondItem="CMD-IZ-jj4" secondAttribute="leading" constant="20" id="Z5D-qm-bLu"/>
-                                    <constraint firstAttribute="trailing" secondItem="t2B-uM-888" secondAttribute="trailing" constant="20" id="qjk-CR-8Ht"/>
-                                    <constraint firstItem="t2B-uM-888" firstAttribute="centerY" secondItem="CMD-IZ-jj4" secondAttribute="centerY" id="sEN-mC-ZiO"/>
-                                    <constraint firstAttribute="height" constant="60" id="wDe-8u-6pu"/>
+                                    <constraint firstAttribute="trailing" secondItem="xgS-Zx-Bjs" secondAttribute="trailing" id="0Aq-4r-JD3"/>
+                                    <constraint firstItem="xgS-Zx-Bjs" firstAttribute="top" secondItem="CMD-IZ-jj4" secondAttribute="bottom" constant="10" id="4Bv-SI-PXg"/>
+                                    <constraint firstItem="xgS-Zx-Bjs" firstAttribute="leading" secondItem="CXF-up-iLU" secondAttribute="leading" id="Aqw-cW-VbG"/>
+                                    <constraint firstItem="CMD-IZ-jj4" firstAttribute="top" secondItem="CXF-up-iLU" secondAttribute="top" id="GxL-jC-l54"/>
+                                    <constraint firstAttribute="bottom" secondItem="xgS-Zx-Bjs" secondAttribute="bottom" id="IO1-o0-5zr"/>
+                                    <constraint firstAttribute="trailing" secondItem="CMD-IZ-jj4" secondAttribute="trailing" id="QFJ-bF-Dwv"/>
+                                    <constraint firstAttribute="height" constant="200" identifier="quickPayHeightConstraint" id="llj-Uo-QDy"/>
+                                    <constraint firstItem="CMD-IZ-jj4" firstAttribute="leading" secondItem="CXF-up-iLU" secondAttribute="leading" id="zxY-UM-qKF"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xgS-Zx-Bjs">
-                                <rect key="frame" x="0.0" y="129" width="393" height="93.666666666666686"/>
-                                <color key="backgroundColor" name="onboardingViewControllerBackground"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bzo-O4-zCx">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inx-lf-9ev">
-                                <rect key="frame" x="0.0" y="222.66666666666663" width="393" height="85"/>
+                                <rect key="frame" x="0.0" y="259" width="393" height="85"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4X-Vg-bIw">
                                         <rect key="frame" x="30.000000000000004" y="10" width="59.333333333333343" height="34"/>
@@ -865,13 +881,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat Stores ( 2 )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5Q-Bv-6pd">
-                                        <rect key="frame" x="282.33333333333331" y="19.333333333333343" width="90.666666666666686" height="15.666666666666664"/>
+                                        <rect key="frame" x="282.33333333333331" y="19.333333333333314" width="90.666666666666686" height="15.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="11"/>
                                         <color key="textColor" red="0.0" green="0.47450980392156861" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hm3-hP-pwq">
-                                        <rect key="frame" x="12" y="54.000000000000028" width="329" height="32"/>
+                                        <rect key="frame" x="12" y="54" width="329" height="32"/>
                                         <segments>
                                             <segment title="All Chats"/>
                                             <segment title="Friends Shopping Carts"/>
@@ -893,7 +909,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mUQ-Yn-w5i">
-                                <rect key="frame" x="0.0" y="307.66666666666669" width="393" height="544.33333333333326"/>
+                                <rect key="frame" x="0.0" y="344" width="393" height="508"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzx-Hm-RXC">
@@ -908,19 +924,15 @@
                         <viewLayoutGuide key="safeArea" id="njN-rs-B2E"/>
                         <color key="backgroundColor" name="onboardingViewControllerBackground"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CXF-up-iLU" secondAttribute="trailing" id="4Vu-Wo-B4f"/>
                             <constraint firstItem="mUQ-Yn-w5i" firstAttribute="top" secondItem="inx-lf-9ev" secondAttribute="bottom" id="6QK-1H-gLO"/>
-                            <constraint firstItem="xgS-Zx-Bjs" firstAttribute="top" secondItem="CMD-IZ-jj4" secondAttribute="bottom" constant="10" id="8X0-gW-9pJ"/>
                             <constraint firstAttribute="bottom" secondItem="mUQ-Yn-w5i" secondAttribute="bottom" id="9KI-1K-g4h"/>
-                            <constraint firstItem="xgS-Zx-Bjs" firstAttribute="leading" secondItem="njN-rs-B2E" secondAttribute="leading" id="Bbm-cu-mty"/>
-                            <constraint firstItem="njN-rs-B2E" firstAttribute="trailing" secondItem="CMD-IZ-jj4" secondAttribute="trailing" id="GLG-1h-BOY"/>
-                            <constraint firstItem="CMD-IZ-jj4" firstAttribute="leading" secondItem="njN-rs-B2E" secondAttribute="leading" id="SAI-2x-G8f"/>
+                            <constraint firstItem="CXF-up-iLU" firstAttribute="leading" secondItem="8Hu-1w-MWe" secondAttribute="leading" id="A03-b7-U1N"/>
                             <constraint firstItem="njN-rs-B2E" firstAttribute="trailing" secondItem="mUQ-Yn-w5i" secondAttribute="trailing" id="TNr-lO-3V8"/>
+                            <constraint firstItem="inx-lf-9ev" firstAttribute="top" secondItem="CXF-up-iLU" secondAttribute="bottom" id="VUz-sO-9mM"/>
                             <constraint firstItem="mUQ-Yn-w5i" firstAttribute="leading" secondItem="njN-rs-B2E" secondAttribute="leading" id="WWh-g6-Sh5"/>
-                            <constraint firstItem="inx-lf-9ev" firstAttribute="top" secondItem="xgS-Zx-Bjs" secondAttribute="bottom" id="byw-sU-3OZ"/>
-                            <constraint firstItem="njN-rs-B2E" firstAttribute="trailing" secondItem="xgS-Zx-Bjs" secondAttribute="trailing" id="eSg-Sc-rD8"/>
-                            <constraint firstItem="xgS-Zx-Bjs" firstAttribute="height" secondItem="8Hu-1w-MWe" secondAttribute="height" multiplier="0.11" id="gfP-H8-zL9"/>
+                            <constraint firstItem="CXF-up-iLU" firstAttribute="top" secondItem="njN-rs-B2E" secondAttribute="top" id="fxO-W6-le1"/>
                             <constraint firstItem="fzx-Hm-RXC" firstAttribute="centerX" secondItem="8Hu-1w-MWe" secondAttribute="centerX" id="ivb-91-Vre"/>
-                            <constraint firstItem="CMD-IZ-jj4" firstAttribute="top" secondItem="njN-rs-B2E" secondAttribute="top" id="mlV-bG-fbP"/>
                             <constraint firstItem="njN-rs-B2E" firstAttribute="trailing" secondItem="inx-lf-9ev" secondAttribute="trailing" id="pgL-c1-FP9"/>
                             <constraint firstItem="inx-lf-9ev" firstAttribute="leading" secondItem="njN-rs-B2E" secondAttribute="leading" id="usZ-qe-PHR"/>
                             <constraint firstItem="njN-rs-B2E" firstAttribute="bottom" secondItem="fzx-Hm-RXC" secondAttribute="bottom" constant="10" id="zZt-fx-ko8"/>
@@ -929,6 +941,7 @@
                     <connections>
                         <outlet property="chatSegmentedControl" destination="hm3-hP-pwq" id="cpY-Aa-L1y"/>
                         <outlet property="chatTableView" destination="mUQ-Yn-w5i" id="d0L-rD-mZG"/>
+                        <outlet property="quickPayViewContainer" destination="CXF-up-iLU" id="7xU-Gc-ayf"/>
                         <outlet property="usersCollectionView" destination="xgS-Zx-Bjs" id="6fb-Ea-TwK"/>
                     </connections>
                 </viewController>

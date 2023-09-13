@@ -3,4 +3,180 @@
    uuid = "AEABA12B-0EBC-4F67-B799-43CDE58F9B38"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB16F221-5999-42DC-B9AB-4EF536A7E4B4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swe&#x301;y/StoreLanding/ViewControllers/UserChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "isQuickPayHidden"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9D41CF3-DEFA-4AE1-8BF1-F90E3741D6C4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swe&#x301;y/StoreLanding/ViewControllers/UserChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "isQuickPayHidden"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C43397BE-A4CB-453C-A815-45E40A7539B5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swe&#x301;y/StoreLanding/ViewControllers/UserChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "isQuickPayHidden"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BBDE7E41-5694-4D48-9AE9-6542C912FA61"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swe&#x301;y/StoreLanding/ViewControllers/UserChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "isQuickPayHidden"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "BBDE7E41-5694-4D48-9AE9-6542C912FA61 - 52833aeaa651f049"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.UserChatViewController.isQuickPayHidden.didset : Swift.Bool"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/UserChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "2448">
+               </Location>
+               <Location
+                  uuid = "BBDE7E41-5694-4D48-9AE9-6542C912FA61 - 52833aeaa651f1d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.UserChatViewController.isQuickPayHidden.didset : Swift.Bool"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/UserChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "2701">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "11FF22EC-BD73-450A-9CC7-F7DF7D7691D8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swe&#x301;y/SweyCart/Cells/CartTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "onTapAdd(sender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "11FF22EC-BD73-450A-9CC7-F7DF7D7691D8 - 55c9794cb21de176"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.CartTableViewCell.onTapAdd(sender: Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/Cells/CartTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "91">
+               </Location>
+               <Location
+                  uuid = "11FF22EC-BD73-450A-9CC7-F7DF7D7691D8 - 55c9794cb21de176"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.CartTableViewCell.onTapAdd(sender: Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/Cells/CartTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "277">
+               </Location>
+               <Location
+                  uuid = "11FF22EC-BD73-450A-9CC7-F7DF7D7691D8 - 55c9794cb21de176"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.CartTableViewCell.onTapAdd(sender: Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/Cells/CartTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "113">
+               </Location>
+               <Location
+                  uuid = "11FF22EC-BD73-450A-9CC7-F7DF7D7691D8 - 55c9794cb21de176"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.CartTableViewCell.onTapAdd(sender: Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/SweyCart/Cells/CartTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "308">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

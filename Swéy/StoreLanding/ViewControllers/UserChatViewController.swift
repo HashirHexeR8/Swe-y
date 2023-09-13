@@ -12,6 +12,34 @@ class UserChatViewController: UIViewController {
     @IBOutlet weak var usersCollectionView: UICollectionView!
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var chatSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var quickPayViewContainer: UIView!
+    
+    private var tableViewLastContentOffset = 0.0
+    
+    private var isQuickPayHidden = false {
+        didSet {
+            if isQuickPayHidden {
+                for constraint in quickPayViewContainer.constraints {
+                    if constraint.identifier == "quickPayHeightConstraint" {
+                        constraint.constant = 0
+                    }
+                }
+                UIView.animate(withDuration: 0.15) {
+                    self.view.layoutIfNeeded()
+                }
+            }
+            else {
+                for constraint in quickPayViewContainer.constraints {
+                    if constraint.identifier == "quickPayHeightConstraint" {
+                        constraint.constant = self.view.bounds.height * 0.2
+                    }
+                }
+                UIView.animate(withDuration: 0.15) {
+                    self.view.layoutIfNeeded()
+                }
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +77,36 @@ class UserChatViewController: UIViewController {
         vc?.modalPresentationStyle = .overCurrentContext
         vc?.modalTransitionStyle = .crossDissolve
         self.present(vc!, animated: true)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if scrollView == self.chatTableView {
+            self.tableViewLastContentOffset = scrollView.contentOffset.y
+            let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview!)
+            if translation.y > 0 {
+                self.isQuickPayHidden = false
+            }
+            else {
+                self.isQuickPayHidden = true
+            }
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == self.chatTableView {
+            if self.tableViewLastContentOffset < scrollView.contentOffset.y {
+                // did move up
+                self.isQuickPayHidden = true
+            }
+            else if self.tableViewLastContentOffset > scrollView.contentOffset.y {
+                // did move down
+                self.isQuickPayHidden = false
+            }
+            
+            let offsetY = scrollView.contentOffset.y
+            let contentHeight = scrollView.contentSize.height
+            
+        }
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

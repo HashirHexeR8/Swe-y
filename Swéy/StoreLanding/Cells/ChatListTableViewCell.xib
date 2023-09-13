@@ -92,7 +92,7 @@
         <image name="chatCheckBoxUnchecked" width="16" height="16"/>
         <image name="userProfile" width="46" height="46"/>
         <namedColor name="chatUserNameLabelColor">
-            <color red="0.16862745098039217" green="0.16862745098039217" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.16899999976158142" green="0.16899999976158142" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="onboardingViewControllerBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -43,6 +43,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="46"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="qtyRmvBtn"/>
+                                <connections>
+                                    <action selector="onTapRemoveWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CM9-ib-iFN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V5-tV-8fP">
                                 <rect key="frame" x="39.666666666666686" y="0.0" width="65" height="46"/>
@@ -54,6 +57,9 @@
                                 <rect key="frame" x="104.66666666666669" y="0.0" width="39.666666666666657" height="46"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="qtyAddBtn"/>
+                                <connections>
+                                    <action selector="onTapAddWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6Nf-6Z-CLj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,6 +105,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="productImage" destination="d4i-bW-Ffi" id="ltw-wW-UPp"/>
+                <outlet property="quantityLabel" destination="3V5-tV-8fP" id="MIh-fv-rBv"/>
             </connections>
             <point key="canvasLocation" x="304.58015267175574" y="59.859154929577471"/>
         </tableViewCell>
