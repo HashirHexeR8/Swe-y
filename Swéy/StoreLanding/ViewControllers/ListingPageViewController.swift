@@ -26,6 +26,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var filterSearchBackgroundBlurView: UIView!
     @IBOutlet weak var cartCountButton: UIButton!
     @IBOutlet weak var cartButton: UIButton!
+    @IBOutlet weak var profileImageView: UIImageView!
     
     ///Offset to calculate if there's any change in scroll of tableview
     private var lastContentOffset: CGFloat = 0
@@ -127,6 +128,17 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         // Add the visual effect view as a subview
         filterSearchBackgroundBlurView.addSubview(blurredView)
         
+        self.profileImageView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onProfileButtonTap))
+        self.profileImageView.addGestureRecognizer(tapGesture)
+        
+    }
+    
+    @objc func onProfileButtonTap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: ProfileDetailsViewController.self)) as? ProfileDetailsViewController
+        vc?.modalPresentationStyle = .fullScreen
+        self.present(vc!, animated: true)
     }
     
     @IBAction func onFilterButtonTap(_ sender: Any) {

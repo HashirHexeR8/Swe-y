@@ -178,5 +178,53 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B956ADB3-5892-4B14-ABEE-462420CC0E74"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swe&#x301;y/StoreLanding/ViewControllers/ListingPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "onProfileButtonTap(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B956ADB3-5892-4B14-ABEE-462420CC0E74 - aa4b8e5981596395"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.ListingPageViewController.onProfileButtonTap(Any) -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ListingPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "154">
+               </Location>
+               <Location
+                  uuid = "B956ADB3-5892-4B14-ABEE-462420CC0E74 - aa4b8e5981596395"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.ListingPageViewController.onProfileButtonTap(Any) -&gt; ()"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ListingPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "97">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

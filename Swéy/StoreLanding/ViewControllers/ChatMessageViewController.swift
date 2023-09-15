@@ -13,6 +13,7 @@ class ChatMessageViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var attachmentViewContainer: UIView!
     @IBOutlet weak var attachmentCancelButton: UIButton!
+    @IBOutlet weak var sendMessageTextField: UITextView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     private var isAttachmentViewVisible: Bool = false {
@@ -61,6 +62,9 @@ class ChatMessageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.sendMessageTextField.textContainerInset = UIEdgeInsets(top: 8.0, left: 5.0, bottom: 5.0, right: 30.0)
+        
         self.chatsTableView.delegate = self
         self.chatsTableView.dataSource = self
         

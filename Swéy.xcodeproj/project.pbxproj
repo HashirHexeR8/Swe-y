@@ -89,6 +89,13 @@
 		6EEE55FB2A9E79B8002A5506 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE55FA2A9E79B8002A5506 /* CartViewController.swift */; };
 		6EEE55FF2A9E7D5A002A5506 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE55FD2A9E7D5A002A5506 /* CartTableViewCell.swift */; };
 		6EEE56002A9E7D5A002A5506 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEE55FE2A9E7D5A002A5506 /* CartTableViewCell.xib */; };
+		6EEE661A2AB2598D0020063A /* SettingsAccountActionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE66182AB2598D0020063A /* SettingsAccountActionButtonTableViewCell.swift */; };
+		6EEE661B2AB2598D0020063A /* SettingsAccountActionButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEE66192AB2598D0020063A /* SettingsAccountActionButtonTableViewCell.xib */; };
+		6EEE661E2AB25A900020063A /* SettingsAppVersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE661C2AB25A900020063A /* SettingsAppVersionTableViewCell.swift */; };
+		6EEE661F2AB25A900020063A /* SettingsAppVersionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEE661D2AB25A900020063A /* SettingsAppVersionTableViewCell.xib */; };
+		6EEE66222AB25F560020063A /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE66212AB25F560020063A /* ProfileDetailsViewController.swift */; };
+		6EEE66242AB3A1230020063A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE66232AB3A1230020063A /* ProfileViewController.swift */; };
+		6EEE66262AB3B87A0020063A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE66252AB3B87A0020063A /* SettingsViewController.swift */; };
 		6EEEE5D02A103045007723F0 /* ListingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE5CF2A103045007723F0 /* ListingPageViewController.swift */; };
 		6EEEE5DF2A10DA14007723F0 /* ProductImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE5DD2A10DA14007723F0 /* ProductImageCollectionViewCell.swift */; };
 		6EEEE5E02A10DA14007723F0 /* ProductImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEEE5DE2A10DA14007723F0 /* ProductImageCollectionViewCell.xib */; };
@@ -182,6 +189,13 @@
 		6EEE55FA2A9E79B8002A5506 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		6EEE55FD2A9E7D5A002A5506 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		6EEE55FE2A9E7D5A002A5506 /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
+		6EEE66182AB2598D0020063A /* SettingsAccountActionButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAccountActionButtonTableViewCell.swift; sourceTree = "<group>"; };
+		6EEE66192AB2598D0020063A /* SettingsAccountActionButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsAccountActionButtonTableViewCell.xib; sourceTree = "<group>"; };
+		6EEE661C2AB25A900020063A /* SettingsAppVersionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppVersionTableViewCell.swift; sourceTree = "<group>"; };
+		6EEE661D2AB25A900020063A /* SettingsAppVersionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsAppVersionTableViewCell.xib; sourceTree = "<group>"; };
+		6EEE66212AB25F560020063A /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
+		6EEE66232AB3A1230020063A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6EEE66252AB3B87A0020063A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6EEEE5CF2A103045007723F0 /* ListingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPageViewController.swift; sourceTree = "<group>"; };
 		6EEEE5DD2A10DA14007723F0 /* ProductImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		6EEEE5DE2A10DA14007723F0 /* ProductImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductImageCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -348,6 +362,16 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		6EEE66202AB25F410020063A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6EEE66212AB25F560020063A /* ProfileDetailsViewController.swift */,
+				6EEE66232AB3A1230020063A /* ProfileViewController.swift */,
+				6EEE66252AB3B87A0020063A /* SettingsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		6EEEE5CD2A0F5664007723F0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +418,7 @@
 		6EFFE01D2AADCDFE00E39501 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				6EEE66202AB25F410020063A /* ViewControllers */,
 				6EFFE0202AAE006600E39501 /* Cells */,
 				6EFFE01E2AADCE8E00E39501 /* Profile.storyboard */,
 			);
@@ -405,6 +430,10 @@
 			children = (
 				6EFFE0232AAE01DA00E39501 /* SettingsTableViewCell.swift */,
 				6EFFE0242AAE01DA00E39501 /* SettingsTableViewCell.xib */,
+				6EEE66182AB2598D0020063A /* SettingsAccountActionButtonTableViewCell.swift */,
+				6EEE66192AB2598D0020063A /* SettingsAccountActionButtonTableViewCell.xib */,
+				6EEE661C2AB25A900020063A /* SettingsAppVersionTableViewCell.swift */,
+				6EEE661D2AB25A900020063A /* SettingsAppVersionTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -477,6 +506,7 @@
 				6E04FA4929D43DC000503E75 /* DMSans-Regular.ttf in Resources */,
 				6E04FA0F29D212C100503E75 /* LaunchScreen.storyboard in Resources */,
 				6E04FA3A29D222C200503E75 /* Poppins-Regular.ttf in Resources */,
+				6EEE661B2AB2598D0020063A /* SettingsAccountActionButtonTableViewCell.xib in Resources */,
 				6E04FA3629D222C200503E75 /* Poppins-Medium.ttf in Resources */,
 				6E7C0FA02A35B786002186E2 /* ChatListTableViewCell.xib in Resources */,
 				6E04FA3429D222C200503E75 /* Poppins-MediumItalic.ttf in Resources */,
@@ -499,6 +529,7 @@
 				6E04FA3229D222C200503E75 /* Poppins-SemiBold.ttf in Resources */,
 				6E04FA3729D222C200503E75 /* Poppins-Thin.ttf in Resources */,
 				6E04FA4629D43DC000503E75 /* DMSans-Medium.ttf in Resources */,
+				6EEE661F2AB25A900020063A /* SettingsAppVersionTableViewCell.xib in Resources */,
 				6E04FA3B29D222C200503E75 /* Poppins-ExtraLight.ttf in Resources */,
 				6E04FA3329D222C200503E75 /* Poppins-Italic.ttf in Resources */,
 				6E04FA0A29D212BE00503E75 /* Main.storyboard in Resources */,
@@ -527,6 +558,7 @@
 				6E44C0AC2A7AECE400AE8385 /* ProductDetailCollectionViewCell.swift in Sources */,
 				6E3BE19E29E5DD720060199C /* PhoneNumberSignInViewController.swift in Sources */,
 				6E82A37F2A8818DA000447AB /* UserChatViewController.swift in Sources */,
+				6EEE66242AB3A1230020063A /* ProfileViewController.swift in Sources */,
 				6E3BE19C29E5DD0E0060199C /* SignUpOTPViewController.swift in Sources */,
 				6E82A3822A889ABB000447AB /* ChatMessageTableViewCell.swift in Sources */,
 				6E9B79302A2D0BB600B6559C /* FilterItemDTO.swift in Sources */,
@@ -546,22 +578,26 @@
 				6EFFE0252AAE01DA00E39501 /* SettingsTableViewCell.swift in Sources */,
 				6EEEE5DF2A10DA14007723F0 /* ProductImageCollectionViewCell.swift in Sources */,
 				6EDBB63A29D6C6FE00DA91C1 /* PhoneNumberViewController.swift in Sources */,
+				6EEE66222AB25F560020063A /* ProfileDetailsViewController.swift in Sources */,
 				6E9B79342A2D137100B6559C /* CategoryFilterViewController.swift in Sources */,
 				6E5662432A8D7DFC00141178 /* SendPaymentViewController.swift in Sources */,
 				6EEE55FF2A9E7D5A002A5506 /* CartTableViewCell.swift in Sources */,
 				6E9B79322A2D135F00B6559C /* FIlterMainViewController.swift in Sources */,
 				6E9B79382A2D3CD600B6559C /* ListingDetailPageViewController.swift in Sources */,
 				6E04FA0529D212BE00503E75 /* SceneDelegate.swift in Sources */,
+				6EEE661E2AB25A900020063A /* SettingsAppVersionTableViewCell.swift in Sources */,
 				6E56623F2A8A528400141178 /* ScrollDirectionDelegate.swift in Sources */,
 				6E56623B2A8916D400141178 /* ChatMessageViewController.swift in Sources */,
 				6E82A3882A890AE9000447AB /* TextChatTableViewCell.swift in Sources */,
 				6EBDD6312A10FFD000AECD19 /* ListingPageProductDTO.swift in Sources */,
 				6E3BE19429E5DC0D0060199C /* ProfilePictureViewController.swift in Sources */,
+				6EEE66262AB3B87A0020063A /* SettingsViewController.swift in Sources */,
 				6E3BE19629E5DC2E0060199C /* SignInViewController.swift in Sources */,
 				6E5662412A8D646F00141178 /* PageChangeDelegate.swift in Sources */,
 				6E44C0AF2A7AF28F00AE8385 /* CustomCollectionView.swift in Sources */,
 				6EBDD6332A11018900AECD19 /* Enums.swift in Sources */,
 				6EDF39E32A2E8B6B00DF04C0 /* PreviewViewController.swift in Sources */,
+				6EEE661A2AB2598D0020063A /* SettingsAccountActionButtonTableViewCell.swift in Sources */,
 				6E7C0F9C2A35B398002186E2 /* ChatViewController.swift in Sources */,
 				6E82A3852A88C661000447AB /* StoreMainPageViewController.swift in Sources */,
 				6E04FA4C29D459E500503E75 /* Extensions.swift in Sources */,

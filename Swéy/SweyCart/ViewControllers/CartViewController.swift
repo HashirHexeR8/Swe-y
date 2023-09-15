@@ -25,6 +25,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         updateCollectionViewHeight()
         
+        let cornerRadius: CGFloat = 25.0
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = UIBezierPath(roundedRect: self.shareCartButton.bounds, byRoundingCorners: [.topLeft, .bottomLeft], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)).cgPath
+        self.shareCartButton.layer.mask = maskLayer
+        
         self.checkoutButton.clipsToBounds = false
         self.checkoutButton.layer.shadowColor = UIColor(red: 0, green: 0.4745098039215686, blue: 1, alpha: 0.65).cgColor
         self.checkoutButton.layer.shadowOpacity = 0.5

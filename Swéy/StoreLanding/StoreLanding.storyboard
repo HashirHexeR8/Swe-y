@@ -212,6 +212,7 @@
                         <outlet property="filterSearchBackgroundBlurView" destination="8X8-lg-Sko" id="OwB-yn-tJn"/>
                         <outlet property="filterSearchBackgroundView" destination="vBk-St-xqs" id="I3a-Qy-IFB"/>
                         <outlet property="filterSearchViewContainer" destination="YgW-R9-VJ6" id="LuX-WY-boe"/>
+                        <outlet property="profileImageView" destination="KWY-TD-t2I" id="e6c-eT-UPg"/>
                         <outlet property="topViewContainer" destination="omE-4I-JL3" id="UBj-gw-h4F"/>
                     </connections>
                 </viewController>
@@ -1197,14 +1198,14 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Smp-ga-B7U">
-                                <rect key="frame" x="0.0" y="134" width="393" height="684"/>
+                                <rect key="frame" x="0.0" y="134" width="393" height="627.66666666666663"/>
                                 <color key="backgroundColor" name="onboardingViewControllerBackground"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lnu-zy-iYf" userLabel="chatViewContainer">
-                                <rect key="frame" x="12" y="762" width="369" height="56"/>
+                                <rect key="frame" x="12" y="761.66666666666663" width="369" height="56.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYN-Wf-Xvf">
-                                        <rect key="frame" x="326" y="10.666666666666629" width="35" height="35"/>
+                                        <rect key="frame" x="326" y="10.666666666666742" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="hTy-5C-I0c"/>
                                             <constraint firstAttribute="width" constant="35" id="pww-Pc-SGB"/>
@@ -1213,7 +1214,7 @@
                                         <state key="normal" image="sendChatbutton"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXH-4w-3Bc">
-                                        <rect key="frame" x="12" y="17" width="16" height="22"/>
+                                        <rect key="frame" x="12" y="17.333333333333371" width="16" height="22"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="addAttachmentButton"/>
                                         <connections>
@@ -1222,7 +1223,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kay-BU-Vgt">
-                                        <rect key="frame" x="38" y="10.666666666666629" width="1" height="35"/>
+                                        <rect key="frame" x="38" y="10.666666666666742" width="1" height="35"/>
                                         <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="akY-86-xDO"/>
@@ -1230,7 +1231,7 @@
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xGr-Nk-P0S">
-                                        <rect key="frame" x="49" y="0.0" width="267" height="56"/>
+                                        <rect key="frame" x="49" y="0.0" width="267" height="56.333333333333336"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1242,12 +1243,12 @@
                                     <constraint firstItem="rXH-4w-3Bc" firstAttribute="leading" secondItem="Lnu-zy-iYf" secondAttribute="leading" constant="12" id="6eL-3A-08Q"/>
                                     <constraint firstItem="kay-BU-Vgt" firstAttribute="centerY" secondItem="Lnu-zy-iYf" secondAttribute="centerY" id="A7f-cB-S4m"/>
                                     <constraint firstItem="rXH-4w-3Bc" firstAttribute="centerY" secondItem="Lnu-zy-iYf" secondAttribute="centerY" id="BYa-ew-8F7"/>
-                                    <constraint firstAttribute="height" constant="56" id="Fkx-lz-6Xu"/>
                                     <constraint firstAttribute="bottom" secondItem="xGr-Nk-P0S" secondAttribute="bottom" id="Ic8-qJ-3GC"/>
                                     <constraint firstAttribute="trailing" secondItem="oYN-Wf-Xvf" secondAttribute="trailing" constant="8" id="cw7-1c-XrM"/>
                                     <constraint firstItem="oYN-Wf-Xvf" firstAttribute="centerY" secondItem="Lnu-zy-iYf" secondAttribute="centerY" id="nXX-vL-5Mx"/>
                                     <constraint firstItem="oYN-Wf-Xvf" firstAttribute="leading" secondItem="xGr-Nk-P0S" secondAttribute="trailing" constant="10" id="qZi-aE-jwJ"/>
                                     <constraint firstItem="kay-BU-Vgt" firstAttribute="leading" secondItem="rXH-4w-3Bc" secondAttribute="trailing" constant="10" id="tJx-dW-rf0"/>
+                                    <constraint firstItem="kay-BU-Vgt" firstAttribute="top" secondItem="Lnu-zy-iYf" secondAttribute="top" constant="10.666666666666629" id="uYs-m8-e6i"/>
                                     <constraint firstItem="xGr-Nk-P0S" firstAttribute="leading" secondItem="kay-BU-Vgt" secondAttribute="trailing" constant="10" id="vCP-u4-Yqd"/>
                                     <constraint firstItem="xGr-Nk-P0S" firstAttribute="top" secondItem="Lnu-zy-iYf" secondAttribute="top" id="wy9-GJ-Pk9"/>
                                 </constraints>
@@ -1295,7 +1296,7 @@
                                                     </backgroundConfiguration>
                                                 </buttonConfiguration>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDM-Ra-tU2">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDM-Ra-tU2" userLabel="sendMoneyButton">
                                                 <rect key="frame" x="184.66666666666666" y="0.0" width="91.999999999999972" height="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
@@ -1387,8 +1388,8 @@
                             <constraint firstItem="PpG-90-w0t" firstAttribute="trailing" secondItem="Lnu-zy-iYf" secondAttribute="trailing" constant="12" id="Jgj-al-3pF"/>
                             <constraint firstItem="Smp-ga-B7U" firstAttribute="top" secondItem="Imq-Qa-bMF" secondAttribute="bottom" id="Mir-qb-CFZ"/>
                             <constraint firstItem="Smp-ga-B7U" firstAttribute="leading" secondItem="PpG-90-w0t" secondAttribute="leading" id="RmG-rk-25x"/>
-                            <constraint firstItem="PpG-90-w0t" firstAttribute="bottom" secondItem="Smp-ga-B7U" secondAttribute="bottom" id="SpD-Ic-NcN"/>
                             <constraint firstItem="PpG-90-w0t" firstAttribute="trailing" secondItem="Imq-Qa-bMF" secondAttribute="trailing" id="adE-tt-ilf"/>
+                            <constraint firstItem="Lnu-zy-iYf" firstAttribute="top" secondItem="Smp-ga-B7U" secondAttribute="bottom" id="aqM-Sw-0Rb"/>
                             <constraint firstItem="6WO-Ed-P0i" firstAttribute="leading" secondItem="PpG-90-w0t" secondAttribute="leading" constant="12" id="kEU-Of-EZ3"/>
                             <constraint firstItem="PpG-90-w0t" firstAttribute="trailing" secondItem="nqG-WT-PI5" secondAttribute="trailing" constant="12" id="rhh-bJ-3t2"/>
                             <constraint firstItem="nqG-WT-PI5" firstAttribute="top" secondItem="6WO-Ed-P0i" secondAttribute="bottom" constant="-10" id="rsi-6w-Pfa"/>
@@ -1404,6 +1405,7 @@
                         <outlet property="backButton" destination="u6W-Zd-Qz8" id="DEY-iK-a1c"/>
                         <outlet property="chatsTableView" destination="Smp-ga-B7U" id="619-M0-a6U"/>
                         <outlet property="heightConstraint" destination="cNR-ax-BrN" id="RRo-v7-Fxk"/>
+                        <outlet property="sendMessageTextField" destination="xGr-Nk-P0S" id="iHG-QG-CQU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ESS-Yx-IWd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1465,7 +1467,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jod-Qg-xJ2">
-                                                <rect key="frame" x="24.999999999999989" y="413" width="48.333333333333357" height="17"/>
+                                                <rect key="frame" x="24.999999999999989" y="413" width="48.333333333333343" height="17"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" name="chatUserNameLabelColor"/>
                                                 <nil key="highlightedColor"/>
