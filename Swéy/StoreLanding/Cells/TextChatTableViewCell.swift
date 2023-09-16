@@ -15,6 +15,7 @@ class TextChatTableViewCell: UITableViewCell {
     private var edgeConstraint = NSLayoutConstraint()
     var backgroundLayer = CAGradientLayer()
     var isIncomingMessage = false
+    var isAllRoundCorners = false
     var messageText = ""
 
     override func awakeFromNib() {
@@ -65,7 +66,8 @@ class TextChatTableViewCell: UITableViewCell {
         self.edgeConstraint.isActive = false
         self.edgeConstraint = self.containerView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 12.0)
         self.edgeConstraint.isActive = true
-        self.containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner]
+        let cornersMasks: CACornerMask = self.isAllRoundCorners ? [.layerMinXMaxYCorner, .layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner] : [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner]
+        self.containerView.layer.maskedCorners = cornersMasks
     }
     
 }

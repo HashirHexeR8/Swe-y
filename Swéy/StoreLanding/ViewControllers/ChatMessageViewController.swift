@@ -13,7 +13,7 @@ class ChatMessageViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var attachmentViewContainer: UIView!
     @IBOutlet weak var attachmentCancelButton: UIButton!
-    @IBOutlet weak var sendMessageTextField: UITextView!
+    @IBOutlet weak var sendMessageTextField: UITextField!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     private var isAttachmentViewVisible: Bool = false {
@@ -34,6 +34,7 @@ class ChatMessageViewController: UIViewController {
                     }
                     self.attachmentViewContainer.isHidden = false
                     self.attachmentCancelButton.isHidden = false
+                    self.sendMessageTextField.isUserInteractionEnabled = false
                 }
             }
             else {
@@ -53,6 +54,7 @@ class ChatMessageViewController: UIViewController {
                     
                     self.attachmentViewContainer.isHidden = true
                     self.attachmentCancelButton.isHidden = true
+                    self.sendMessageTextField.isUserInteractionEnabled = true
                 }
             }
         }
@@ -62,9 +64,7 @@ class ChatMessageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        self.sendMessageTextField.textContainerInset = UIEdgeInsets(top: 8.0, left: 5.0, bottom: 5.0, right: 30.0)
-        
+                
         self.chatsTableView.delegate = self
         self.chatsTableView.dataSource = self
         
@@ -78,14 +78,36 @@ class ChatMessageViewController: UIViewController {
         
         let textMessageNib = UINib(nibName: String(describing: TextChatTableViewCell.self), bundle: nil)
         self.chatsTableView.register(textMessageNib, forCellReuseIdentifier: String(describing: TextChatTableViewCell.self))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= (keyboardSize.height)
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     @IBAction func onBackButtonTap(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
+    @IBAction func onAttachmentButtonTap(_ sender: Any) {
+        self.isAttachmentViewVisible = true
+    }
+    
     @IBAction func onAttachmentCancelButtonTap(_ sender: Any) {
-        self.isAttachmentViewVisible = !self.isAttachmentViewVisible
+        self.isAttachmentViewVisible = false
     }
 
 }
@@ -99,18 +121,22 @@ extension ChatMessageViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TextChatTableViewCell.self), for: indexPath) as! TextChatTableViewCell
         if indexPath.row == 0 {
             cell.isIncomingMessage = false
+            cell.isAllRoundCorners = false
             cell.messageText = "Hellow Bro! How are you?"
         }
         else if indexPath.row == 1 {
             cell.isIncomingMessage = true
+            cell.isAllRoundCorners = false
             cell.messageText = "Hi Mohammad! Im fine and you?"
         }
         else if indexPath.row == 2 {
             cell.isIncomingMessage = false
+            cell.isAllRoundCorners = true
             cell.messageText = "Not bad, i just finished Swimming and take the dinner with my parent."
         }
         else {
             cell.isIncomingMessage = false
+            cell.isAllRoundCorners = false
             cell.messageText = "Not bad, i just finished Swimming and take the dinner with my parent. Let's try to make this even more bigger so we can see if it actually works for a very long text but not sure if it will."
         }
         cell.setupCell()

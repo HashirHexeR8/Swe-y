@@ -78,7 +78,7 @@ class FIlterMainViewController: UIViewController {
                 pannableView.frame.origin.y = touchPoint.y - initialTouchPoint.y
             }
         case .ended, .cancelled:
-            if touchPoint.y - initialTouchPoint.y > 600 {
+            if touchPoint.y - initialTouchPoint.y >= 600 {
                 dismiss(animated: true, completion: nil)
             }
             else if direction.y > 0.0 {
