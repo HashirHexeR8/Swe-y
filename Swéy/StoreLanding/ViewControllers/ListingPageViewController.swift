@@ -198,7 +198,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: horizontalGroupSize, subitems: [verticalGroup, verticalProducts[0], verticalProducts[0], verticalProducts[0]])
         //Section
         let section = NSCollectionLayoutSection(group: horizontalGroup)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 70 , leading: 8, bottom: 10, trailing: 8)
+        section.contentInsets = NSDirectionalEdgeInsets(top: topViewContainer!.bounds.height , leading: 8, bottom: 10, trailing: 8)
         section.orthogonalScrollingBehavior = .continuous
         return section
     }

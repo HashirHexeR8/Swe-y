@@ -59,10 +59,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgW-R9-VJ6">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBk-St-xqs">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="KWY-TD-t2I">
                                                 <rect key="frame" x="330" y="11.333333333333332" width="46" height="47.333333333333343"/>
                                                 <constraints>
@@ -131,16 +127,12 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="vBk-St-xqs" firstAttribute="top" secondItem="YgW-R9-VJ6" secondAttribute="top" id="3ou-v7-NWf"/>
-                                            <constraint firstAttribute="trailing" secondItem="vBk-St-xqs" secondAttribute="trailing" id="7yd-s3-gYh"/>
                                             <constraint firstItem="KWY-TD-t2I" firstAttribute="leading" secondItem="TIo-nd-422" secondAttribute="trailing" constant="20" id="HY8-W6-kU1"/>
                                             <constraint firstItem="TIo-nd-422" firstAttribute="leading" secondItem="YgW-R9-VJ6" secondAttribute="leading" constant="15" id="KIy-sX-AMc"/>
                                             <constraint firstAttribute="trailing" secondItem="KWY-TD-t2I" secondAttribute="trailing" constant="17" id="Pva-V9-NV5"/>
                                             <constraint firstAttribute="height" constant="70" identifier="heightConstraint" id="VlX-KF-j2f"/>
                                             <constraint firstItem="TIo-nd-422" firstAttribute="height" secondItem="YgW-R9-VJ6" secondAttribute="height" multiplier="0.794118" id="W7J-lc-oDf"/>
                                             <constraint firstItem="TIo-nd-422" firstAttribute="centerY" secondItem="YgW-R9-VJ6" secondAttribute="centerY" id="eNR-8r-9oF"/>
-                                            <constraint firstItem="vBk-St-xqs" firstAttribute="leading" secondItem="YgW-R9-VJ6" secondAttribute="leading" id="ecA-9q-Umf"/>
-                                            <constraint firstAttribute="bottom" secondItem="vBk-St-xqs" secondAttribute="bottom" id="kue-wx-rUl"/>
                                             <constraint firstItem="KWY-TD-t2I" firstAttribute="height" secondItem="YgW-R9-VJ6" secondAttribute="height" multiplier="0.676471" id="pHR-ah-Y1a"/>
                                             <constraint firstItem="KWY-TD-t2I" firstAttribute="centerY" secondItem="YgW-R9-VJ6" secondAttribute="centerY" id="tVu-6O-gr8"/>
                                         </constraints>
@@ -201,8 +193,8 @@
                             <constraint firstAttribute="bottom" secondItem="ZXr-Ib-n37" secondAttribute="bottom" constant="-10" id="0tO-HE-Uqg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5Jf-wT-qcd" secondAttribute="trailing" id="62A-E8-Y4S"/>
                             <constraint firstAttribute="trailing" secondItem="ZXr-Ib-n37" secondAttribute="trailing" id="6YX-9w-6xC"/>
+                            <constraint firstItem="omE-4I-JL3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7oi-5s-8AW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="omE-4I-JL3" secondAttribute="trailing" id="88K-OQ-nHp"/>
-                            <constraint firstItem="omE-4I-JL3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Jrg-GK-EKe"/>
                             <constraint firstAttribute="bottom" secondItem="5Jf-wT-qcd" secondAttribute="bottom" id="Jsw-sf-vUq"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gHu-9i-m6k" secondAttribute="trailing" constant="20" id="YaY-2b-M0l"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="gHu-9i-m6k" secondAttribute="bottom" constant="15" id="ZHd-zq-1fR"/>
@@ -219,7 +211,6 @@
                         <outlet property="collectionView" destination="5Jf-wT-qcd" id="jM4-y7-det"/>
                         <outlet property="filterButton" destination="oum-7N-ZW7" id="3OM-Qa-PYh"/>
                         <outlet property="filterSearchBackgroundBlurView" destination="8X8-lg-Sko" id="OwB-yn-tJn"/>
-                        <outlet property="filterSearchBackgroundView" destination="vBk-St-xqs" id="I3a-Qy-IFB"/>
                         <outlet property="filterSearchViewContainer" destination="YgW-R9-VJ6" id="LuX-WY-boe"/>
                         <outlet property="profileImageView" destination="KWY-TD-t2I" id="e6c-eT-UPg"/>
                         <outlet property="topViewContainer" destination="omE-4I-JL3" id="UBj-gw-h4F"/>
@@ -985,7 +976,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odO-fH-Hie" userLabel="embeddedViewContainer">
-                                <rect key="frame" x="0.0" y="100" width="393" height="752"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcR-qj-lCn">
@@ -1125,7 +1116,7 @@
                             <constraint firstItem="ryd-aX-CN6" firstAttribute="top" secondItem="6wM-EK-Ba0" secondAttribute="top" id="cau-HZ-cP3"/>
                             <constraint firstItem="wcR-qj-lCn" firstAttribute="trailing" secondItem="Q9z-HG-qbW" secondAttribute="trailing" id="iDS-97-Vcb"/>
                             <constraint firstAttribute="bottom" secondItem="ryd-aX-CN6" secondAttribute="bottom" id="jAU-f5-dMA"/>
-                            <constraint firstItem="odO-fH-Hie" firstAttribute="top" secondItem="wcR-qj-lCn" secondAttribute="bottom" id="jwo-hA-xeQ"/>
+                            <constraint firstItem="odO-fH-Hie" firstAttribute="top" secondItem="6wM-EK-Ba0" secondAttribute="top" identifier="topAnchorConstraint" id="jwo-hA-xeQ"/>
                             <constraint firstAttribute="bottom" secondItem="odO-fH-Hie" secondAttribute="bottom" id="oQn-fY-CLv"/>
                         </constraints>
                     </view>
@@ -1137,6 +1128,7 @@
                         <outlet property="guidTile3" destination="b3Q-KP-C7s" id="mm5-ti-5El"/>
                         <outlet property="guidView" destination="ryd-aX-CN6" id="vQ9-fl-uj9"/>
                         <outlet property="segmentedControl" destination="PNC-bI-4F6" id="Lv4-SR-dwO"/>
+                        <outlet property="topAnchorConstraint" destination="jwo-hA-xeQ" id="gHR-qf-gb9"/>
                         <outlet property="topContainerBackgroundView" destination="AUj-2s-ai4" id="l9v-r0-Xan"/>
                         <outlet property="topViewContainer" destination="wcR-qj-lCn" id="5Ns-lc-qOt"/>
                     </connections>

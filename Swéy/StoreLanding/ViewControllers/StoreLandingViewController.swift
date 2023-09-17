@@ -17,6 +17,7 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
     @IBOutlet weak var guidTile1: UIView!
     @IBOutlet weak var guidTile2: UIView!
     @IBOutlet weak var guidTile3: UIView!
+    @IBOutlet weak var topAnchorConstraint: NSLayoutConstraint!
     
     lazy var blurredView: UIView = {
         return UIView()
@@ -38,13 +39,11 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
                         constraint.constant = 55
                     }
                 }
+                topAnchorConstraint.constant = 0
                 UIView.animate(withDuration: 0.15) {
                     self.view.layoutIfNeeded()
                 }
                 
-                UIView.animate(withDuration: 0.15) {
-                    self.view.layoutIfNeeded()
-                }
                 self.topViewContainer.backgroundColor = UIColor(named: "onboardingViewControllerBackground")?.withAlphaComponent(0.0)
                 self.topContainerBackgroundView.isHidden = false
                 self.blurredView.frame = self.topContainerBackgroundView.bounds
@@ -61,13 +60,11 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
                         constraint.constant = 100
                     }
                 }
+                topAnchorConstraint.constant = (UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0) + 45
                 UIView.animate(withDuration: 0.15) {
                     self.view.layoutIfNeeded()
                 }
                 
-                UIView.animate(withDuration: 0.15) {
-                    self.view.layoutIfNeeded()
-                }
                 self.topViewContainer.backgroundColor = UIColor(named: "onboardingViewControllerBackground")?.withAlphaComponent(1.0)
                 self.topContainerBackgroundView.isHidden = true
                 self.blurredView.frame = self.topContainerBackgroundView.bounds
