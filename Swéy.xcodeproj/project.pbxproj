@@ -83,6 +83,7 @@
 		6EBDD6332A11018900AECD19 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDD6322A11018900AECD19 /* Enums.swift */; };
 		6ECE0C652A641016007958D4 /* CustomBlurViewEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECE0C642A641016007958D4 /* CustomBlurViewEffect.swift */; };
 		6ECE0C672A649184007958D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ECE0C662A649184007958D4 /* Assets.xcassets */; };
+		6ED541F42AB7A2B70026644D /* BillingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED541F32AB7A2B70026644D /* BillingDetailsViewController.swift */; };
 		6EDBB63A29D6C6FE00DA91C1 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBB63929D6C6FE00DA91C1 /* PhoneNumberViewController.swift */; };
 		6EDF39E32A2E8B6B00DF04C0 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDF39E22A2E8B6B00DF04C0 /* PreviewViewController.swift */; };
 		6EEE55F82A9B9725002A5506 /* SweyCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EEE55F72A9B9725002A5506 /* SweyCart.storyboard */; };
@@ -183,6 +184,7 @@
 		6EBDD6322A11018900AECD19 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		6ECE0C642A641016007958D4 /* CustomBlurViewEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBlurViewEffect.swift; sourceTree = "<group>"; };
 		6ECE0C662A649184007958D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6ED541F32AB7A2B70026644D /* BillingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingDetailsViewController.swift; sourceTree = "<group>"; };
 		6EDBB63929D6C6FE00DA91C1 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
 		6EDF39E22A2E8B6B00DF04C0 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		6EEE55F72A9B9725002A5506 /* SweyCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SweyCart.storyboard; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				6EEE66212AB25F560020063A /* ProfileDetailsViewController.swift */,
 				6EEE66232AB3A1230020063A /* ProfileViewController.swift */,
 				6EEE66252AB3B87A0020063A /* SettingsViewController.swift */,
+				6ED541F32AB7A2B70026644D /* BillingDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				6E04FA0329D212BE00503E75 /* AppDelegate.swift in Sources */,
 				6E04FA4E29D4622500503E75 /* OnboardingViewController.swift in Sources */,
 				6E6597872A2FC36A004ADE35 /* ProductPreviewViewController.swift in Sources */,
+				6ED541F42AB7A2B70026644D /* BillingDetailsViewController.swift in Sources */,
 				6E9B79292A2CF0ED00B6559C /* SizeTileFilterCollectionViewCell.swift in Sources */,
 				6E9B79362A2D138B00B6559C /* PantsSizeViewController.swift in Sources */,
 				6EFFE0252AAE01DA00E39501 /* SettingsTableViewCell.swift in Sources */,
@@ -746,7 +750,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 97KF2LZHQ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Swéy/Info.plist";
@@ -779,7 +783,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 97KF2LZHQ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Swéy/Info.plist";

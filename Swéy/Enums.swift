@@ -21,6 +21,16 @@ enum ProductItemType {
     case horizontalItem
 }
 
+enum SettingsScreenType: String {
+    case settingsScreen = "Settings"
+    case supportScreen = "Support"
+    case sellingScreen = "Selling"
+    case buyingScreen = "Buying"
+    case safetyScreen = "Safety"
+    case guideScreen = "Guide to SWÉY"
+    case techIssueSccreen = "Technical Issues"
+}
+
 enum ProfileDetailsCellType: Int {
     case profileCell = 0
     case privacyAndSafetyCell = 1
@@ -89,7 +99,7 @@ enum ProfileDetailsCellType: Int {
     }
 }
 
-enum SettingsCellType: Int {
+enum SettingsCellType: Int, CaseIterable {
     case cardsCell = 0
     case depositeMoneyCell = 1
     case convertSweyCoinCell = 2
@@ -122,7 +132,7 @@ enum SettingsCellType: Int {
         case .cardsCell:
             return "icCardSettings"
         case .depositeMoneyCell:
-            return "icDepositeMoney "
+            return "icDepositeMoney"
         case .convertSweyCoinCell:
             return "icSweyCoin"
         case .paypalCell:
@@ -133,6 +143,180 @@ enum SettingsCellType: Int {
             return "icBilling"
         case .notificationCell:
             return "icNotification"
+        }
+    }
+}
+
+enum SupportCellType: Int, CaseIterable {
+    case sellingCell = 0
+    case buyingCell = 1
+    case safetyCell = 2
+    case guideToSweyCell = 3
+    case technicalIssuesCell = 4
+    
+    func getCellLabelText() -> String {
+        switch self {
+        case .sellingCell:
+            return "Selling"
+        case .buyingCell:
+            return "Buying"
+        case .safetyCell:
+            return "Safety"
+        case .guideToSweyCell:
+            return "Guide to SWÉY"
+        case .technicalIssuesCell:
+            return "Technical Issues"
+        }
+    }
+    
+    func getCellIconImageName() -> String {
+        switch self {
+        case .sellingCell:
+            return "icSelling"
+        case .buyingCell:
+            return "icBuying"
+        case .safetyCell:
+            return "icSafety"
+        case .guideToSweyCell:
+            return "icGuideToSwey"
+        case .technicalIssuesCell:
+            return "icTechnicalIssues"
+        }
+    }
+}
+
+
+enum SellingCellType: Int, CaseIterable {
+    case shippingCell = 0
+    case paymentCell = 1
+    case saleCell = 2
+    
+    func getCellLabelText() -> String {
+        switch self {
+        case .shippingCell:
+            return "Selling"
+        case .paymentCell:
+            return "Buying"
+        case .saleCell:
+            return "Safety"
+        }
+    }
+    
+    func getCellIconImageName() -> String {
+        switch self {
+        case .shippingCell:
+            return "icShipping"
+        case .paymentCell:
+            return "icPayment"
+        case .saleCell:
+            return "icSalling"
+        }
+    }
+}
+
+enum BuyingCellType: Int, CaseIterable {
+    case purchaseHistoryCell = 0
+    case authenticItemsCell = 1
+    
+    func getCellLabelText() -> String {
+        switch self {
+        case .purchaseHistoryCell:
+            return "Purchase history"
+        case .authenticItemsCell:
+            return "How to buy Authentic items"
+        }
+    }
+    
+    func getCellIconImageName() -> String {
+        switch self {
+        case .purchaseHistoryCell:
+            return "icPayment"
+        case .authenticItemsCell:
+            return "icAuthentic"
+        }
+    }
+}
+
+enum SafteyCellType: Int, CaseIterable {
+    case reportUsersCell = 0
+    case verifiedStoresCell = 1
+    case standardAuthenticItemsCell = 2
+    case verifiedOnlyStoresCell = 3
+    
+    func getCellLabelText() -> String {
+        switch self {
+        case .reportUsersCell:
+            return "Report users"
+        case .verifiedStoresCell:
+            return "Verified stores"
+        case .standardAuthenticItemsCell:
+            return "Standard and sell authentic items"
+        case .verifiedOnlyStoresCell:
+            return "Only Shop at verified stores"
+        }
+    }
+    
+    func getCellIconImageName() -> String {
+        switch self {
+        case .reportUsersCell:
+            return "icProfilePlaceHolder"
+        case .verifiedStoresCell:
+            return "icVerifiedStores"
+        case .standardAuthenticItemsCell:
+            return "icStandardAuthentic"
+        case .verifiedOnlyStoresCell:
+            return "icShopOnlyVerifiedStores"
+        }
+    }
+}
+
+enum GuideSweyCellType: Int, CaseIterable {
+    case rulesCell = 0
+    case termsOfServiceCell = 1
+    
+    func getCellLabelText() -> String {
+        switch self {
+        case .rulesCell:
+            return "Rules"
+        case .termsOfServiceCell:
+            return "Terms of Service"
+        }
+    }
+    
+    func getCellIconImageName() -> String {
+        switch self {
+        case .rulesCell:
+            return "icRules"
+        case .termsOfServiceCell:
+            return "icTermsAndService"
+        }
+    }
+}
+
+enum TechIssueCellType: Int, CaseIterable {
+    case troubleShootCell = 0
+    case restartCell = 1
+    case uninstallAndRedownloadCell = 2
+    
+    func getCellLabelText() -> String {
+        switch self {
+        case .troubleShootCell:
+            return "Troubleshoot"
+        case .restartCell:
+            return "Restart"
+        case .uninstallAndRedownloadCell:
+            return "Uninstall and redownload"
+        }
+    }
+    
+    func getCellIconImageName() -> String {
+        switch self {
+        case .troubleShootCell:
+            return "icTroubleshoot"
+        case .restartCell:
+            return "icRestart"
+        case .uninstallAndRedownloadCell:
+            return "icUninstall"
         }
     }
 }

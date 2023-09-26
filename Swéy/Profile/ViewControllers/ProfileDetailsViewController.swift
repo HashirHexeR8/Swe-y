@@ -71,6 +71,13 @@ class ProfileDetailsViewController: UIViewController, UITableViewDelegate, UITab
         }
         else if indexPath.row == ProfileDetailsCellType.settingsCell.rawValue {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: String(describing: SettingsViewController.self)) as? SettingsViewController
+            vc?.screenType = .settingsScreen
+            vc?.modalPresentationStyle = .fullScreen
+            self.present(vc!, animated: true)
+        }
+        else if indexPath.row == ProfileDetailsCellType.supportCell.rawValue {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: String(describing: SettingsViewController.self)) as? SettingsViewController
+            vc?.screenType = .supportScreen
             vc?.modalPresentationStyle = .fullScreen
             self.present(vc!, animated: true)
         }
