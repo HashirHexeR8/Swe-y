@@ -1105,7 +1105,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q9z-HG-qbW"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="onboardingViewControllerBackground"/>
                         <constraints>
                             <constraint firstItem="wcR-qj-lCn" firstAttribute="leading" secondItem="Q9z-HG-qbW" secondAttribute="leading" id="411-0f-ecX"/>
                             <constraint firstItem="Q9z-HG-qbW" firstAttribute="trailing" secondItem="odO-fH-Hie" secondAttribute="trailing" id="7Go-5D-NwG"/>

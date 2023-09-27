@@ -113,10 +113,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayk-iP-Yu0">
-                                <rect key="frame" x="0.0" y="722" width="393" height="130"/>
+                                <rect key="frame" x="0.0" y="722" width="396" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmQ-h3-eEo">
-                                        <rect key="frame" x="49" y="27.666666666666629" width="295" height="75"/>
+                                        <rect key="frame" x="49.666666666666657" y="27.666666666666629" width="297" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="NWb-tK-SYk"/>
                                         </constraints>
@@ -139,7 +139,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dz6-Et-Ytm">
-                                <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                                <rect key="frame" x="0.0" y="59" width="396" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxB-vW-yHY">
                                         <rect key="frame" x="12" y="16" width="47" height="28"/>
@@ -167,10 +167,10 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9B-7C-G8G">
-                                <rect key="frame" x="0.0" y="119" width="393" height="603"/>
+                                <rect key="frame" x="0.0" y="119" width="396" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBx-MZ-cHR">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="396" height="800"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editProfilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="bAl-3H-IeP">
                                                 <rect key="frame" x="20" y="20" width="80" height="80"/>
@@ -191,8 +191,8 @@
                                                 <color key="textColor" name="paymentLabelsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k20-Ky-TkU">
-                                                <rect key="frame" x="20" y="150" width="350" height="54"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k20-Ky-TkU">
+                                                <rect key="frame" x="20" y="150" width="352.66666666666669" height="54"/>
                                                 <color key="backgroundColor" name="onboardingFieldBackground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="54" id="W09-tG-Nhy"/>
@@ -219,8 +219,8 @@
                                                 <color key="textColor" name="paymentLabelsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bEg-S1-Sa1">
-                                                <rect key="frame" x="20" y="246" width="350" height="54"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bEg-S1-Sa1">
+                                                <rect key="frame" x="20" y="246" width="352.66666666666669" height="54"/>
                                                 <color key="backgroundColor" name="onboardingFieldBackground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="54" id="W5u-Hf-NmS"/>
@@ -253,7 +253,7 @@
                                                 <color key="textColor" name="paymentLabelsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-qh-QNp">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-qh-QNp">
                                                 <rect key="frame" x="22" y="632" width="352.66666666666669" height="54"/>
                                                 <color key="backgroundColor" name="onboardingFieldBackground"/>
                                                 <constraints>
@@ -281,7 +281,7 @@
                                                 <color key="textColor" name="paymentLabelsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VlP-zy-Zee">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VlP-zy-Zee">
                                                 <rect key="frame" x="22" y="728" width="352.66666666666669" height="54"/>
                                                 <color key="backgroundColor" name="onboardingFieldBackground"/>
                                                 <constraints>
@@ -304,13 +304,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biography:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T98-8T-xAz">
-                                                <rect key="frame" x="20" y="315" width="67" height="17"/>
+                                                <rect key="frame" x="20" y="315" width="66.333333333333329" height="17"/>
                                                 <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="13"/>
                                                 <color key="textColor" name="paymentLabelsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Anr-wf-f7u">
-                                                <rect key="frame" x="20" y="342" width="346" height="125"/>
+                                                <rect key="frame" x="20" y="342" width="348.33333333333331" height="125"/>
                                                 <color key="backgroundColor" name="onboardingFieldBackground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="125" id="7KF-YR-fyC"/>
@@ -330,7 +330,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eG5-wZ-jKg">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eG5-wZ-jKg">
                                                 <rect key="frame" x="22" y="516" width="352.66666666666669" height="54"/>
                                                 <color key="backgroundColor" name="onboardingFieldBackground"/>
                                                 <constraints>
@@ -617,7 +617,7 @@
                                                     <action selector="onCompanyButtonTapWithSender:" destination="3RI-6o-JZJ" eventType="touchUpInside" id="A5O-wJ-Lmu"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ytr-yq-8dt">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ytr-yq-8dt">
                                                 <rect key="frame" x="23" y="46" width="350" height="54"/>
                                                 <color key="backgroundColor" name="onboardingFieldBackground"/>
                                                 <constraints>
@@ -645,7 +645,7 @@
                                                 <color key="textColor" name="paymentLabelsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbN-Gt-xvW">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbN-Gt-xvW">
                                                 <rect key="frame" x="23" y="142" width="345.66666666666669" height="54"/>
                                                 <color key="backgroundColor" name="onboardingFieldBackground"/>
                                                 <constraints>
@@ -673,7 +673,7 @@
                                                 <color key="textColor" name="paymentLabelsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jUC-sK-bBJ">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jUC-sK-bBJ">
                                                 <rect key="frame" x="23" y="238" width="345.66666666666669" height="54"/>
                                                 <color key="backgroundColor" name="onboardingFieldBackground"/>
                                                 <constraints>
@@ -701,7 +701,7 @@
                                                 <color key="textColor" name="paymentLabelsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0hI-Tt-puk">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0hI-Tt-puk">
                                                 <rect key="frame" x="23" y="334" width="345.66666666666669" height="54"/>
                                                 <color key="backgroundColor" name="onboardingFieldBackground"/>
                                                 <constraints>
@@ -729,7 +729,7 @@
                                                 <color key="textColor" name="paymentLabelsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NmN-dm-SQq">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NmN-dm-SQq">
                                                 <rect key="frame" x="23" y="430" width="345.66666666666669" height="54"/>
                                                 <color key="backgroundColor" name="onboardingFieldBackground"/>
                                                 <constraints>
@@ -757,7 +757,7 @@
                                                 <color key="textColor" name="paymentLabelsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pdf-nF-fCd">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pdf-nF-fCd">
                                                 <rect key="frame" x="23" y="526" width="345.66666666666669" height="54"/>
                                                 <color key="backgroundColor" name="onboardingFieldBackground"/>
                                                 <constraints>
@@ -785,7 +785,7 @@
                                                 <color key="textColor" name="paymentLabelsColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AH0-6q-Dr8">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AH0-6q-Dr8">
                                                 <rect key="frame" x="23" y="622" width="345.66666666666669" height="54"/>
                                                 <color key="backgroundColor" name="onboardingFieldBackground"/>
                                                 <constraints>
