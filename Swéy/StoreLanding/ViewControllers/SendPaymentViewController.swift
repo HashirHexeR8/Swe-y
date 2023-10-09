@@ -16,8 +16,8 @@ class SendPaymentViewController: UIViewController {
             // 1. create container view
             let containerView = UIView()
             // 2. create custom blur view
-            let blurEffect = UIBlurEffect(style: .light)
-            let customBlurEffectView = CustomVisualEffectView(effect: blurEffect, intensity: 0.2)
+            let blurEffect = UIBlurEffect(style: .extraLight)
+            let customBlurEffectView = CustomVisualEffectView(effect: blurEffect, intensity: 0.1)
             customBlurEffectView.frame = self.view.bounds
             // 3. create semi-transparent black view
             let dimmedView = UIView()

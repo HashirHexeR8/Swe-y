@@ -949,6 +949,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnAdd" destination="fzx-Hm-RXC" id="at2-a4-OZz"/>
                         <outlet property="chatSegmentedControl" destination="hm3-hP-pwq" id="cpY-Aa-L1y"/>
                         <outlet property="chatTableView" destination="mUQ-Yn-w5i" id="d0L-rD-mZG"/>
                         <outlet property="quickPayViewContainer" destination="CXF-up-iLU" id="7xU-Gc-ayf"/>
@@ -1426,6 +1427,7 @@
                         <outlet property="attachmentCancelButton" destination="nqG-WT-PI5" id="zPR-P3-dG1"/>
                         <outlet property="attachmentViewContainer" destination="6WO-Ed-P0i" id="qqE-pi-gSA"/>
                         <outlet property="backButton" destination="u6W-Zd-Qz8" id="DEY-iK-a1c"/>
+                        <outlet property="chatTextBoxViewContainer" destination="Lnu-zy-iYf" id="vzD-ff-3KB"/>
                         <outlet property="chatsTableView" destination="Smp-ga-B7U" id="619-M0-a6U"/>
                         <outlet property="heightConstraint" destination="cNR-ax-BrN" id="RRo-v7-Fxk"/>
                         <outlet property="sendMessageTextField" destination="Xm9-Ou-3Ka" id="Cvd-5t-IZo"/>
@@ -1490,7 +1492,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jod-Qg-xJ2">
-                                                <rect key="frame" x="24.999999999999989" y="413" width="48.333333333333343" height="17"/>
+                                                <rect key="frame" x="24.999999999999989" y="413" width="48.333333333333357" height="17"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" name="chatUserNameLabelColor"/>
                                                 <nil key="highlightedColor"/>

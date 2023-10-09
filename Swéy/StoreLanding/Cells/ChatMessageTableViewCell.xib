@@ -52,7 +52,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Really? That’s great. We will do watch it and let me know what do you think" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7W-Ax-gFy">
-                                <rect key="frame" x="104.00000000000003" y="50" width="407.66666666666674" height="15.666666666666671"/>
+                                <rect key="frame" x="104.00000000000003" y="50" width="409.66666666666674" height="15.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="11"/>
                                 <color key="textColor" red="0.3803921569" green="0.38823529410000002" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -64,19 +64,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Al-Qc-DUv">
-                                <rect key="frame" x="521.66666666666663" y="49" width="24" height="24"/>
+                                <rect key="frame" x="523.66666666666663" y="49" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="RJD-f6-zWe"/>
-                                    <constraint firstAttribute="width" constant="24" id="zGq-dZ-8So"/>
+                                    <constraint firstAttribute="height" constant="20" id="RJD-f6-zWe"/>
+                                    <constraint firstAttribute="width" constant="20" id="zGq-dZ-8So"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="selected" image="chatCheckBoxChecked"/>
-                                <buttonConfiguration key="configuration" style="plain" title="9+">
+                                <buttonConfiguration key="configuration" style="plain" title="5">
                                     <backgroundConfiguration key="background" cornerRadius="24">
                                         <color key="backgroundColor" red="0.0" green="0.47450980392156861" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="strokeColor" red="0.0" green="0.47450980390000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="DMSans-Regular" family="DM Sans" pointSize="14"/>
+                                    <fontDescription key="titleFontDescription" name="DMSans-Regular" family="DM Sans" pointSize="11"/>
                                     <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                             </button>

@@ -13,6 +13,7 @@ class UserChatViewController: UIViewController {
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var chatSegmentedControl: UISegmentedControl!
     @IBOutlet weak var quickPayViewContainer: UIView!
+    @IBOutlet weak var btnAdd: UIButton!
     
     private var tableViewLastContentOffset = 0.0
     
@@ -65,6 +66,13 @@ class UserChatViewController: UIViewController {
 
         let chatMessageCellNib = UINib(nibName: String(describing: ChatMessageTableViewCell.self), bundle: nil)
         self.chatTableView.register(chatMessageCellNib, forCellReuseIdentifier: String(describing: ChatMessageTableViewCell.self))
+        
+        self.btnAdd.clipsToBounds = false
+        self.btnAdd.layer.shadowColor = UIColor(red: 0, green: 0.4745098039215686, blue: 1, alpha: 0.65).cgColor
+        self.btnAdd.layer.shadowOpacity = 0.5
+        self.btnAdd.layer.shadowOffset = CGSize(width: 0, height: 8)
+        self.btnAdd.layer.shadowRadius = 10
+        self.btnAdd.layer.masksToBounds = false
     }
     
     @IBAction func onSegmentValueChanged() {

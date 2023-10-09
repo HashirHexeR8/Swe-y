@@ -118,7 +118,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="shareCartIcon" title="Share Cart" imagePadding="10">
                                                     <fontDescription key="titleFontDescription" name="DMSans-Bold" family="DM Sans" pointSize="13"/>
-                                                    <color key="baseForegroundColor" red="0.14117647059999999" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="baseForegroundColor" name="onboardingLabelButtonColor"/>
                                                 </buttonConfiguration>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -826,13 +826,13 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="315.33333333333331"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Transfer Successful" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YX-3Y-KsE">
-                                <rect key="frame" x="118" y="374.33333333333331" width="157" height="22.666666666666686"/>
+                                <rect key="frame" x="118.33333333333333" y="374.33333333333331" width="156.66666666666669" height="22.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="23:34:17 - 09/12/202" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNM-2h-W9X">
-                                <rect key="frame" x="127" y="407" width="139" height="20"/>
+                                <rect key="frame" x="127.00000000000001" y="407" width="139.33333333333337" height="19.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -850,17 +850,17 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H51-qr-f5c">
-                                <rect key="frame" x="39.333333333333343" y="508.66666666666669" width="314.33333333333326" height="219.33333333333331"/>
+                                <rect key="frame" x="39.333333333333343" y="508.33333333333331" width="314.33333333333326" height="219.66666666666669"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatUser1" translatesAutoresizingMaskIntoConstraints="NO" id="Yby-4q-qct">
-                                        <rect key="frame" x="65.666666666666657" y="78.999999999999943" width="28" height="28"/>
+                                        <rect key="frame" x="65.666666666666657" y="79.000000000000057" width="28" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="Tiz-64-qkX"/>
                                             <constraint firstAttribute="width" constant="28" id="asf-6B-1Fy"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dS2-GX-WhD">
-                                        <rect key="frame" x="65.666666666666657" y="121.99999999999994" width="183" height="1"/>
+                                        <rect key="frame" x="65.666666666666657" y="122.00000000000006" width="183" height="1"/>
                                         <color key="backgroundColor" name="filterItemSeparatorColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="8Rr-oK-43y"/>
@@ -868,19 +868,19 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="$150     $15     $1.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zE-Cn-SWi">
-                                        <rect key="frame" x="56.333333333333343" y="177.33333333333331" width="202.00000000000003" height="34"/>
+                                        <rect key="frame" x="56.333333333333329" y="178.00000000000006" width="201.66666666666669" height="33.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:                     Tip:              Commision:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuG-qO-NAF">
-                                        <rect key="frame" x="56.333333333333329" y="130.99999999999994" width="204.33333333333337" height="41.333333333333343"/>
+                                        <rect key="frame" x="56.333333333333329" y="131.00000000000006" width="204.66666666666669" height="42"/>
                                         <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="11"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.62" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Stores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flE-Js-qCy">
-                                        <rect key="frame" x="108.66666666666666" y="82.999999999999943" width="57" height="20"/>
+                                        <rect key="frame" x="108.66666666666666" y="83.333333333333314" width="57" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -892,7 +892,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcl-X9-oNe">
-                                        <rect key="frame" x="65.666666666666657" y="62.999999999999943" width="183" height="1"/>
+                                        <rect key="frame" x="65.666666666666657" y="63.000000000000057" width="183" height="1"/>
                                         <color key="backgroundColor" name="filterItemSeparatorColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="pWi-rY-vvJ"/>
@@ -900,14 +900,14 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatUser1" translatesAutoresizingMaskIntoConstraints="NO" id="ckl-oL-XeI">
-                                        <rect key="frame" x="65.666666666666657" y="19.999999999999943" width="28" height="28"/>
+                                        <rect key="frame" x="65.666666666666657" y="20.000000000000057" width="28" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="28" id="3jC-56-oS0"/>
                                             <constraint firstAttribute="height" constant="28" id="nQ6-Pw-Oc2"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8t-h0-QYP">
-                                        <rect key="frame" x="108.66666666666666" y="23.999999999999943" width="26.666666666666657" height="20"/>
+                                        <rect key="frame" x="108.66666666666666" y="24.333333333333314" width="26.666666666666657" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -956,13 +956,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Multi pay:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQ4-Qm-G3Y">
-                                <rect key="frame" x="169.66666666666666" y="442" width="54" height="15.666666666666686"/>
+                                <rect key="frame" x="169.66666666666666" y="441.66666666666669" width="53.666666666666657" height="15.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="11"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.62" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatUser1" translatesAutoresizingMaskIntoConstraints="NO" id="daC-dH-kRw">
-                                <rect key="frame" x="182.66666666666666" y="465.66666666666669" width="28" height="28"/>
+                                <rect key="frame" x="182.66666666666666" y="465.33333333333331" width="28" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="7fH-We-5bI"/>
                                     <constraint firstAttribute="width" constant="28" id="Zhf-I6-TM4"/>
@@ -1027,11 +1027,14 @@
         <namedColor name="filterItemSeparatorColor">
             <color red="0.92900002002716064" green="0.92900002002716064" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="onboardingLabelButtonColor">
+            <color red="0.16899999976158142" green="0.16899999976158142" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="onboardingViewControllerBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="paymentBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="paymentLabelsColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

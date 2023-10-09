@@ -15,6 +15,7 @@ class ChatMessageViewController: UIViewController {
     @IBOutlet weak var attachmentCancelButton: UIButton!
     @IBOutlet weak var sendMessageTextField: UITextField!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var chatTextBoxViewContainer: UIView!
     
     private var isAttachmentViewVisible: Bool = false {
         didSet {
