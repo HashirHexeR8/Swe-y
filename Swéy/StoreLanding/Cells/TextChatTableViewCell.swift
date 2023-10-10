@@ -45,8 +45,8 @@ class TextChatTableViewCell: UITableViewCell {
         backgroundLayer.colors = [
         UIColor(red: 0.306, green: 0.663, blue: 1, alpha: 1).cgColor,
         UIColor(red: 0.039, green: 0.498, blue: 1, alpha: 1).cgColor]
-        backgroundLayer.startPoint = CGPoint(x: 0.25, y: 0.5)
-        backgroundLayer.endPoint = CGPoint(x: 0.75, y: 0.5)
+        backgroundLayer.startPoint = CGPoint(x: 0.75, y: 0.5)
+        backgroundLayer.endPoint = CGPoint(x: 0.25, y: 0.5)
         backgroundLayer.locations = [0, 1]
         backgroundLayer.bounds = self.containerView.bounds.insetBy(dx: -0.5 * self.containerView.bounds.size.width, dy: -0.5 * self.containerView.bounds.size.height)
         backgroundLayer.position = self.containerView.center
@@ -66,7 +66,7 @@ class TextChatTableViewCell: UITableViewCell {
         self.edgeConstraint.isActive = false
         self.edgeConstraint = self.containerView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 12.0)
         self.edgeConstraint.isActive = true
-        let cornersMasks: CACornerMask = self.isAllRoundCorners ? [.layerMinXMaxYCorner, .layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner] : [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner]
+        let cornersMasks: CACornerMask = self.isAllRoundCorners ? [ .layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner] : [.layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         self.containerView.layer.maskedCorners = cornersMasks
     }
     

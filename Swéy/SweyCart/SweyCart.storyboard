@@ -602,8 +602,8 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="0%">
                                                     <backgroundConfiguration key="background" cornerRadius="8">
-                                                        <color key="backgroundColor" name="paymentBackgroundColor"/>
-                                                        <color key="strokeColor" name="paymentBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
                                                     <fontDescription key="titleFontDescription" name="DMSans-Bold" family="DM Sans" pointSize="18"/>
                                                     <color key="baseForegroundColor" name="paymentLabelsColor"/>
@@ -617,10 +617,11 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="10%">
                                                     <backgroundConfiguration key="background" cornerRadius="8">
-                                                        <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="1" alpha="0.7258783808" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="strokeColor" red="0.0" green="0.47450980390000003" blue="1" alpha="0.7258783808" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
                                                     <fontDescription key="titleFontDescription" name="DMSans-Bold" family="DM Sans" pointSize="18"/>
+                                                    <color key="baseForegroundColor" name="paymentLabelsColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="onFirstCommTap" destination="BKU-6g-3vx" eventType="touchUpInside" id="srd-ko-idP"/>
@@ -631,8 +632,8 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="25%">
                                                     <backgroundConfiguration key="background" cornerRadius="5">
-                                                        <color key="backgroundColor" name="paymentBackgroundColor"/>
-                                                        <color key="strokeColor" name="paymentBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
                                                     <fontDescription key="titleFontDescription" name="DMSans-Bold" family="DM Sans" pointSize="18"/>
                                                     <color key="baseForegroundColor" name="paymentLabelsColor"/>
@@ -646,8 +647,8 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="50%">
                                                     <backgroundConfiguration key="background" cornerRadius="8">
-                                                        <color key="backgroundColor" name="paymentBackgroundColor"/>
-                                                        <color key="strokeColor" name="paymentBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
                                                     <fontDescription key="titleFontDescription" name="DMSans-Bold" family="DM Sans" pointSize="18"/>
                                                     <color key="baseForegroundColor" name="paymentLabelsColor"/>
@@ -870,7 +871,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="$150     $15     $1.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zE-Cn-SWi">
                                         <rect key="frame" x="56.333333333333329" y="178.00000000000006" width="201.66666666666669" height="33.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="24"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="paymentLabelsColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:                     Tip:              Commision:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuG-qO-NAF">
@@ -882,7 +883,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Stores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flE-Js-qCy">
                                         <rect key="frame" x="108.66666666666666" y="83.333333333333314" width="57" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" name="paymentLabelsColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN9-jL-xEG">
@@ -909,7 +910,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8t-h0-QYP">
                                         <rect key="frame" x="108.66666666666666" y="24.333333333333314" width="26.666666666666657" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" name="paymentLabelsColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfD-NP-vb4">
@@ -919,7 +920,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" name="paymentBackgroundColor"/>
+                                <color key="backgroundColor" name="orderConfirmationPaymentSummaryBackground"/>
                                 <constraints>
                                     <constraint firstItem="wcl-X9-oNe" firstAttribute="leading" secondItem="ckl-oL-XeI" secondAttribute="leading" id="0mg-Ag-Uot"/>
                                     <constraint firstItem="4zE-Cn-SWi" firstAttribute="centerX" secondItem="H51-qr-f5c" secondAttribute="centerX" id="8HE-7P-TqF"/>
@@ -1032,6 +1033,9 @@
         </namedColor>
         <namedColor name="onboardingViewControllerBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="orderConfirmationPaymentSummaryBackground">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="0.35999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="paymentBackgroundColor">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

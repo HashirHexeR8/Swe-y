@@ -19,6 +19,14 @@ class PaymentDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        firstCommButton.cornerRadius = 10.0
+        secondCommButton.cornerRadius = 10.0
+        thirdCommButton.cornerRadius = 10.0
+        fourthCommButton.cornerRadius = 10.0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        onFirstCommTap()
     }
     
     @IBAction func onNoCommTap() {
@@ -65,13 +73,31 @@ class PaymentDetailsViewController: UIViewController {
     }
     
     func makeButtonSelected(button: UIButton) {
-        button.backgroundColor = UIColor(hexString: "#0079FF", alpha: 0.73)
+        let backgroundLayer = CAGradientLayer()
+        backgroundLayer.colors = [
+        UIColor(red: 0.306, green: 0.663, blue: 1, alpha: 1).cgColor,
+        UIColor(red: 0.039, green: 0.498, blue: 1, alpha: 1).cgColor]
+        backgroundLayer.startPoint = CGPoint(x: 0.25, y: 1)
+        backgroundLayer.endPoint = CGPoint(x: 0.75, y: 1)
+        backgroundLayer.locations = [0, 1]
+        backgroundLayer.bounds = button.bounds.insetBy(dx: -0.5 * button.bounds.size.width, dy: -0.5 * button.bounds.size.height)
+        backgroundLayer.isHidden = false
+        backgroundLayer.name = "GradientLayer"
+        button.layer.insertSublayer(backgroundLayer, at: 0)
         button.setTitleColor(UIColor.white, for: .normal)
     }
     
     func makeButtonUnselected(button: UIButton) {
-        button.backgroundColor = UIColor(hexString: "#F2F2F2")
-        button.setTitleColor(UIColor.black, for: .normal)
+        if let layers = button.layer.sublayers {
+            for (index, layer) in layers.enumerated() {
+                if layer.name == "GradientLayer" {
+                    button.layer.sublayers?[index].removeFromSuperlayer()
+                    break
+                }
+            }
+        }
+        button.backgroundColor = UIColor(named: "paymentBackgroundColor")
+        button.setTitleColor(UIColor(named: "paymentLabelsColor"), for: .normal)
     }
 
     /*
