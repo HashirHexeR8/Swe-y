@@ -14,7 +14,7 @@ class ChatMessageViewController: UIViewController {
     @IBOutlet weak var attachmentViewContainer: UIView!
     @IBOutlet weak var attachmentCancelButton: UIButton!
     @IBOutlet weak var sendMessageTextField: UITextField!
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var attachmentViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var chatTextBoxViewContainer: UIView!
     
     private var isAttachmentViewVisible: Bool = false {
@@ -22,11 +22,8 @@ class ChatMessageViewController: UIViewController {
             if isAttachmentViewVisible {
                 
                 UIView.animate(withDuration: 0.12) {
-                    for attachmentViewConstraint in self.attachmentViewContainer.constraints {
-                        if attachmentViewConstraint.identifier == "attachmentButtonStackHeightConstraint" {
-                            attachmentViewConstraint.constant = self.view.frame.height * 0.25
-                        }
-                    }
+                    
+                    self.attachmentViewHeightConstraint.constant = self.view.frame.height * 0.25
                     
                     for buttonConstraint in self.attachmentCancelButton.constraints {
                         if buttonConstraint.identifier == "cancelButtonHeightConstraint" {
@@ -41,11 +38,8 @@ class ChatMessageViewController: UIViewController {
             else {
                 
                 UIView.animate(withDuration: 0.12) {
-                    for attachmentViewConstraint in self.attachmentViewContainer.constraints {
-                        if attachmentViewConstraint.identifier == "attachmentButtonStackHeightConstraint" {
-                            attachmentViewConstraint.constant = 0.0
-                        }
-                    }
+                    
+                    self.attachmentViewHeightConstraint.constant = 0.0
                     
                     for buttonConstraint in self.attachmentCancelButton.constraints {
                         if buttonConstraint.identifier == "cancelButtonHeightConstraint" {
@@ -87,15 +81,15 @@ class ChatMessageViewController: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
 
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= (keyboardSize.height)
+            if self.attachmentViewHeightConstraint.constant == 0 {
+                attachmentViewHeightConstraint.constant = keyboardSize.height - 20
             }
         }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
+        if self.attachmentViewHeightConstraint.constant != 0 {
+            self.attachmentViewHeightConstraint.constant = 0
         }
     }
     

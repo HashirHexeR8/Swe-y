@@ -27,6 +27,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var cartCountButton: UIButton!
     @IBOutlet weak var cartButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var searchContainerTopConstraint: NSLayoutConstraint!
     
     ///Offset to calculate if there's any change in scroll of tableview
     private var lastContentOffset: CGFloat = 0
@@ -57,6 +58,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
                         constraint.constant = 50
                     }
                 }
+                searchContainerTopConstraint.constant = 55
                 UIView.animate(withDuration: 0.15) {
                     self.view.layoutIfNeeded()
                 }
@@ -79,6 +81,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
                         constraint.constant = 70
                     }
                 }
+                searchContainerTopConstraint.constant = 0
                 UIView.animate(withDuration: 0.15) {
                     self.view.layoutIfNeeded()
                 }

@@ -47,6 +47,8 @@ class UserChatViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
+        self.hideKeyboardWhenTappedAround()
+        
         self.usersCollectionView.delegate = self
         self.usersCollectionView.dataSource = self
         self.chatTableView.delegate = self
