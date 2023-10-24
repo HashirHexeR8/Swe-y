@@ -103,6 +103,7 @@ class FIlterMainViewController: UIViewController {
         let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: String(describing: CategoryFilterViewController.self)) as? CategoryFilterViewController
         vc?.modalPresentationStyle = .overCurrentContext
+        vc?.modalTransitionStyle = .crossDissolve
         self.present(vc!, animated: true)
     }
     
@@ -110,6 +111,7 @@ class FIlterMainViewController: UIViewController {
         let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: String(describing: SizeTileFilterViewController.self)) as? SizeTileFilterViewController
         vc?.modalPresentationStyle = .overCurrentContext
+        vc?.modalTransitionStyle = .crossDissolve
         self.present(vc!, animated: true)
     }
     

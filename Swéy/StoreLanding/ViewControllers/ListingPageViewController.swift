@@ -19,15 +19,8 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
     }
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var filterButton: UIButton!
-    @IBOutlet weak var topViewContainer: UIView!
-    @IBOutlet weak var filterSearchViewContainer: UIView!
-    @IBOutlet weak var filterSearchBackgroundView: UIView!
-    @IBOutlet weak var filterSearchBackgroundBlurView: UIView!
     @IBOutlet weak var cartCountButton: UIButton!
     @IBOutlet weak var cartButton: UIButton!
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var searchContainerTopConstraint: NSLayoutConstraint!
     
     ///Offset to calculate if there's any change in scroll of tableview
     private var lastContentOffset: CGFloat = 0
@@ -42,53 +35,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
     ///Flag to show and hide the topFilterView
     private var isFilterViewHidden: Bool = false {
         didSet {
-            self.scrollDirectionDelegate?.onViewScrolled(didScrollUp: isFilterViewHidden)
-            if isFilterViewHidden {
-                for constraint in topViewContainer.constraints {
-                    if constraint.identifier == "viewHeightConstraint" {
-                        constraint.constant = 50
-                    }
-                }
-                UIView.animate(withDuration: 0.15) {
-                    self.view.layoutIfNeeded()
-                }
-                
-                for constraint in filterSearchViewContainer.constraints {
-                    if constraint.identifier == "heightConstraint" {
-                        constraint.constant = 50
-                    }
-                }
-                searchContainerTopConstraint.constant = 55
-                UIView.animate(withDuration: 0.15) {
-                    self.view.layoutIfNeeded()
-                }
-                self.topViewContainer.backgroundColor = UIColor(named: "onboardingViewControllerBackground")?.withAlphaComponent(0.0)
-                self.filterSearchBackgroundBlurView.isHidden = false
-                self.blurredView.frame = self.filterSearchBackgroundBlurView.bounds
-            }
-            else {
-                for constraint in topViewContainer.constraints {
-                    if constraint.identifier == "viewHeightConstraint" {
-                        constraint.constant = 70
-                    }
-                }
-                UIView.animate(withDuration: 0.15) {
-                    self.view.layoutIfNeeded()
-                }
-                
-                for constraint in filterSearchViewContainer.constraints {
-                    if constraint.identifier == "heightConstraint" {
-                        constraint.constant = 70
-                    }
-                }
-                searchContainerTopConstraint.constant = 0
-                UIView.animate(withDuration: 0.15) {
-                    self.view.layoutIfNeeded()
-                }
-                self.topViewContainer.backgroundColor = UIColor(named: "onboardingViewControllerBackground")?.withAlphaComponent(1.0)
-                self.filterSearchBackgroundBlurView.isHidden = true
-                self.blurredView.frame = self.filterSearchBackgroundBlurView.bounds
-            }
+            
         }
     }
     
@@ -121,35 +68,6 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         self.cartButton.layer.shadowRadius = 2
         self.cartButton.layer.masksToBounds = false
         
-        
-        // Create a blur effect
-        let blurEffect = UIBlurEffect(style: .light)
-        // Create a visual effect view with the blur effect
-        blurredView = CustomVisualEffectView(effect: blurEffect, intensity: 0.2)
-        // Set the frame to cover the entire view
-        blurredView.frame = filterSearchBackgroundBlurView.bounds
-        // Add the visual effect view as a subview
-        filterSearchBackgroundBlurView.addSubview(blurredView)
-        
-        self.profileImageView.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onProfileButtonTap))
-        self.profileImageView.addGestureRecognizer(tapGesture)
-        
-    }
-    
-    @objc func onProfileButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: ProfileDetailsViewController.self)) as? ProfileDetailsViewController
-        vc?.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
-    }
-    
-    @IBAction func onFilterButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: FIlterMainViewController.self)) as? FIlterMainViewController
-        vc?.modalPresentationStyle = .overCurrentContext
-        vc?.modalTransitionStyle = .crossDissolve
-        self.present(vc!, animated: true)
     }
     
     @IBAction func onCartButtonTap(_ sender: Any) {
@@ -201,7 +119,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: horizontalGroupSize, subitems: [verticalGroup, verticalProducts[0], verticalProducts[0], verticalProducts[0]])
         //Section
         let section = NSCollectionLayoutSection(group: horizontalGroup)
-        section.contentInsets = NSDirectionalEdgeInsets(top: topViewContainer!.bounds.height , leading: 8, bottom: 10, trailing: 8)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 70, leading: 8, bottom: 10, trailing: 8)
         section.orthogonalScrollingBehavior = .continuous
         return section
     }
@@ -325,10 +243,10 @@ extension ListingPageViewController: UICollectionViewDataSource {
             self.lastContentOffset = scrollView.contentOffset.y
             let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview!)
             if translation.y > 0 {
-                self.isFilterViewHidden = false
+                self.scrollDirectionDelegate?.onViewScrolled(didScrollUp: false)
             }
             else {
-                self.isFilterViewHidden = true
+                self.scrollDirectionDelegate?.onViewScrolled(didScrollUp: true)
             }
         }
     }
@@ -337,11 +255,11 @@ extension ListingPageViewController: UICollectionViewDataSource {
         if scrollView == self.collectionView {
             if self.lastContentOffset < scrollView.contentOffset.y {
                 // did move up
-                self.isFilterViewHidden = true
+                self.scrollDirectionDelegate?.onViewScrolled(didScrollUp: true)
             }
             else if self.lastContentOffset > scrollView.contentOffset.y {
                 // did move down
-                self.isFilterViewHidden = false
+                self.scrollDirectionDelegate?.onViewScrolled(didScrollUp: false)
             }
             
             let offsetY = scrollView.contentOffset.y

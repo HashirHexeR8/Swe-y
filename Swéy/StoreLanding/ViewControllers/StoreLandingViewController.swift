@@ -17,7 +17,13 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
     @IBOutlet weak var guidTile1: UIView!
     @IBOutlet weak var guidTile2: UIView!
     @IBOutlet weak var guidTile3: UIView!
+    @IBOutlet weak var searchFilterContainerView: UIView!
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var topAnchorConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchContainerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topViewContainerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var segmentedBottomSuperViewConstraint: NSLayoutConstraint!
+
     
     lazy var blurredView: UIView = {
         return UIView()
@@ -34,12 +40,9 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
                         constraint.constant = 0
                     }
                 }
-                for constraint in topViewContainer.constraints {
-                    if constraint.identifier == "viewHeightConstraint" {
-                        constraint.constant = 55
-                    }
-                }
+                topViewContainerHeightConstraint.constant = 110
                 topAnchorConstraint.constant = 0
+                searchContainerViewHeightConstraint.constant = 50
                 UIView.animate(withDuration: 0.15) {
                     self.view.layoutIfNeeded()
                 }
@@ -55,11 +58,8 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
                         constraint.constant = 45
                     }
                 }
-                for constraint in topViewContainer.constraints {
-                    if constraint.identifier == "viewHeightConstraint" {
-                        constraint.constant = 100
-                    }
-                }
+                topViewContainerHeightConstraint.constant = 170
+                searchContainerViewHeightConstraint.constant = 70
                 topAnchorConstraint.constant = (UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0) + 45
                 UIView.animate(withDuration: 0.15) {
                     self.view.layoutIfNeeded()
@@ -100,6 +100,25 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
         
         self.guidView.isUserInteractionEnabled = true
         self.guidView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onGuidViewTap)))
+        
+        self.profileImageView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onProfileButtonTap))
+        self.profileImageView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func onProfileButtonTap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: ProfileDetailsViewController.self)) as? ProfileDetailsViewController
+        vc?.modalPresentationStyle = .fullScreen
+        self.present(vc!, animated: true)
+    }
+    
+    @IBAction func onFilterButtonTap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: FIlterMainViewController.self)) as? FIlterMainViewController
+        vc?.modalPresentationStyle = .overCurrentContext
+        vc?.modalTransitionStyle = .crossDissolve
+        self.present(vc!, animated: true)
     }
     
     @objc func onGuidViewTap(_ sender: Any) {
@@ -136,6 +155,16 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
     
     func onPageChanged(selectedPage: Int) {
         self.segmentedControl.selectedSegmentIndex = selectedPage
+        if self.segmentedControl.selectedSegmentIndex == 1 {
+            self.searchFilterContainerView.isHidden = true
+            self.topViewContainerHeightConstraint.constant = 100
+            segmentedBottomSuperViewConstraint.priority = .required
+        }
+        else {
+            self.searchFilterContainerView.isHidden = false
+            self.topViewContainerHeightConstraint.constant = 170
+            segmentedBottomSuperViewConstraint.priority = .defaultLow
+        }
         self.segmentChanged(self.segmentedControl)
     }
 }
