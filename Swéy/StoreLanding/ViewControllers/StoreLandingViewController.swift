@@ -157,12 +157,16 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
         self.segmentedControl.selectedSegmentIndex = selectedPage
         if self.segmentedControl.selectedSegmentIndex == 1 {
             self.searchFilterContainerView.isHidden = true
-            self.topViewContainerHeightConstraint.constant = 100
+            self.topViewContainerHeightConstraint.constant = 110
+            self.topViewContainer.backgroundColor = UIColor(named: "onboardingViewControllerBackground")?.withAlphaComponent(0.0)
+            self.topContainerBackgroundView.isHidden = false
             segmentedBottomSuperViewConstraint.priority = .required
         }
         else {
             self.searchFilterContainerView.isHidden = false
             self.topViewContainerHeightConstraint.constant = 170
+            self.topViewContainer.backgroundColor = UIColor(named: "onboardingViewControllerBackground")?.withAlphaComponent(1.0)
+            self.topContainerBackgroundView.isHidden = true
             segmentedBottomSuperViewConstraint.priority = .defaultLow
         }
         self.segmentChanged(self.segmentedControl)
