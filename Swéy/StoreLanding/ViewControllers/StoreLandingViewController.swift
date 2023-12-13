@@ -23,6 +23,7 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
     @IBOutlet weak var searchContainerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var topViewContainerHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var segmentedBottomSuperViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var segmentHeightConstraint: NSLayoutConstraint!
 
     
     lazy var blurredView: UIView = {
@@ -58,12 +59,19 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
                         constraint.constant = 45
                     }
                 }
-                topViewContainerHeightConstraint.constant = 170
-                searchContainerViewHeightConstraint.constant = 70
-                topAnchorConstraint.constant = (UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0) + 45
-                UIView.animate(withDuration: 0.15) {
-                    self.view.layoutIfNeeded()
+                
+                if segmentedControl.selectedSegmentIndex == 0 {
+                    topViewContainerHeightConstraint.constant = 170
+                    searchContainerViewHeightConstraint.constant = 70
+                    self.searchFilterContainerView.isHidden = false
+                    segmentedBottomSuperViewConstraint.priority = .defaultLow
                 }
+                else {
+                    topViewContainerHeightConstraint.constant = 100
+                    self.searchFilterContainerView.isHidden = true
+                    segmentedBottomSuperViewConstraint.priority = .required
+                }
+                topAnchorConstraint.constant = (UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0) + 45
                 
                 self.topViewContainer.backgroundColor = UIColor(named: "onboardingViewControllerBackground")?.withAlphaComponent(1.0)
                 self.topContainerBackgroundView.isHidden = true
@@ -155,20 +163,7 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
     
     func onPageChanged(selectedPage: Int) {
         self.segmentedControl.selectedSegmentIndex = selectedPage
-        if self.segmentedControl.selectedSegmentIndex == 1 {
-            self.searchFilterContainerView.isHidden = true
-            self.topViewContainerHeightConstraint.constant = 110
-            self.topViewContainer.backgroundColor = UIColor(named: "onboardingViewControllerBackground")?.withAlphaComponent(0.0)
-            self.topContainerBackgroundView.isHidden = false
-            segmentedBottomSuperViewConstraint.priority = .required
-        }
-        else {
-            self.searchFilterContainerView.isHidden = false
-            self.topViewContainerHeightConstraint.constant = 170
-            self.topViewContainer.backgroundColor = UIColor(named: "onboardingViewControllerBackground")?.withAlphaComponent(1.0)
-            self.topContainerBackgroundView.isHidden = true
-            segmentedBottomSuperViewConstraint.priority = .defaultLow
-        }
+        self.isSegmentControlHidden = false
         self.segmentChanged(self.segmentedControl)
     }
 }

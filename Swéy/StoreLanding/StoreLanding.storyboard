@@ -751,7 +751,7 @@
                                         <cells/>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="onboardingViewControllerBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="xgS-Zx-Bjs" secondAttribute="trailing" id="0Aq-4r-JD3"/>
                                     <constraint firstItem="xgS-Zx-Bjs" firstAttribute="top" secondItem="CMD-IZ-jj4" secondAttribute="bottom" constant="10" id="4Bv-SI-PXg"/>
