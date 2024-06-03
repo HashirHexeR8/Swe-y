@@ -23,6 +23,8 @@ class ChatMessageViewController: UIViewController {
                 
                 UIView.animate(withDuration: 0.12) {
                     
+                    self.view.endEditing(true)
+                    
                     self.attachmentViewHeightConstraint.constant = self.view.frame.height * 0.25
                     
                     for buttonConstraint in self.attachmentCancelButton.constraints {

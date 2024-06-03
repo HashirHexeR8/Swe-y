@@ -67,13 +67,20 @@ class TextChatTableViewCell: UITableViewCell {
     
     func setupIncomingMessage() {
         backgroundLayer.isHidden = true
-        self.containerView.layer.backgroundColor = UIColor(red: 0.95, green: 0.954, blue: 0.962, alpha: 1).cgColor
-        self.messageLabel.textColor =  UIColor(red: 0.18, green: 0.227, blue: 0.349, alpha: 1)
+        self.containerView.layer.backgroundColor = UIColor(named: "chatBubbleIncomingMessageBackgroundColor")?.resolvedColor(with: self.traitCollection).cgColor
+        self.messageLabel.textColor =  UIColor(named: "chatTextColor")?.resolvedColor(with: self.traitCollection)
         self.edgeConstraint.isActive = false
         self.edgeConstraint = self.containerView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 12.0)
         self.edgeConstraint.isActive = true
         let cornersMasks: CACornerMask = self.isAllRoundCorners ? [ .layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner] : [.layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         self.containerView.layer.maskedCorners = cornersMasks
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.containerView.layer.backgroundColor = UIColor(named: "chatBubbleIncomingMessageBackgroundColor")?.resolvedColor(with: self.traitCollection).cgColor
+        if !isIncomingMessage {
+            self.messageLabel.textColor = UIColor(named: "chatTextColor")?.resolvedColor(with: self.traitCollection)
+        }
     }
     
 }

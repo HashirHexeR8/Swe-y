@@ -79,26 +79,29 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
             }
         }
     }
+    private var pageViewController: StoreMainPageViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        hideKeyboardWhenTappedAround()
+        
         segmentedControl.addUnderlineForSelectedSegment()
 
         ///Embedding PageViewController to the VC.
-        var vc: UIViewController = self.storyboard?.instantiateViewController(identifier: String(describing: StoreMainPageViewController.self)) { coder in
+        pageViewController = self.storyboard?.instantiateViewController(identifier: String(describing: StoreMainPageViewController.self)) { coder in
             StoreMainPageViewController(coder: coder, scrollDelegate: self, pagerDelegate: self)
         } as! StoreMainPageViewController
         
-        addChild(vc)
+        addChild(pageViewController)
 
-        self.embededViewContainer.addSubview(vc.view)
-        vc.view.frame = embededViewContainer.bounds
-        vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.embededViewContainer.addSubview(pageViewController.view)
+        pageViewController.view.frame = embededViewContainer.bounds
+        pageViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
-        vc.didMove(toParent: self)
+        pageViewController.didMove(toParent: self)
         
         // Create a blur effect
         let blurEffect = UIBlurEffect(style: .light)
@@ -155,6 +158,8 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
     
     @IBAction func segmentChanged(_ sender: Any) {
         self.segmentedControl.changeUnderlinePosition()
+        self.isSegmentControlHidden = false
+        pageViewController.goToPage(index: self.segmentedControl.selectedSegmentIndex)
     }
     
     func onViewScrolled(didScrollUp: Bool) {

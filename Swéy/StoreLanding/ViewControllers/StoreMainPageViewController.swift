@@ -86,6 +86,24 @@ class StoreMainPageViewController: UIPageViewController, UIPageViewControllerDat
         }
     }
     
+    func goToPage(index: Int) {
+        // Ensure that the index is within valid bounds
+        guard index >= 0 && index < 2 else {
+            return
+        }
+        
+        // Get the view controller for the desired index
+        let viewController = viewControllersList[index]
+        
+        // Set the view controller(s) using setViewControllers method
+        if index == 0 {
+            setViewControllers([viewController], direction: .reverse, animated: true, completion: nil)
+        }
+        else {
+            setViewControllers([viewController], direction: .forward, animated: true, completion: nil)
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
