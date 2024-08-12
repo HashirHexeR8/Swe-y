@@ -12,24 +12,31 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductImageCollectionViewCell" customModule="Swey" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="334" height="245"/>
+            <rect key="frame" x="0.0" y="0.0" width="334" height="324"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="334" height="245"/>
+                <rect key="frame" x="0.0" y="0.0" width="334" height="324"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZG5-gK-kYe">
-                        <rect key="frame" x="0.0" y="0.0" width="334" height="245"/>
+                        <rect key="frame" x="0.0" y="0.0" width="334" height="324"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product0" translatesAutoresizingMaskIntoConstraints="NO" id="ktA-qJ-Hlz">
-                                <rect key="frame" x="0.0" y="0.0" width="334" height="245"/>
+                                <rect key="frame" x="0.0" y="0.0" width="334" height="324"/>
                             </imageView>
+                            <button opaque="NO" contentMode="right" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBb-fB-sXO">
+                                <rect key="frame" x="10" y="292" width="99" height="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Shop Now" image="checkoutNext"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="onboardingViewControllerBackground"/>
                         <constraints>
                             <constraint firstItem="ktA-qJ-Hlz" firstAttribute="leading" secondItem="ZG5-gK-kYe" secondAttribute="leading" id="5Ml-ge-jB7"/>
+                            <constraint firstItem="zBb-fB-sXO" firstAttribute="leading" secondItem="ZG5-gK-kYe" secondAttribute="leading" constant="10" id="CZd-w6-X5R"/>
                             <constraint firstAttribute="bottom" secondItem="ktA-qJ-Hlz" secondAttribute="bottom" id="HCx-Tq-wTM"/>
                             <constraint firstItem="ktA-qJ-Hlz" firstAttribute="top" secondItem="ZG5-gK-kYe" secondAttribute="top" id="Na8-E2-mS2"/>
+                            <constraint firstAttribute="bottom" secondItem="zBb-fB-sXO" secondAttribute="bottom" constant="10" id="gN6-s8-XSP"/>
                             <constraint firstAttribute="trailing" secondItem="ktA-qJ-Hlz" secondAttribute="trailing" id="vjs-U4-TCC"/>
                         </constraints>
                     </view>
@@ -42,14 +49,15 @@
                 <constraint firstAttribute="trailing" secondItem="ZG5-gK-kYe" secondAttribute="trailing" id="isR-Tn-26g"/>
                 <constraint firstItem="ZG5-gK-kYe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="t7k-O2-RCa"/>
             </constraints>
-            <size key="customSize" width="334" height="245"/>
+            <size key="customSize" width="334" height="324"/>
             <connections>
                 <outlet property="cellImageView" destination="ktA-qJ-Hlz" id="4cO-Hc-Lgh"/>
             </connections>
-            <point key="canvasLocation" x="271.75572519083971" y="25.704225352112676"/>
+            <point key="canvasLocation" x="271.75572519083971" y="53.521126760563384"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="checkoutNext" width="16" height="15"/>
         <image name="product0" width="222" height="215"/>
         <namedColor name="onboardingViewControllerBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

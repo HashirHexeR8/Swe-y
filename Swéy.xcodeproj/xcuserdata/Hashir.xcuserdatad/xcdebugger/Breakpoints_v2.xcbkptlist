@@ -120,7 +120,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "99538F14-5375-4A24-A1B0-424EC558F626"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swe&#x301;y/StoreLanding/ViewControllers/StoreLandingViewController.swift"
@@ -152,7 +152,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "10F104D0-159B-4407-B344-566318D917B7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swe&#x301;y/StoreLanding/ViewControllers/StoreLandingViewController.swift"
@@ -162,6 +162,54 @@
             endingLineNumber = "39"
             landmarkName = "isSegmentControlHidden"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE092854-422E-47F0-B221-09DF0C044489"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swe&#x301;y/StoreLanding/ViewControllers/ListingPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "createHorizontalProductSection(sectionIndex:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EE092854-422E-47F0-B221-09DF0C044489 - 671b3c03e134ed8f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swey.ListingPageViewController.createHorizontalProductSection(sectionIndex: Swift.Int) -&gt; __C.NSCollectionLayoutSection"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ListingPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "274">
+               </Location>
+               <Location
+                  uuid = "EE092854-422E-47F0-B221-09DF0C044489 - 64e3e212b4eed738"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swey.ListingPageProductDTO) -&gt; Swift.Bool in Swey.ListingPageViewController.createHorizontalProductSection(sectionIndex: Swift.Int) -&gt; __C.NSCollectionLayoutSection"
+                  moduleName = "Swey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Hashir/Documents/GitHub/Swe%CC%81y/Swe%CC%81y/StoreLanding/ViewControllers/ListingPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

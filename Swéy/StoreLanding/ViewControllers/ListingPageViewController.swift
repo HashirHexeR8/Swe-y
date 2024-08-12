@@ -101,28 +101,28 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         var products: [NSCollectionLayoutItem] = []
         var verticalProducts: [NSCollectionLayoutItem] = []
         
-        for product in sectionDataSource[sectionIndex].products.filter({ productItem in productItem.itemType == .verticalGroupItem}) {
-            let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(175), heightDimension: .fractionalHeight(product.itemPriority)))
+        for _ in sectionDataSource[sectionIndex].products {
+            let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
             productItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 3, bottom: 2, trailing: 3)
             products.append(productItem)
         }
         
-        for product in sectionDataSource[sectionIndex].products.filter({ productItem in productItem.itemType == .verticalItem}) {
-            let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(191), heightDimension: .fractionalHeight(1)))
-            productItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 3, bottom: 2, trailing: 3)
-            verticalProducts.append(productItem)
-        }
+//        for product in sectionDataSource[sectionIndex].products.filter({ productItem in productItem.itemType == .verticalItem}) {
+//            let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(191), heightDimension: .fractionalHeight(1)))
+//            productItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 3, bottom: 2, trailing: 3)
+//            verticalProducts.append(productItem)
+//        }
         
-        let verticalGroupSize = NSCollectionLayoutSize(widthDimension: .absolute(175), heightDimension: .fractionalHeight(1))
-        let verticalGroup = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize, subitems: products)
-        let verticalProductsGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(354))
-        let verticalProductsGroup = NSCollectionLayoutGroup.horizontal(layoutSize: verticalProductsGroupSize, subitems: verticalProducts)
+//        let verticalGroupSize = NSCollectionLayoutSize(widthDimension: .absolute(175), heightDimension: .fractionalHeight(1))
+//        let verticalGroup = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize, subitems: products)
+//        let verticalProductsGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(354))
+//        let verticalProductsGroup = NSCollectionLayoutGroup.horizontal(layoutSize: verticalProductsGroupSize, subitems: verticalProducts)
         let horizontalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(354))
-        let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: horizontalGroupSize, subitems: [verticalGroup, verticalProducts[0], verticalProducts[0], verticalProducts[0]])
+        let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: horizontalGroupSize, subitems: products)
         //Section
         let section = NSCollectionLayoutSection(group: horizontalGroup)
         section.contentInsets = NSDirectionalEdgeInsets(top: 75, leading: 8, bottom: 10, trailing: 8)
-        section.orthogonalScrollingBehavior = .continuous
+        section.orthogonalScrollingBehavior = .paging
         return section
     }
     
