@@ -102,7 +102,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         var verticalProducts: [NSCollectionLayoutItem] = []
         
         for _ in sectionDataSource[sectionIndex].products {
-            let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+            let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.99), heightDimension: .fractionalHeight(1)))
             productItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 3, bottom: 2, trailing: 3)
             products.append(productItem)
         }
@@ -117,7 +117,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
 //        let verticalGroup = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize, subitems: products)
 //        let verticalProductsGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(354))
 //        let verticalProductsGroup = NSCollectionLayoutGroup.horizontal(layoutSize: verticalProductsGroupSize, subitems: verticalProducts)
-        let horizontalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(354))
+        let horizontalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.65))
         let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: horizontalGroupSize, subitems: products)
         //Section
         let section = NSCollectionLayoutSection(group: horizontalGroup)
@@ -209,8 +209,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         let horizontalProduct2 = ListingPageProductDTO(itemImage: "h1p2", itemType: .verticalGroupItem, itemPriority: 0.5)
         let horizontalProduct3 = ListingPageProductDTO(itemImage: "h1p3", itemType: .verticalItem, itemPriority: 0.7)
         let horizontalProduct4 = ListingPageProductDTO(itemImage: "h1p4", itemType: .verticalItem, itemPriority: 0.8)
-        let horizontalProduct5 = ListingPageProductDTO(itemImage: "h1p5", itemType: .verticalItem, itemPriority: 0.9)
-        let horizontalSection1 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .horizontalProductSection, products: [horizontalProduct1, horizontalProduct2, horizontalProduct3, horizontalProduct4, horizontalProduct5])
+        let horizontalSection1 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .horizontalProductSection, products: [horizontalProduct1, horizontalProduct2, horizontalProduct3, horizontalProduct4])
         //Section 1
         let product1 = ListingPageProductDTO(itemImage: "s1p1", itemType: .horizontalGroupItem, itemPriority: 0.6)
         let product2 = ListingPageProductDTO(itemImage: "s1p2", itemType: .horizontalGroupItem, itemPriority: 0.4)
