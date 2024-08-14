@@ -15,6 +15,7 @@ enum ListingPageSectionType {
 }
 
 enum ProductItemType {
+    case categoryItem
     case verticalGroupItem
     case verticalItem
     case horizontalGroupItem

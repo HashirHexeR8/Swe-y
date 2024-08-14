@@ -39,6 +39,8 @@
 		6E04FA4C29D459E500503E75 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04FA4B29D459E500503E75 /* Extensions.swift */; };
 		6E04FA4E29D4622500503E75 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04FA4D29D4622500503E75 /* OnboardingViewController.swift */; };
 		6E04FA5029D4627D00503E75 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04FA4F29D4627D00503E75 /* SignupViewController.swift */; };
+		6E257B182C6D60AA006C4C8B /* FilterCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E257B162C6D60AA006C4C8B /* FilterCategoryCollectionViewCell.swift */; };
+		6E257B192C6D60AA006C4C8B /* FilterCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E257B172C6D60AA006C4C8B /* FilterCategoryCollectionViewCell.xib */; };
 		6E3BE19229E497460060199C /* DOBPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19129E497460060199C /* DOBPickerViewController.swift */; };
 		6E3BE19429E5DC0D0060199C /* ProfilePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19329E5DC0D0060199C /* ProfilePictureViewController.swift */; };
 		6E3BE19629E5DC2E0060199C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3BE19529E5DC2E0060199C /* SignInViewController.swift */; };
@@ -140,6 +142,8 @@
 		6E04FA4B29D459E500503E75 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6E04FA4D29D4622500503E75 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		6E04FA4F29D4627D00503E75 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		6E257B162C6D60AA006C4C8B /* FilterCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		6E257B172C6D60AA006C4C8B /* FilterCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		6E3BE19129E497460060199C /* DOBPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOBPickerViewController.swift; sourceTree = "<group>"; };
 		6E3BE19329E5DC0D0060199C /* ProfilePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureViewController.swift; sourceTree = "<group>"; };
 		6E3BE19529E5DC2E0060199C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -378,6 +382,8 @@
 		6EEEE5CD2A0F5664007723F0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				6E257B162C6D60AA006C4C8B /* FilterCategoryCollectionViewCell.swift */,
+				6E257B172C6D60AA006C4C8B /* FilterCategoryCollectionViewCell.xib */,
 				6EEEE5DD2A10DA14007723F0 /* ProductImageCollectionViewCell.swift */,
 				6EEEE5DE2A10DA14007723F0 /* ProductImageCollectionViewCell.xib */,
 				6E9B79272A2CF0ED00B6559C /* SizeTileFilterCollectionViewCell.swift */,
@@ -521,6 +527,7 @@
 				6EFFE01F2AADCE8E00E39501 /* Profile.storyboard in Resources */,
 				6E04FA3029D222C200503E75 /* Poppins-ThinItalic.ttf in Resources */,
 				6E04FA2E29D222C200503E75 /* Poppins-Light.ttf in Resources */,
+				6E257B192C6D60AA006C4C8B /* FilterCategoryCollectionViewCell.xib in Resources */,
 				6EEEE5E02A10DA14007723F0 /* ProductImageCollectionViewCell.xib in Resources */,
 				6E04FA4829D43DC000503E75 /* DMSans-MediumItalic.ttf in Resources */,
 				6E04FA4729D43DC000503E75 /* DMSans-Bold.ttf in Resources */,
@@ -552,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E3BE19829E5DCF30060199C /* ForgetPasswordViewController.swift in Sources */,
+				6E257B182C6D60AA006C4C8B /* FilterCategoryCollectionViewCell.swift in Sources */,
 				6ECE0C652A641016007958D4 /* CustomBlurViewEffect.swift in Sources */,
 				6E9B792E2A2CF61100B6559C /* SizeTileFilterViewController.swift in Sources */,
 				6E04FA5029D4627D00503E75 /* SignupViewController.swift in Sources */,

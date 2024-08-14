@@ -87,7 +87,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
                 return self.createNormalProductSection(sectionIndex: sectionIndex)
             case .verticalProductSection:
                 return self.createVerticalProductSection(sectionIndex: sectionIndex)
-            case .horizontalProductSection:
+            case .categoriesSection:
                 return self.createHorizontalProductSection(sectionIndex: sectionIndex)
             default:
                 return self.createNormalProductSection()
@@ -102,7 +102,7 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
         var verticalProducts: [NSCollectionLayoutItem] = []
         
         for _ in sectionDataSource[sectionIndex].products {
-            let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.99), heightDimension: .fractionalHeight(1)))
+            let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.98), heightDimension: .fractionalHeight(1)))
             productItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 3, bottom: 2, trailing: 3)
             products.append(productItem)
         }
@@ -117,11 +117,11 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
 //        let verticalGroup = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize, subitems: products)
 //        let verticalProductsGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(354))
 //        let verticalProductsGroup = NSCollectionLayoutGroup.horizontal(layoutSize: verticalProductsGroupSize, subitems: verticalProducts)
-        let horizontalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.65))
+        let horizontalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.68))
         let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: horizontalGroupSize, subitems: products)
         //Section
         let section = NSCollectionLayoutSection(group: horizontalGroup)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 75, leading: 8, bottom: 10, trailing: 8)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 85, leading: 2, bottom: 10, trailing: 10)
         section.orthogonalScrollingBehavior = .paging
         return section
     }
@@ -205,31 +205,31 @@ class ListingPageViewController: UIViewController, UICollectionViewDelegate {
     func createDataSource() -> [ListingPageProductSectionDTO] {
         
         //Section 1
-        let horizontalProduct1 = ListingPageProductDTO(itemImage: "h1p1", itemType: .verticalGroupItem, itemPriority: 0.5)
-        let horizontalProduct2 = ListingPageProductDTO(itemImage: "h1p2", itemType: .verticalGroupItem, itemPriority: 0.5)
-        let horizontalProduct3 = ListingPageProductDTO(itemImage: "h1p3", itemType: .verticalItem, itemPriority: 0.7)
-        let horizontalProduct4 = ListingPageProductDTO(itemImage: "h1p4", itemType: .verticalItem, itemPriority: 0.8)
-        let horizontalSection1 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .horizontalProductSection, products: [horizontalProduct1, horizontalProduct2, horizontalProduct3, horizontalProduct4])
+        let horizontalProduct1 = ListingPageProductDTO(itemImage: "h1p1", itemType: .categoryItem, itemPriority: 0.5, categoryItemTitle: "Winter is Here", categoryItemDescription: "Discover the finest selection of jackets, hoodies, coats, and all your essential winter wear.", productStoreName: "", productPrice: "")
+        let horizontalProduct2 = ListingPageProductDTO(itemImage: "h1p2", itemType: .categoryItem, itemPriority: 0.5, categoryItemTitle: "Holy Grails", categoryItemDescription: "Explore early releases and exclusive collaborations to shop your favorite sneakers.", productStoreName: "", productPrice: "")
+        let horizontalProduct3 = ListingPageProductDTO(itemImage: "h1p3", itemType: .categoryItem, itemPriority: 0.7, categoryItemTitle: "Final Touches", categoryItemDescription: "Enhance your favorite outfits with designer jewelry and accessories.", productStoreName: "", productPrice: "")
+        let horizontalProduct4 = ListingPageProductDTO(itemImage: "h1p4", itemType: .categoryItem, itemPriority: 0.8, categoryItemTitle: "Emerging Designers", categoryItemDescription: "Explore small businesses and discover unique, one-of-a-kind looks.", productStoreName: "", productPrice: "")
+        let horizontalSection1 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .categoriesSection, products: [horizontalProduct1, horizontalProduct2, horizontalProduct3, horizontalProduct4])
         //Section 1
-        let product1 = ListingPageProductDTO(itemImage: "s1p1", itemType: .horizontalGroupItem, itemPriority: 0.6)
-        let product2 = ListingPageProductDTO(itemImage: "s1p2", itemType: .horizontalGroupItem, itemPriority: 0.4)
+        let product1 = ListingPageProductDTO(itemImage: "s1p1", itemType: .horizontalGroupItem, itemPriority: 0.6, categoryItemTitle: "", categoryItemDescription: "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product2 = ListingPageProductDTO(itemImage: "s1p2", itemType: .horizontalGroupItem, itemPriority: 0.4, categoryItemTitle: "", categoryItemDescription:  "", productStoreName: "Box Fit minecraft tea", productPrice: "R4 999.9")
         let section1 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product1, product2])
         //Section 2
-        let product3 = ListingPageProductDTO(itemImage: "s2p1", itemType: .horizontalGroupItem, itemPriority: 0.4)
-        let product4 = ListingPageProductDTO(itemImage: "s2p2", itemType: .horizontalGroupItem, itemPriority: 0.6)
+        let product3 = ListingPageProductDTO(itemImage: "s2p1", itemType: .horizontalGroupItem, itemPriority: 0.4, categoryItemTitle: "", categoryItemDescription:  "", productStoreName: "No Breeze windreaker v2", productPrice: "R4 999.9")
+        let product4 = ListingPageProductDTO(itemImage: "s2p2", itemType: .horizontalGroupItem, itemPriority: 0.6, categoryItemTitle: "", categoryItemDescription:  "", productStoreName: "AHD Roman Angel Cream", productPrice: "R4 999.9")
         let section2 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product3, product4])
         //Section 3
-        let product5 = ListingPageProductDTO(itemImage: "s3p1", itemType: .horizontalGroupItem, itemPriority: 0.6)
-        let product6 = ListingPageProductDTO(itemImage: "s3p2", itemType: .horizontalGroupItem, itemPriority: 0.4)
+        let product5 = ListingPageProductDTO(itemImage: "s3p1", itemType: .horizontalGroupItem, itemPriority: 0.6, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "AHD Bonzai", productPrice: "R4 999.9")
+        let product6 = ListingPageProductDTO(itemImage: "s3p2", itemType: .horizontalGroupItem, itemPriority: 0.4, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Geneva Thrift", productPrice: "R4 999.9")
         let section3 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product5, product6])
         //Section 4
-        let product7 = ListingPageProductDTO(itemImage: "s4p1", itemType: .verticalGroupItem, itemPriority: 0.35)
-        let product8 = ListingPageProductDTO(itemImage: "s4p2", itemType: .verticalGroupItem, itemPriority: 0.65)
-        let product9 = ListingPageProductDTO(itemImage: "s4p3", itemType: .verticalItem, itemPriority: 1)
+        let product7 = ListingPageProductDTO(itemImage: "s4p1", itemType: .verticalGroupItem, itemPriority: 0.35, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product8 = ListingPageProductDTO(itemImage: "s4p2", itemType: .verticalGroupItem, itemPriority: 0.65, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product9 = ListingPageProductDTO(itemImage: "s4p3", itemType: .verticalItem, itemPriority: 1, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
         let section4 = ListingPageProductSectionDTO(sectionName: "p2", sectionType: .verticalProductSection, products: [product7, product8, product9])
         //Section 5
-        let product10 = ListingPageProductDTO(itemImage: "s5p1", itemType: .horizontalGroupItem, itemPriority: 0.6)
-        let product11 = ListingPageProductDTO(itemImage: "s5p2", itemType: .horizontalGroupItem, itemPriority: 0.4)
+        let product10 = ListingPageProductDTO(itemImage: "s5p1", itemType: .horizontalGroupItem, itemPriority: 0.6, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product11 = ListingPageProductDTO(itemImage: "s5p2", itemType: .horizontalGroupItem, itemPriority: 0.4, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
         let section5 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product10, product11])
         
         return [horizontalSection1, section1, section2, section3, section4, section5]
@@ -280,6 +280,23 @@ extension ListingPageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ProductImageCollectionViewCell.self), for: indexPath) as! ProductImageCollectionViewCell
         cell.setupCell(imageName: sectionDataSource[indexPath.section].products[indexPath.row].itemImage)
+        if sectionDataSource[indexPath.section].products[indexPath.row].itemType == .categoryItem {
+            cell.productCategoryHeadingTitle.isHidden = false
+            cell.productCategoryDescription.isHidden = false
+            cell.shopCategoryButton.isHidden = false
+            cell.productPriceInfoContainer.isHidden = true
+            cell.productCategoryHeadingTitle.text = sectionDataSource[indexPath.section].products[indexPath.row].categoryItemTitle
+            cell.productCategoryDescription.text = sectionDataSource[indexPath.section].products[indexPath.row].categoryItemDescription
+
+        }
+        else {
+            cell.productCategoryHeadingTitle.isHidden = true
+            cell.productCategoryDescription.isHidden = true
+            cell.shopCategoryButton.isHidden = true
+            cell.productPriceInfoContainer.isHidden = false
+            cell.productPriceLabel.text = sectionDataSource[indexPath.section].products[indexPath.row].productPrice
+            cell.productName.text = sectionDataSource[indexPath.section].products[indexPath.row].productStoreName
+        }
         return cell
     }
     

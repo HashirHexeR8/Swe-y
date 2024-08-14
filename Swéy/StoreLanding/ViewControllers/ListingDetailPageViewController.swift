@@ -283,25 +283,25 @@ class ListingDetailPageViewController: UIViewController, UIGestureRecognizerDele
     
     func createDataSource() -> [ListingPageProductSectionDTO] {
         //Section 1
-        let product1 = ListingPageProductDTO(itemImage: "s1p1", itemType: .horizontalGroupItem, itemPriority: 0.6)
-        let product2 = ListingPageProductDTO(itemImage: "s1p2", itemType: .horizontalGroupItem, itemPriority: 0.4)
+        let product1 = ListingPageProductDTO(itemImage: "s1p1", itemType: .horizontalGroupItem, itemPriority: 0.6, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product2 = ListingPageProductDTO(itemImage: "s1p2", itemType: .horizontalGroupItem, itemPriority: 0.4, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
         let section1 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product1, product2])
         //Section 2
-        let product3 = ListingPageProductDTO(itemImage: "s2p1", itemType: .horizontalGroupItem, itemPriority: 0.4)
-        let product4 = ListingPageProductDTO(itemImage: "s2p2", itemType: .horizontalGroupItem, itemPriority: 0.6)
+        let product3 = ListingPageProductDTO(itemImage: "s2p1", itemType: .horizontalGroupItem, itemPriority: 0.4, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product4 = ListingPageProductDTO(itemImage: "s2p2", itemType: .horizontalGroupItem, itemPriority: 0.6, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
         let section2 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product3, product4])
         //Section 3
-        let product5 = ListingPageProductDTO(itemImage: "s3p1", itemType: .horizontalGroupItem, itemPriority: 0.6)
-        let product6 = ListingPageProductDTO(itemImage: "s3p2", itemType: .horizontalGroupItem, itemPriority: 0.4)
+        let product5 = ListingPageProductDTO(itemImage: "s3p1", itemType: .horizontalGroupItem, itemPriority: 0.6, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product6 = ListingPageProductDTO(itemImage: "s3p2", itemType: .horizontalGroupItem, itemPriority: 0.4, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
         let section3 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product5, product6])
         //Section 4
-        let product7 = ListingPageProductDTO(itemImage: "s4p1", itemType: .verticalGroupItem, itemPriority: 0.35)
-        let product8 = ListingPageProductDTO(itemImage: "s4p2", itemType: .verticalGroupItem, itemPriority: 0.65)
-        let product9 = ListingPageProductDTO(itemImage: "s4p3", itemType: .verticalItem, itemPriority: 1)
+        let product7 = ListingPageProductDTO(itemImage: "s4p1", itemType: .verticalGroupItem, itemPriority: 0.35, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product8 = ListingPageProductDTO(itemImage: "s4p2", itemType: .verticalGroupItem, itemPriority: 0.65, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product9 = ListingPageProductDTO(itemImage: "s4p3", itemType: .verticalItem, itemPriority: 1, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
         let section4 = ListingPageProductSectionDTO(sectionName: "p2", sectionType: .verticalProductSection, products: [product7, product8, product9])
         //Section 5
-        let product10 = ListingPageProductDTO(itemImage: "s5p1", itemType: .horizontalGroupItem, itemPriority: 0.6)
-        let product11 = ListingPageProductDTO(itemImage: "s5p2", itemType: .horizontalGroupItem, itemPriority: 0.4)
+        let product10 = ListingPageProductDTO(itemImage: "s5p1", itemType: .horizontalGroupItem, itemPriority: 0.6, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product11 = ListingPageProductDTO(itemImage: "s5p2", itemType: .horizontalGroupItem, itemPriority: 0.4, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
         let section5 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product10, product11])
         
         return [section1, section2, section3, section4, section5]
@@ -334,6 +334,10 @@ extension ListingDetailPageViewController: UICollectionViewDelegate, UICollectio
             else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ProductImageCollectionViewCell.self), for: indexPath) as! ProductImageCollectionViewCell
                 cell.setupCell(imageName: sectionDataSource[indexPath.section].products[indexPath.row].itemImage)
+                cell.productCategoryHeadingTitle.isHidden = true
+                cell.productCategoryDescription.isHidden = true
+                cell.shopCategoryButton.isHidden = true
+                cell.productPriceInfoContainer.isHidden = true
                 return cell
             }
         }
@@ -341,9 +345,17 @@ extension ListingDetailPageViewController: UICollectionViewDelegate, UICollectio
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ProductImageCollectionViewCell.self), for: indexPath) as! ProductImageCollectionViewCell
             if indexPath.row == 0 {
                 cell.setupCell(imageName: "productDetailFullImage")
+                cell.productCategoryHeadingTitle.isHidden = true
+                cell.productCategoryDescription.isHidden = true
+                cell.shopCategoryButton.isHidden = true
+                cell.productPriceInfoContainer.isHidden = true
             }
             else {
                 cell.setupCell(imageName: "productDetailNormal")
+                cell.productCategoryHeadingTitle.isHidden = true
+                cell.productCategoryDescription.isHidden = true
+                cell.shopCategoryButton.isHidden = true
+                cell.productPriceInfoContainer.isHidden = true
             }
             return cell
         }

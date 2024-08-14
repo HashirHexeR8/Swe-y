@@ -17,4 +17,8 @@ struct ListingPageProductDTO {
     var itemImage: String
     var itemType: ProductItemType
     var itemPriority: Double
+    var categoryItemTitle: String
+    var categoryItemDescription: String
+    var productStoreName: String
+    var productPrice: String
 }
