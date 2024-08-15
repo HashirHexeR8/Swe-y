@@ -918,7 +918,7 @@
                                                                 <state key="normal" image="searchIcon"/>
                                                             </button>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search your product…" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H7C-CL-nGj">
-                                                                <rect key="frame" x="46" y="7.6666666666666714" width="130" height="18.666666666666671"/>
+                                                                <rect key="frame" x="46" y="7.6666666666666732" width="130" height="18.666666666666671"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="textColor" name="storeLandingTextColorSet"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
@@ -961,10 +961,9 @@
                                                     <constraint firstItem="eXi-Xv-ALT" firstAttribute="height" secondItem="He1-pu-vuc" secondAttribute="height" multiplier="0.676471" id="yOC-ai-1SA"/>
                                                 </constraints>
                                             </view>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TeB-zR-XOc">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TeB-zR-XOc">
                                                 <rect key="frame" x="0.0" y="47.666666666666657" width="393" height="42.333333333333343"/>
-                                                <color key="backgroundColor" name="AccentColor"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NUE-u7-HvC">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NUE-u7-HvC">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -974,8 +973,10 @@
                                             </collectionView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="TeB-zR-XOc" firstAttribute="leading" secondItem="YJ3-Ey-IRr" secondAttribute="leading" id="Osh-5m-9Hx"/>
                                             <constraint firstAttribute="trailing" secondItem="He1-pu-vuc" secondAttribute="trailing" id="QUj-oe-Vg6"/>
                                             <constraint firstItem="He1-pu-vuc" firstAttribute="leading" secondItem="YJ3-Ey-IRr" secondAttribute="leading" id="erJ-7U-kCY"/>
+                                            <constraint firstAttribute="trailing" secondItem="TeB-zR-XOc" secondAttribute="trailing" id="oA8-uq-Ufe"/>
                                             <constraint firstAttribute="height" constant="90" id="z1c-em-yoz"/>
                                         </constraints>
                                     </stackView>
@@ -1445,13 +1446,13 @@
                                         <rect key="frame" x="39.333333333333343" y="157.66666666666669" width="314.33333333333326" height="536.66666666666652"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZK6-Ou-4QN">
-                                                <rect key="frame" x="109.33333333333331" y="30" width="95.666666666666686" height="21"/>
+                                                <rect key="frame" x="112" y="30" width="90.666666666666686" height="18.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="16"/>
                                                 <color key="textColor" name="chatUserNameLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZS0-sJ-dAb">
-                                                <rect key="frame" x="22" y="29.333333333333343" width="18" height="22"/>
+                                                <rect key="frame" x="22" y="28.333333333333343" width="18" height="22"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="closePaymentWindowBtn"/>
                                                 <connections>
@@ -1459,14 +1460,14 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUC-Ua-s96">
-                                                <rect key="frame" x="31.333333333333329" y="71" width="251.66666666666669" height="1"/>
+                                                <rect key="frame" x="31.333333333333329" y="68.666666666666686" width="251.66666666666669" height="1"/>
                                                 <color key="backgroundColor" name="filterItemSeparatorColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="khq-Wb-bI2"/>
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEO-lz-n9N" customClass="FormTextField" customModule="Swey" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="442" width="264.33333333333331" height="53.666666666666686"/>
+                                                <rect key="frame" x="25" y="427.66666666666674" width="264.33333333333331" height="53.666666666666686"/>
                                                 <color key="backgroundColor" name="quickPayFieldsBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="11"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1484,13 +1485,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jod-Qg-xJ2">
-                                                <rect key="frame" x="24.999999999999989" y="413" width="48.333333333333357" height="17"/>
+                                                <rect key="frame" x="24.999999999999993" y="401.66666666666674" width="44.000000000000007" height="14"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" name="chatUserNameLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ES9-7E-XOI" customClass="FormTextField" customModule="Swey" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="231.66666666666666" width="264.33333333333331" height="53.666666666666657"/>
+                                                <rect key="frame" x="25" y="223.33333333333334" width="264.33333333333331" height="53.666666666666657"/>
                                                 <color key="backgroundColor" name="quickPayFieldsBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="11"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1508,19 +1509,19 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iA-gr-6RQ">
-                                                <rect key="frame" x="25" y="202.66666666666666" width="79" height="17"/>
+                                                <rect key="frame" x="24.999999999999993" y="197.33333333333334" width="70.333333333333314" height="14"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" name="chatUserNameLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxi-L9-q8M">
-                                                <rect key="frame" x="24.999999999999993" y="102.00000000000003" width="101.66666666666666" height="17"/>
+                                                <rect key="frame" x="24.999999999999993" y="99.666666666666657" width="88.333333333333314" height="14"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" name="chatUserNameLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="247" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wOP-Gv-A1X" customClass="FormTextField" customModule="Swey" customModuleProvider="target">
-                                                <rect key="frame" x="24.999999999999993" y="131.00000000000003" width="125.66666666666666" height="53.666666666666657"/>
+                                                <rect key="frame" x="24.999999999999993" y="125.66666666666667" width="125.66666666666666" height="53.666666666666671"/>
                                                 <color key="backgroundColor" name="quickPayFieldsBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="11"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1538,7 +1539,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="247" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UKL-1U-TQJ" customClass="FormTextField" customModule="Swey" customModuleProvider="target">
-                                                <rect key="frame" x="163.66666666666666" y="131.00000000000003" width="125.66666666666666" height="53.666666666666657"/>
+                                                <rect key="frame" x="163.66666666666666" y="125.66666666666667" width="125.66666666666666" height="53.666666666666671"/>
                                                 <color key="backgroundColor" name="quickPayFieldsBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="11"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1556,12 +1557,12 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eb9-11-lr3">
-                                                <rect key="frame" x="143.33333333333331" y="131.00000000000003" width="28" height="53.666666666666657"/>
+                                                <rect key="frame" x="143.33333333333331" y="125.66666666666667" width="28" height="53.666666666666671"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="convertButton"/>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Destination Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Urk-mJ-xza" customClass="FormTextField" customModule="Swey" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="334.33333333333337" width="264.33333333333331" height="53.666666666666686"/>
+                                                <rect key="frame" x="25" y="323" width="264.33333333333331" height="53.666666666666686"/>
                                                 <color key="backgroundColor" name="quickPayFieldsBackgroundColor"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="11"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1579,7 +1580,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jef-B7-Efn">
-                                                <rect key="frame" x="24.999999999999993" y="305.33333333333337" width="120.66666666666666" height="17"/>
+                                                <rect key="frame" x="24.999999999999993" y="297" width="106.66666666666666" height="14"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" name="chatUserNameLabelColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2822,19 +2823,19 @@
     </scenes>
     <designables>
         <designable name="ES9-7E-XOI">
-            <size key="intrinsicContentSize" width="72.666666666666671" height="17.333333333333332"/>
+            <size key="intrinsicContentSize" width="64.333333333333329" height="14.666666666666666"/>
         </designable>
         <designable name="UKL-1U-TQJ">
-            <size key="intrinsicContentSize" width="3" height="17.333333333333332"/>
+            <size key="intrinsicContentSize" width="4" height="14.666666666666666"/>
         </designable>
         <designable name="Urk-mJ-xza">
-            <size key="intrinsicContentSize" width="110.66666666666667" height="17.333333333333332"/>
+            <size key="intrinsicContentSize" width="97.666666666666671" height="14.666666666666666"/>
         </designable>
         <designable name="dEO-lz-n9N">
-            <size key="intrinsicContentSize" width="60" height="17.333333333333332"/>
+            <size key="intrinsicContentSize" width="53.666666666666664" height="14.666666666666666"/>
         </designable>
         <designable name="wOP-Gv-A1X">
-            <size key="intrinsicContentSize" width="3" height="17.333333333333332"/>
+            <size key="intrinsicContentSize" width="4" height="14.666666666666666"/>
         </designable>
     </designables>
     <resources>
@@ -2884,9 +2885,6 @@
         <image name="trasnferMoneyIcon" width="34" height="28.333333969116211"/>
         <image name="tutorialTile" width="236" height="50"/>
         <image name="userProfile" width="46" height="46"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="chatAttachmentFButtonBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

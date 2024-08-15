@@ -28,6 +28,7 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
     @IBOutlet weak var segmentHeightConstraint: NSLayoutConstraint!
     
     private var categoryFilterDataSource = ["For You","Men", "Women", "Jacket", "Accessories"]
+    var prevSelectedItem = 0
 
     
     lazy var blurredView: UIView = {
@@ -41,9 +42,9 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
         didSet {
             if isSegmentControlHidden {
                 self.segmentHeightConstraint.constant = 0
-                self.topViewContainerHeightConstraint.constant = 110
+                self.topViewContainerHeightConstraint.constant = 115
                 self.topAnchorConstraint.constant = 0
-                self.searchFilterContainerViewHeightConstraint.constant = 40
+                self.searchFilterContainerViewHeightConstraint.constant = 45
                 self.filterCollectionView.isHidden = true
                 UIView.animate(withDuration: 0.15) {
                     self.view.layoutIfNeeded()
@@ -56,8 +57,8 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
             else {
                 self.segmentHeightConstraint.constant = 45
                 if segmentedControl.selectedSegmentIndex == 0 {
-                    self.topViewContainerHeightConstraint.constant = 180
-                    self.searchFilterContainerViewHeightConstraint.constant = 80
+                    self.topViewContainerHeightConstraint.constant = 195
+                    self.searchFilterContainerViewHeightConstraint.constant = 90
                     self.filterCollectionView.isHidden = false
                     self.searchFilterContainer.isHidden = false
                     self.segmentedBottomSuperViewConstraint.priority = .defaultLow
@@ -87,9 +88,6 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
         
         filterCollectionView.delegate = self
         filterCollectionView.dataSource = self
-        
-        filterCollectionView.collectionViewLayout = createCompositionalLayout()
-
                 
         hideKeyboardWhenTappedAround()
         
@@ -176,37 +174,9 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
         self.isSegmentControlHidden = false
         self.segmentChanged(self.segmentedControl)
     }
-    
-    func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            
-            return self.createFilterSection(sectionIndex: sectionIndex)
-        }
-        return layout
-    }
-    
-    func createFilterSection(sectionIndex: Int) -> NSCollectionLayoutSection {
-        
-        var products: [NSCollectionLayoutItem] = []
-        var verticalProducts: [NSCollectionLayoutItem] = []
-        
-        for _ in self.categoryFilterDataSource {
-            let productItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.23), heightDimension: .fractionalHeight(1)))
-            productItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 3, bottom: 2, trailing: 3)
-            products.append(productItem)
-        }
-        
-        let horizontalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.68))
-        let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: horizontalGroupSize, subitems: products)
-        //Section
-        let section = NSCollectionLayoutSection(group: horizontalGroup)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-        section.orthogonalScrollingBehavior = .continuous
-        return section
-    }
 }
 
-extension StoreLandingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension StoreLandingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -219,11 +189,22 @@ extension StoreLandingViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: FilterCategoryCollectionViewCell.self), for: indexPath) as! FilterCategoryCollectionViewCell
         cell.filterLabel.text = self.categoryFilterDataSource[indexPath.row]
+        cell.containerView.cornerRadius = 8.0
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if let font = UIFont(name: "Poppins-Regular", size: 12) {
+            let fontAttributes: [NSAttributedString.Key: Any?] = [.font: font]
+            let text = self.categoryFilterDataSource[indexPath.row]
+            let size = (text as NSString).size(withAttributes: fontAttributes as [NSAttributedString.Key : Any])
+            return CGSize(width: size.width + 50, height: 50)
+        }
+        return CGSize(width: (collectionView.frame.width*0.25), height: 50)
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         
     }
 }
