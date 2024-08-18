@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		327CB3C32C6F892300AC7D01 /* CategoryFilterItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327CB3C22C6F892300AC7D01 /* CategoryFilterItemDTO.swift */; };
 		6E04FA0329D212BE00503E75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04FA0229D212BE00503E75 /* AppDelegate.swift */; };
 		6E04FA0529D212BE00503E75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04FA0429D212BE00503E75 /* SceneDelegate.swift */; };
 		6E04FA0A29D212BE00503E75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E04FA0829D212BE00503E75 /* Main.storyboard */; };
@@ -106,10 +105,10 @@
 		6EFFE01F2AADCE8E00E39501 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EFFE01E2AADCE8E00E39501 /* Profile.storyboard */; };
 		6EFFE0252AAE01DA00E39501 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFE0232AAE01DA00E39501 /* SettingsTableViewCell.swift */; };
 		6EFFE0262AAE01DA00E39501 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EFFE0242AAE01DA00E39501 /* SettingsTableViewCell.xib */; };
+		A3AF8FB62C72422E00F89ACB /* CategoryFilterItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AF8FB52C72422E00F89ACB /* CategoryFilterItemDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		327CB3C22C6F892300AC7D01 /* CategoryFilterItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterItemDTO.swift; sourceTree = "<group>"; };
 		6E04F9FF29D212BE00503E75 /* Swey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E04FA0229D212BE00503E75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E04FA0429D212BE00503E75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +209,7 @@
 		6EFFE01E2AADCE8E00E39501 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		6EFFE0232AAE01DA00E39501 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		6EFFE0242AAE01DA00E39501 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		A3AF8FB52C72422E00F89ACB /* CategoryFilterItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterItemDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,7 +337,7 @@
 			children = (
 				6EBDD6302A10FFD000AECD19 /* ListingPageProductDTO.swift */,
 				6E9B792F2A2D0BB600B6559C /* FilterItemDTO.swift */,
-				327CB3C22C6F892300AC7D01 /* CategoryFilterItemDTO.swift */,
+				A3AF8FB52C72422E00F89ACB /* CategoryFilterItemDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -585,7 +585,7 @@
 				6E7C0F9F2A35B786002186E2 /* ChatListTableViewCell.swift in Sources */,
 				6E82A37C2A880A57000447AB /* QuickPayUserCollectionViewCell.swift in Sources */,
 				6E04FA0329D212BE00503E75 /* AppDelegate.swift in Sources */,
-				327CB3C32C6F892300AC7D01 /* CategoryFilterItemDTO.swift in Sources */,
+				A3AF8FB62C72422E00F89ACB /* CategoryFilterItemDTO.swift in Sources */,
 				6E04FA4E29D4622500503E75 /* OnboardingViewController.swift in Sources */,
 				6E6597872A2FC36A004ADE35 /* ProductPreviewViewController.swift in Sources */,
 				6ED541F42AB7A2B70026644D /* BillingDetailsViewController.swift in Sources */,
@@ -762,7 +762,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = 97KF2LZHQ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Swéy/Info.plist";
@@ -795,7 +795,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = 97KF2LZHQ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Swéy/Info.plist";

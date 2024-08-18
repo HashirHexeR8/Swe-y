@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,32 +23,40 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYN-Qu-iUV">
-                        <rect key="frame" x="7" y="7" width="125" height="64"/>
+                        <rect key="frame" x="0.0" y="0.0" width="139" height="78"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filterCategoryBtnNormalBg" translatesAutoresizingMaskIntoConstraints="NO" id="ns0-7C-pg9">
+                                <rect key="frame" x="0.0" y="0.0" width="139" height="78"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Men" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6il-eu-syg">
-                                <rect key="frame" x="49.666666666666664" y="23.666666666666671" width="25.666666666666664" height="17"/>
+                                <rect key="frame" x="56.666666666666664" y="30.666666666666671" width="25.666666666666664" height="17"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="categoryFilterButtonNormal"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ns0-7C-pg9" secondAttribute="trailing" id="0gq-AQ-MKl"/>
+                            <constraint firstItem="ns0-7C-pg9" firstAttribute="leading" secondItem="xYN-Qu-iUV" secondAttribute="leading" id="8Ff-dW-i7u"/>
                             <constraint firstItem="6il-eu-syg" firstAttribute="centerX" secondItem="xYN-Qu-iUV" secondAttribute="centerX" id="GW1-GN-EWL"/>
+                            <constraint firstItem="ns0-7C-pg9" firstAttribute="top" secondItem="xYN-Qu-iUV" secondAttribute="top" id="O2H-1e-LYy"/>
                             <constraint firstItem="6il-eu-syg" firstAttribute="centerY" secondItem="xYN-Qu-iUV" secondAttribute="centerY" id="l7P-Gw-yCu"/>
+                            <constraint firstAttribute="bottom" secondItem="ns0-7C-pg9" secondAttribute="bottom" id="lBs-BH-KUW"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="xYN-Qu-iUV" secondAttribute="bottom" constant="7" id="0Lz-1M-NnF"/>
-                <constraint firstItem="xYN-Qu-iUV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="9hp-ca-G0m"/>
-                <constraint firstItem="xYN-Qu-iUV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="HU7-eQ-hYh"/>
-                <constraint firstAttribute="trailing" secondItem="xYN-Qu-iUV" secondAttribute="trailing" constant="7" id="fWv-gV-qpu"/>
+                <constraint firstAttribute="bottom" secondItem="xYN-Qu-iUV" secondAttribute="bottom" id="0Lz-1M-NnF"/>
+                <constraint firstItem="xYN-Qu-iUV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9hp-ca-G0m"/>
+                <constraint firstItem="xYN-Qu-iUV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HU7-eQ-hYh"/>
+                <constraint firstAttribute="trailing" secondItem="xYN-Qu-iUV" secondAttribute="trailing" id="fWv-gV-qpu"/>
             </constraints>
             <size key="customSize" width="139" height="78"/>
             <connections>
+                <outlet property="backgroundImageView" destination="ns0-7C-pg9" id="Hq2-O0-iCz"/>
                 <outlet property="containerView" destination="xYN-Qu-iUV" id="wvo-6M-oWj"/>
                 <outlet property="filterLabel" destination="6il-eu-syg" id="QiO-3D-IOG"/>
             </connections>
@@ -57,8 +64,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="categoryFilterButtonNormal">
-            <color red="0.16899999976158142" green="0.16899999976158142" blue="0.17299999296665192" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="filterCategoryBtnNormalBg" width="99" height="40"/>
     </resources>
 </document>

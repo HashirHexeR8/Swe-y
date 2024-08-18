@@ -190,14 +190,13 @@ extension StoreLandingViewController: UICollectionViewDelegate, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: FilterCategoryCollectionViewCell.self), for: indexPath) as! FilterCategoryCollectionViewCell
         cell.filterLabel.text = self.categoryFilterDataSource[indexPath.row].categoryName
         if self.categoryFilterDataSource[indexPath.row].isSelected {
-            cell.containerView.backgroundColor = UIColor.blue
+            cell.backgroundImageView.image = UIImage(named: "filterCategoryBtnSelectedBg")
             cell.filterLabel.textColor = UIColor.white
         }
         else {
-            cell.containerView.backgroundColor = UIColor(named: "categoryFilterButtonNormal")
+            cell.backgroundImageView.image = UIImage(named: "filterCategoryBtnNormalBg")
             cell.filterLabel.textColor = UIColor.black
         }
-        cell.containerView.cornerRadius = 8.0
         return cell
     }
     
@@ -206,9 +205,9 @@ extension StoreLandingViewController: UICollectionViewDelegate, UICollectionView
             let fontAttributes: [NSAttributedString.Key: Any?] = [.font: font]
             let text = self.categoryFilterDataSource[indexPath.row].categoryName
             let size = (text as NSString).size(withAttributes: fontAttributes as [NSAttributedString.Key : Any])
-            return CGSize(width: size.width + 50, height: 50)
+            return CGSize(width: size.width + 45, height: 40)
         }
-        return CGSize(width: (collectionView.frame.width*0.25), height: 45)
+        return CGSize(width: (collectionView.frame.width*0.25), height: 40)
     }
     
     
