@@ -27,7 +27,7 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
     @IBOutlet weak var segmentedBottomSuperViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var segmentHeightConstraint: NSLayoutConstraint!
     
-    private var categoryFilterDataSource = ["For You","Men", "Women", "Jacket", "Accessories"]
+    private var categoryFilterDataSource: [CategoryFilterItemDTO] = [CategoryFilterItemDTO(categoryName: "For You", isSelected: false), CategoryFilterItemDTO(categoryName: "Men", isSelected: false), CategoryFilterItemDTO(categoryName: "Women", isSelected: false), CategoryFilterItemDTO(categoryName: "Jackets", isSelected: false), CategoryFilterItemDTO(categoryName: "Accessories", isSelected: false)]
     var prevSelectedItem = 0
 
     
@@ -188,7 +188,15 @@ extension StoreLandingViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: FilterCategoryCollectionViewCell.self), for: indexPath) as! FilterCategoryCollectionViewCell
-        cell.filterLabel.text = self.categoryFilterDataSource[indexPath.row]
+        cell.filterLabel.text = self.categoryFilterDataSource[indexPath.row].categoryName
+        if self.categoryFilterDataSource[indexPath.row].isSelected {
+            cell.containerView.backgroundColor = UIColor.blue
+            cell.filterLabel.textColor = UIColor.white
+        }
+        else {
+            cell.containerView.backgroundColor = UIColor(named: "categoryFilterButtonNormal")
+            cell.filterLabel.textColor = UIColor.black
+        }
         cell.containerView.cornerRadius = 8.0
         return cell
     }
@@ -196,15 +204,19 @@ extension StoreLandingViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if let font = UIFont(name: "Poppins-Regular", size: 12) {
             let fontAttributes: [NSAttributedString.Key: Any?] = [.font: font]
-            let text = self.categoryFilterDataSource[indexPath.row]
+            let text = self.categoryFilterDataSource[indexPath.row].categoryName
             let size = (text as NSString).size(withAttributes: fontAttributes as [NSAttributedString.Key : Any])
             return CGSize(width: size.width + 50, height: 50)
         }
-        return CGSize(width: (collectionView.frame.width*0.25), height: 50)
+        return CGSize(width: (collectionView.frame.width*0.25), height: 45)
     }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        for item in self.categoryFilterDataSource {
+            item.isSelected = false
+        }
+        self.categoryFilterDataSource[indexPath.row].isSelected = true
+        self.filterCollectionView.reloadData()
     }
 }
