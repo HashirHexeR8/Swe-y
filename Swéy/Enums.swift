@@ -321,3 +321,8 @@ enum TechIssueCellType: Int, CaseIterable {
         }
     }
 }
+
+enum UserDefaultKeys: String {
+    case authToken
+    case userDetails
+}

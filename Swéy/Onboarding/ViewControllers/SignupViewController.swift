@@ -7,20 +7,26 @@
 
 import UIKit
 
-class SignupViewController: UIViewController, UIGestureRecognizerDelegate {
+class SignupViewController: UIViewController, UIGestureRecognizerDelegate, UITextFieldDelegate {
     
     
     @IBOutlet weak var checkBoxButton: UIButton!
     @IBOutlet weak var lblSignInLabel: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var dobTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    private var userSignupDTO = UserSignupRequestDTO()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         let range = ("Already have an account? Signin" as NSString).range(of: "Signin")
-
+        
         let mutableAttributedString = NSMutableAttributedString.init(string: "Already have an account? Signin")
         
         let attributes:[NSAttributedString.Key : Any] = [.font : UIFont(name: "Poppins-Bold", size: 12.0)]
@@ -43,6 +49,67 @@ class SignupViewController: UIViewController, UIGestureRecognizerDelegate {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
+        self.dobTextField.delegate = self
+    }
+    
+    func validateUserInfo() -> Bool {
+        if let userEmail = self.emailTextField.text, userEmail.isEmpty {
+            SweyAlertController.showAlert(title: "Error", message: "Please enter your email", vc: self)
+            return false
+        }
+        if let userName = self.userNameTextField.text, userName.isEmpty {
+            SweyAlertController.showAlert(title: "Error", message: "Please enter your username", vc: self)
+            return false
+        }
+        if let dob = self.dobTextField.text, dob.isEmpty {
+            SweyAlertController.showAlert(title: "Error", message: "Please enter your date of birth", vc: self)
+            return false
+        }
+        if let password = self.passwordTextField.text, password.isEmpty {
+            SweyAlertController.showAlert(title: "Error", message: "Please enter your password", vc: self)
+            return false
+        }
+        return true
+    }
+    
+    func signupUser() {
+        if validateUserInfo() {
+            userSignupDTO.email = emailTextField.text!
+            userSignupDTO.password = passwordTextField.text!
+            userSignupDTO.phoneNumber = "0123456789"
+            userSignupDTO.username = userNameTextField.text!
+            
+            SweyAlertController.showLoadingAlert(message: "Signing Up...", vc: self)
+            Task {
+                do {
+                    try await AuthService.sharedInstance.signupUser(signupDTO: userSignupDTO)
+                    SweyAlertController.hideLoadingAlert()
+                }
+                catch {
+                    DispatchQueue.main.async {
+                        SweyAlertController.hideLoadingAlert()
+                        SweyAlertController.showAlert(title: "Error", message: "Unable to signup at this moment", vc: self)
+                    }
+                }
+            }
+            
+            
+        }
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == self.dobTextField {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: String(describing: DOBPickerViewController.self)) as! DOBPickerViewController
+            vc.onDatePicked = { date in
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd/MM/yyyy"
+                self.dobTextField.text = formatter.string(from: date)
+                self.userSignupDTO.dateOfBirth = Utilities.formatDateToDBFormat(date: date)
+            }
+            self.present(vc, animated: true)
+            return false
+        }
+        return true
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -54,16 +121,18 @@ class SignupViewController: UIViewController, UIGestureRecognizerDelegate {
         vc?.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(vc!, animated: true)
     }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
+}
 
+extension SignupViewController {
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= (keyboardSize.height - 160)
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
@@ -75,23 +144,13 @@ class SignupViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func onSignupButtonTap(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: PhoneNumberViewController.self)) as? PhoneNumberViewController
-        vc?.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(vc!, animated: true)
+        signupUser()
+//        let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: PhoneNumberViewController.self)) as? PhoneNumberViewController
+//        vc?.modalPresentationStyle = .fullScreen
+//        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func onUserPhoneNumberTap(_ sender: Any) {
         checkBoxButton.isSelected = !checkBoxButton.isSelected
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

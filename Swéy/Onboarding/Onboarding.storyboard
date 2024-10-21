@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uGC-Hs-GZp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uGC-Hs-GZp">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -473,8 +473,12 @@
                     </view>
                     <connections>
                         <outlet property="checkBoxButton" destination="wFX-iW-Wwz" id="jii-no-Rjv"/>
+                        <outlet property="dobTextField" destination="TwD-yI-Tcs" id="Vok-d4-gzo"/>
+                        <outlet property="emailTextField" destination="r9I-Zv-zVN" id="90x-eE-Vcc"/>
                         <outlet property="lblSignInLabel" destination="wLw-jO-FNR" id="3CO-iG-Vqi"/>
+                        <outlet property="passwordTextField" destination="RNI-z8-eob" id="yQy-Kg-f2E"/>
                         <outlet property="signUpButton" destination="TYi-uP-TOt" id="WbN-eM-KHu"/>
+                        <outlet property="userNameTextField" destination="beT-Dh-ww2" id="etD-m2-wut"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fp-fc-CEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -879,7 +883,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signInIllustration" translatesAutoresizingMaskIntoConstraints="NO" id="UQW-Sa-RCM">
                                 <rect key="frame" x="0.0" y="124.00000000000001" width="344" height="214.33333333333337"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sht-Gm-0Rq">
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sht-Gm-0Rq">
                                 <rect key="frame" x="135" y="456.66666666666669" width="160" height="22"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foe-Bv-LtS">
@@ -1092,8 +1096,10 @@
                     </view>
                     <connections>
                         <outlet property="checkBoxButton" destination="38w-A7-9NE" id="NNL-Rm-ETy"/>
+                        <outlet property="emailField" destination="eKc-dA-Sl3" id="Y2o-4D-nYe"/>
                         <outlet property="lblForgetPassword" destination="TXv-Yg-Sp1" id="crA-Bh-Aev"/>
                         <outlet property="lblSignUpButton" destination="ngT-Cg-XRz" id="NY0-4X-182"/>
+                        <outlet property="passwordField" destination="3ot-rH-e3p" id="ptO-nN-mwc"/>
                         <outlet property="signInButton" destination="ffm-nG-1IC" id="is3-pj-GvV"/>
                     </connections>
                 </viewController>
@@ -1768,6 +1774,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="UjQ-IV-ZSt"/>
                                         </constraints>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                            <!--1970-01-01 11:00:00 +0000-->
+                                        </date>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLc-Xn-5Y8">
                                         <rect key="frame" x="195.66666666666666" y="608" width="39" height="14.333333333333371"/>
@@ -1782,7 +1791,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJz-lb-oKP">
-                                        <rect key="frame" x="66.666666666666686" y="488.33333333333331" width="297" height="89.666666666666686"/>
+                                        <rect key="frame" x="79.666666666666657" y="503" width="270.66666666666674" height="75"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1792,13 +1801,13 @@
                                         </state>
                                         <connections>
                                             <action selector="onSignupButtonTap:" destination="6n5-ro-0xh" eventType="touchUpInside" id="cZE-wi-CqS"/>
+                                            <action selector="onTapSelectBtn:" destination="GMW-Zb-kMD" eventType="touchUpInside" id="zan-Zm-C6n"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="onboardingViewControllerBackground"/>
                                 <constraints>
                                     <constraint firstItem="KJz-lb-oKP" firstAttribute="centerX" secondItem="Ua2-U2-6wL" secondAttribute="centerX" id="0Y6-Qz-MwJ"/>
-                                    <constraint firstItem="KJz-lb-oKP" firstAttribute="top" secondItem="DJB-Ir-cGb" secondAttribute="bottom" constant="40" id="150-xF-dAu"/>
                                     <constraint firstItem="GNU-zh-AEa" firstAttribute="top" secondItem="Ua2-U2-6wL" secondAttribute="top" constant="10" id="BcN-ZG-S9g"/>
                                     <constraint firstAttribute="bottom" secondItem="iLc-Xn-5Y8" secondAttribute="bottom" constant="30" id="IHm-FS-jad"/>
                                     <constraint firstItem="5De-0M-LBf" firstAttribute="top" secondItem="GNU-zh-AEa" secondAttribute="bottom" constant="15" id="M2p-bH-2nw"/>
@@ -1806,6 +1815,7 @@
                                     <constraint firstItem="DJB-Ir-cGb" firstAttribute="leading" secondItem="Ua2-U2-6wL" secondAttribute="leading" id="O7l-Mq-0St"/>
                                     <constraint firstItem="KJz-lb-oKP" firstAttribute="centerX" secondItem="Ua2-U2-6wL" secondAttribute="centerX" id="Pjb-gK-ajk"/>
                                     <constraint firstItem="5De-0M-LBf" firstAttribute="centerX" secondItem="Ua2-U2-6wL" secondAttribute="centerX" id="T4R-8h-Mrz"/>
+                                    <constraint firstItem="KJz-lb-oKP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DJB-Ir-cGb" secondAttribute="bottom" constant="54" id="YiK-TN-TLL"/>
                                     <constraint firstAttribute="trailing" secondItem="DJB-Ir-cGb" secondAttribute="trailing" id="ayS-I3-zGT"/>
                                     <constraint firstItem="iLc-Xn-5Y8" firstAttribute="centerX" secondItem="Ua2-U2-6wL" secondAttribute="centerX" id="cZa-CU-rSf"/>
                                     <constraint firstItem="iLc-Xn-5Y8" firstAttribute="centerX" secondItem="Ua2-U2-6wL" secondAttribute="centerX" id="dqd-Td-c5M"/>
@@ -1831,9 +1841,15 @@
                             <constraint firstItem="Ua2-U2-6wL" firstAttribute="leading" secondItem="yRc-nx-5N8" secondAttribute="leading" id="WEd-VR-EWi"/>
                             <constraint firstItem="Ua2-U2-6wL" firstAttribute="bottom" secondItem="yRc-nx-5N8" secondAttribute="bottom" id="YY3-x2-2qF"/>
                             <constraint firstAttribute="trailing" secondItem="Ua2-U2-6wL" secondAttribute="trailing" id="ZIG-ne-WTB"/>
+                            <constraint firstItem="KJz-lb-oKP" firstAttribute="height" secondItem="yRc-nx-5N8" secondAttribute="height" multiplier="0.0804721" id="d7t-DX-plG"/>
                             <constraint firstItem="Ua2-U2-6wL" firstAttribute="height" secondItem="yRc-nx-5N8" secondAttribute="height" multiplier="0.7" id="f49-bu-XlH"/>
+                            <constraint firstItem="KJz-lb-oKP" firstAttribute="width" secondItem="yRc-nx-5N8" secondAttribute="width" multiplier="0.63" id="zFN-AO-qmE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelLabel" destination="iLc-Xn-5Y8" id="flI-cB-1T6"/>
+                        <outlet property="datePicker" destination="DJB-Ir-cGb" id="RVf-oB-1wL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PvZ-fs-VND" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,6 +13,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var checkBoxButton: UIButton!
     @IBOutlet weak var lblSignUpButton: UILabel!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,21 @@ class SignInViewController: UIViewController {
         lblSignUpButton.addGestureRecognizer(signupTapGesture)
     }
     
+    func validateSignIn() -> Bool {
+        if let email = emailField.text, email.isEmpty {
+            SweyAlertController.showAlert(title: "Error", message: "Please enter a valid email.", vc: self)
+            return false
+        }
+        if let password = passwordField.text, password.isEmpty {
+            SweyAlertController.showAlert(title: "Error", message: "Please enter a valid password.", vc: self)
+            return false
+        }
+        
+        return true
+    }
+}
+
+extension SignInViewController {
     @objc func onTapSignup(sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: SignupViewController.self)) as? SignupViewController
         vc?.modalPresentationStyle = .fullScreen
@@ -67,6 +84,7 @@ class SignInViewController: UIViewController {
     @IBAction func onUserPhoneNumberTap(_ sender: Any) {
         checkBoxButton.isSelected = !checkBoxButton.isSelected
     }
+    
     @objc func onTapForgetPassword(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: ForgetPasswordViewController.self)) as? ForgetPasswordViewController
         vc?.modalPresentationStyle = .fullScreen
@@ -78,20 +96,29 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func onNextButtonTap(_ sender: Any) {
+        if validateSignIn() {
+            SweyAlertController.showLoadingAlert(message: "Signing in...", vc: self)
+            let loginDTO = LoginRequestDTO(email: emailField.text!, password: passwordField.text!)
+            Task {
+                do {
+                    try await AuthService.sharedInstance.loginUser(loginDTO: loginDTO)
+                    DispatchQueue.main.async {
+                        SweyAlertController.hideLoadingAlert()
+                    }
+                }
+                catch {
+                    DispatchQueue.main.async {
+                        SweyAlertController.hideLoadingAlert()
+                        SweyAlertController.showAlert(title: "Error", message: "Unable to login.", vc: self)
+                    }
+                }
+            }
+        }
+        
+        
         let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: PhoneNumberSignInViewController.self)) as? PhoneNumberSignInViewController
         vc?.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
