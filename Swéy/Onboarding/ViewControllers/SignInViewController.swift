@@ -104,21 +104,20 @@ extension SignInViewController {
                     try await AuthService.sharedInstance.loginUser(loginDTO: loginDTO)
                     DispatchQueue.main.async {
                         SweyAlertController.hideLoadingAlert()
+                        let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: "StoreLandingNavigationController" ) as? UINavigationController
+                        vc?.modalPresentationStyle = .fullScreen
+                        self.present(vc!, animated: true)
                     }
                 }
                 catch {
                     DispatchQueue.main.async {
                         SweyAlertController.hideLoadingAlert()
-                        SweyAlertController.showAlert(title: "Error", message: "Unable to login.", vc: self)
+                        SweyAlertController.showAlert(title: "Error", message: error.localizedDescription, vc: self)
                     }
                 }
             }
         }
-        
-        
-        let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: PhoneNumberSignInViewController.self)) as? PhoneNumberSignInViewController
-        vc?.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
 }

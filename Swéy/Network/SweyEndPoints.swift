@@ -10,6 +10,7 @@ import Foundation
 enum SweyEndPoints {
     case signup(params: UserSignupRequestDTO)
     case login(params: LoginRequestDTO)
+    case requestPasswordResetOTP(params: [String: Any])
     
     var path: String {
         switch self {
@@ -17,19 +18,21 @@ enum SweyEndPoints {
                 return "api/auth/signup"
             case .login:
                 return "api/auth/login"
+            case .requestPasswordResetOTP:
+                return "api/auth/request-otp"
         }
     }
     
     var methodType: HTTPMethod {
         switch self {
-        case .signup, .login:
+        case .signup, .login, .requestPasswordResetOTP:
             return .post
         }
     }
     
     var queryParams: [String: String]? {
         switch self {
-        case .signup, .login:
+        case .signup, .login, .requestPasswordResetOTP:
             return nil
         }
     }
@@ -40,17 +43,19 @@ enum SweyEndPoints {
             return try? encodeParams(params)
         case .login(params: let params):
             return try? encodeParams(params)
+        case .requestPasswordResetOTP(params: let params):
+            return try? encodeParams(params)
         }
     }
     
     var baseURL: URL {
-        .init(string: "https://swey-app-be.vercel.app/")!
+        .init(string: "http://16.170.254.219:5000/")!
     }
     
     var headers: [String: String] {
         var headers = ["Content-Type": "application/json"]
         switch self {
-        case .signup, .login:
+        case .signup, .login, .requestPasswordResetOTP:
             break
         }
         return headers
@@ -61,7 +66,6 @@ enum SweyEndPoints {
             return try JSONSerialization.data(withJSONObject: dictionary, options: [])
         } else if let encodableValue = params as? Encodable {
             let encoder = JSONEncoder()
-            encoder.keyEncodingStrategy = .convertToSnakeCase
             return try encoder.encode(encodableValue)
         }
         return nil

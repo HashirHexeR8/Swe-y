@@ -17,9 +17,9 @@ class OnboardingViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        let range = ("Already have an account? Signin" as NSString).range(of: "Signin")
+        let range = ("Skip the formalities? Shop as a Guest >" as NSString).range(of: "Shop as a Guest >")
 
-        let mutableAttributedString = NSMutableAttributedString.init(string: "Already have an account? Signin")
+        let mutableAttributedString = NSMutableAttributedString.init(string: "Skip the formalities? Shop as a Guest >")
         
         let attributes:[NSAttributedString.Key : Any] = [.font : UIFont(name: "Poppins-Bold", size: 12.0)]
         mutableAttributedString.addAttributes(attributes, range: range)
@@ -38,9 +38,10 @@ class OnboardingViewController: UIViewController {
     }
     
     @objc func onTapSignup(sender: Any) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: SignInViewController.self)) as? SignInViewController
+        let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "StoreLandingNavigationController" ) as? UINavigationController
         vc?.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(vc!, animated: true)
+        self.present(vc!, animated: true)
     }
     
     @IBAction func onGetStartedButtonTap(_ sender: Any) {

@@ -79,21 +79,18 @@ class SignupViewController: UIViewController, UIGestureRecognizerDelegate, UITex
             userSignupDTO.phoneNumber = "0123456789"
             userSignupDTO.username = userNameTextField.text!
             
-            SweyAlertController.showLoadingAlert(message: "Signing Up...", vc: self)
-            Task {
-                do {
-                    try await AuthService.sharedInstance.signupUser(signupDTO: userSignupDTO)
-                    SweyAlertController.hideLoadingAlert()
-                }
-                catch {
-                    DispatchQueue.main.async {
-                        SweyAlertController.hideLoadingAlert()
-                        SweyAlertController.showAlert(title: "Error", message: "Unable to signup at this moment", vc: self)
-                    }
-                }
+            if self.checkBoxButton.isSelected {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: String(describing: PhoneNumberSignInViewController.self)) as? PhoneNumberSignInViewController
+                vc?.userSignUpDTO = userSignupDTO
+                vc?.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(vc!, animated: true)
             }
-            
-            
+            else {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: String(describing: ProfilePictureViewController.self)) as? ProfilePictureViewController
+                vc?.userSignupDTO = userSignupDTO
+                vc?.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(vc!, animated: true)
+            }
         }
     }
     

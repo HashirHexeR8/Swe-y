@@ -41,8 +41,12 @@ struct AuthService {
             switch networkResult {
             case .success (let response):
                 if response.statusCode == 200 {
-                    //UserDefaults.standard.set(response.data?.token, forKey: UserDefaultKeys.authToken.rawValue)
-                    //UserDefaults.standard.set(response.data, forKey: UserDefaultKeys.userDetails.rawValue)
+                    UserDefaults.standard.set(response.data?.token, forKey: UserDefaultKeys.authToken.rawValue)
+                    let encodedUserProfile = try JSONEncoder().encode(response.data?.user)
+                    UserDefaults.standard.set(encodedUserProfile, forKey: UserDefaultKeys.userDetails.rawValue)
+                }
+                else {
+                    throw SweyError.customError(response.statusMessage)
                 }
                 break
             case .failure (let error):
@@ -51,7 +55,30 @@ struct AuthService {
             }
         }
         catch {
-            print(error.localizedDescription)
+            print(error)
+            throw error
+        }
+    }
+    
+    func requestPasswordResetOTP(email: String) async throws -> RequestOTPResponseDTO? {
+        let resetPasswordEndPoint = SweyEndPoints.requestPasswordResetOTP(params: ["email": email])
+        do {
+            let networkResult: Result<BaseNetworkResponseDTO<RequestOTPResponseDTO>, Error> = await NetworkManager.sharedInstance.makeNetworkRequest(endPoint: resetPasswordEndPoint)
+            switch networkResult {
+            case .success (let response):
+                if response.statusCode == 200 {
+                    return response.data
+                }
+                else {
+                    throw SweyError.customError(response.statusMessage)
+                }
+            case .failure (let error):
+                print(error)
+                throw error
+            }
+        }
+        catch {
+            print(error)
             throw error
         }
     }

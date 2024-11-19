@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PhoneNumberSignInViewController: UIViewController {
-
+    
     @IBOutlet weak var checkBoxButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    
+    var userSignUpDTO: UserSignupRequestDTO!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,10 +55,18 @@ class PhoneNumberSignInViewController: UIViewController {
     }
     
     @IBAction func onNextButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "StoreLandingNavigationController" ) as? UINavigationController
-        vc?.modalPresentationStyle = .fullScreen
-        self.present(vc!, animated: true)
+        
+        PhoneAuthProvider.provider()
+            .verifyPhoneNumber("+923008447764", uiDelegate: nil) { verificationID, error in
+                if let error = error {
+                    SweyAlertController.showAlert(title: "Error", message: error.localizedDescription, vc: self)
+                    return
+                }
+            }
+//        let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "StoreLandingNavigationController" ) as? UINavigationController
+//        vc?.modalPresentationStyle = .fullScreen
+//        self.present(vc!, animated: true)
     }
 
     /*

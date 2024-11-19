@@ -31,6 +31,10 @@ class ProfileDetailsViewController: UIViewController, UITableViewDelegate, UITab
         dismiss(animated: true)
     }
     
+    @IBAction func onTapLogoutButton(_ sender: Any!) {
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 11
     }
