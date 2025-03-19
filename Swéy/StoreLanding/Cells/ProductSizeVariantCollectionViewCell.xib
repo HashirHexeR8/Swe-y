@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductSizeVariantCollectionViewCell" customModule="Swey" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="144" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="144" height="60"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYN-Cw-Ur4">
+                        <rect key="frame" x="32" y="15" width="80" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="US 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="tCc-BK-t7y">
+                                <rect key="frame" x="21.666666666666664" y="4.6666666666666679" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="OPc-db-7Fs"/>
+                            <constraint firstItem="tCc-BK-t7y" firstAttribute="centerX" secondItem="WYN-Cw-Ur4" secondAttribute="centerX" id="UHd-oX-p39"/>
+                            <constraint firstItem="tCc-BK-t7y" firstAttribute="centerY" secondItem="WYN-Cw-Ur4" secondAttribute="centerY" id="ktC-Cv-mui"/>
+                            <constraint firstAttribute="height" constant="30" id="yYc-gI-Tvx"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="WYN-Cw-Ur4" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="lq1-1N-Pkv"/>
+                <constraint firstItem="WYN-Cw-Ur4" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="pWh-vU-l46"/>
+            </constraints>
+            <size key="customSize" width="144" height="60"/>
+            <connections>
+                <outlet property="sizeItemContainerView" destination="WYN-Cw-Ur4" id="oXY-WT-7PQ"/>
+                <outlet property="sizeItemLabel" destination="tCc-BK-t7y" id="oVb-pc-lx5"/>
+            </connections>
+            <point key="canvasLocation" x="201.52671755725191" y="-14.788732394366198"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

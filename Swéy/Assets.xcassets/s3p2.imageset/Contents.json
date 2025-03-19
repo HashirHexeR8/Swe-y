@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "IMG-9897 1@1x.png",
+      "filename" : "s3p2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "IMG-9897 1@2x.png",
+      "filename" : "s3p2@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "IMG-9897 1@3x.png",
+      "filename" : "s3p2@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

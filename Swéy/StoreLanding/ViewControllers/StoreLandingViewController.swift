@@ -112,8 +112,16 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
         blurredView.frame = topContainerBackgroundView.bounds
         topContainerBackgroundView.addSubview(blurredView)
         
-        self.guidView.isUserInteractionEnabled = true
-        self.guidView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onGuidViewTap)))
+        if !UserDefaults.standard.bool(forKey: "isGuideShown") {
+            self.guidView.isHidden = false
+            self.guidView.isUserInteractionEnabled = true
+            self.guidView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onGuidViewTap)))
+        }
+        else {
+            self.guidView.isHidden = true
+            self.guidView.isUserInteractionEnabled = false
+        }
+        
         
         self.profileImageView.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onProfileButtonTap))
@@ -148,6 +156,7 @@ class StoreLandingViewController: UIViewController, ScrollDirectionDelegate, Pag
             case 2:
                 self.guidTile3.isHidden = true
                 self.guidView.isHidden = true
+                UserDefaults.standard.set(true, forKey: "isGuideShown")
             default:
                 self.guidView.isHidden = true
             }

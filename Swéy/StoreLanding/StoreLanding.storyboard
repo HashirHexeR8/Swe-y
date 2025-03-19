@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -219,9 +219,10 @@
                                                 <cells/>
                                             </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6a-hC-AEv">
-                                                <rect key="frame" x="20" y="476.33333333333337" width="26.333333333333329" height="23.333333333333314"/>
+                                                <rect key="frame" x="20" y="476.33333333333337" width="30" height="26"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="shareListingItemIcon"/>
+                                                <state key="normal" image="icBtnLikeInactive"/>
+                                                <state key="selected" image="icBtnLikeActive"/>
                                                 <connections>
                                                     <action selector="onChatButtonTap:" destination="FQE-ui-6cq" eventType="touchUpInside" id="lR9-Rh-5Re"/>
                                                 </connections>
@@ -446,6 +447,7 @@
                     <connections>
                         <outlet property="backButtonView" destination="7zF-ww-tUW" id="rAk-3e-NpJ"/>
                         <outlet property="cartButton" destination="doG-qS-rmK" id="k0A-Ch-BzZ"/>
+                        <outlet property="chatButton" destination="k6a-hC-AEv" id="rAB-7W-KdN"/>
                         <outlet property="deliveryPriceButton" destination="MCS-JD-4Te" id="fMA-RU-LRh"/>
                         <outlet property="productImagesCollectionView" destination="zOM-nS-Izi" id="pqR-OC-pIU"/>
                         <outlet property="productInfoContainer" destination="ycd-cH-YG2" id="oyz-2T-Nab"/>
@@ -1485,7 +1487,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jod-Qg-xJ2">
-                                                <rect key="frame" x="24.999999999999989" y="413" width="48.333333333333343" height="17"/>
+                                                <rect key="frame" x="24.999999999999989" y="413" width="48.333333333333357" height="17"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" name="chatUserNameLabelColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2821,23 +2823,6 @@
             <point key="canvasLocation" x="-1486" y="49"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="ES9-7E-XOI">
-            <size key="intrinsicContentSize" width="92.666666666666671" height="37.333333333333336"/>
-        </designable>
-        <designable name="UKL-1U-TQJ">
-            <size key="intrinsicContentSize" width="23" height="37.333333333333336"/>
-        </designable>
-        <designable name="Urk-mJ-xza">
-            <size key="intrinsicContentSize" width="131" height="37.333333333333336"/>
-        </designable>
-        <designable name="dEO-lz-n9N">
-            <size key="intrinsicContentSize" width="80" height="37.333333333333336"/>
-        </designable>
-        <designable name="wOP-Gv-A1X">
-            <size key="intrinsicContentSize" width="23" height="37.333333333333336"/>
-        </designable>
-    </designables>
     <resources>
         <image name="addAttachmentButton" width="16" height="16"/>
         <image name="addChatBtn" width="78" height="76.666664123535156"/>
@@ -2862,6 +2847,8 @@
         <image name="filterCloseButton" width="13.333333015441895" height="13.333333015441895"/>
         <image name="gifBtnIcon" width="21.666666030883789" height="21.666666030883789"/>
         <image name="guidtileBottom" width="236" height="50"/>
+        <image name="icBtnLikeActive" width="28" height="24"/>
+        <image name="icBtnLikeInactive" width="30" height="26"/>
         <image name="icNextButton" width="5" height="8"/>
         <image name="linkbutton" width="23" height="34"/>
         <image name="listingCart" width="63" height="62"/>
@@ -2880,7 +2867,6 @@
         <image name="sendChatbutton" width="35" height="35"/>
         <image name="sendMoneyButton" width="78" height="78"/>
         <image name="shareButton" width="70.333335876464844" height="70"/>
-        <image name="shareListingItemIcon" width="26.333333969116211" height="23.333333969116211"/>
         <image name="sweyCartActivated" width="83" height="38"/>
         <image name="trasnferMoneyIcon" width="34" height="28.333333969116211"/>
         <image name="tutorialTile" width="236" height="50"/>

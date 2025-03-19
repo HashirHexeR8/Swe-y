@@ -52,8 +52,6 @@ class SizeTileFilterViewController: UIViewController {
     
     func createNormalProductSection(sectionIndex: Int) -> NSCollectionLayoutSection {
         
-        
-        
         let sizeItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.20), heightDimension: .fractionalHeight(1)))
         sizeItem.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
         

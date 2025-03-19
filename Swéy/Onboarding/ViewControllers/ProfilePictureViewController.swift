@@ -27,6 +27,12 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
         self.chooseImageButton.layer.shadowOffset = CGSize(width: 0, height: 8)
         self.chooseImageButton.layer.shadowRadius = 10
         self.chooseImageButton.layer.masksToBounds = false
+        
+        selectedImageView.layer.borderWidth = 1.0
+        selectedImageView.layer.masksToBounds = false
+        selectedImageView.layer.borderColor = UIColor.white.cgColor
+        selectedImageView.layer.cornerRadius = selectedImageView.frame.size.width / 2
+        selectedImageView.clipsToBounds = true
     }
     
     @IBAction func onBackButtonTap(_ sender: Any) {
@@ -54,7 +60,9 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
                 }
             }
         }
-        showImageSourceOptions()
+        else {
+            showImageSourceOptions()
+        }
     }
     
     // Show alert with options to choose between camera and photo library
@@ -117,6 +125,7 @@ class ProfilePictureViewController: UIViewController, UIImagePickerControllerDel
         // Get the selected image
         if let image = info[.originalImage] as? UIImage {
             selectedImageView.image = image
+            isImageSelected = true
         }
         
         // Dismiss the picker view

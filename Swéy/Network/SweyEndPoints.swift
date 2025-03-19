@@ -11,6 +11,7 @@ enum SweyEndPoints {
     case signup(params: UserSignupRequestDTO)
     case login(params: LoginRequestDTO)
     case requestPasswordResetOTP(params: [String: Any])
+    case persistBillingDetails(params: PersistBillingDetailsRequestDTO)
     
     var path: String {
         switch self {
@@ -20,19 +21,21 @@ enum SweyEndPoints {
                 return "api/auth/login"
             case .requestPasswordResetOTP:
                 return "api/auth/request-otp"
+            case .persistBillingDetails:
+                return "api/auth/persist-billing"
         }
     }
     
     var methodType: HTTPMethod {
         switch self {
-        case .signup, .login, .requestPasswordResetOTP:
+        case .signup, .login, .requestPasswordResetOTP, .persistBillingDetails:
             return .post
         }
     }
     
     var queryParams: [String: String]? {
         switch self {
-        case .signup, .login, .requestPasswordResetOTP:
+        case .signup, .login, .requestPasswordResetOTP, .persistBillingDetails:
             return nil
         }
     }
@@ -45,6 +48,8 @@ enum SweyEndPoints {
             return try? encodeParams(params)
         case .requestPasswordResetOTP(params: let params):
             return try? encodeParams(params)
+        case .persistBillingDetails(params: let params):
+            return try? encodeParams(params)
         }
     }
     
@@ -56,6 +61,10 @@ enum SweyEndPoints {
         var headers = ["Content-Type": "application/json"]
         switch self {
         case .signup, .login, .requestPasswordResetOTP:
+            break
+        case .persistBillingDetails:
+            let authToken = UserDefaults.standard.string(forKey: UserDefaultKeys.authToken.rawValue)
+            headers["Authorization"] = authToken ?? ""
             break
         }
         return headers

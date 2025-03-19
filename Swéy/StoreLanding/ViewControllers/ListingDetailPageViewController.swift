@@ -20,6 +20,7 @@ class ListingDetailPageViewController: UIViewController, UIGestureRecognizerDele
     @IBOutlet weak var backButtonView: UIView!
     @IBOutlet weak var productPriceButton: UIStackView!
     @IBOutlet weak var deliveryPriceButton: UIButton!
+    @IBOutlet weak var chatButton: UIButton!
     
     private var sectionDataSource: [ListingPageProductSectionDTO] = []
     
@@ -126,11 +127,7 @@ class ListingDetailPageViewController: UIViewController, UIGestureRecognizerDele
     }
     
     @IBAction func onChatButtonTap (_ sender: Any!) {
-        let storyboard = UIStoryboard(name: "StoreLanding", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: ChatViewController.self)) as? ChatViewController
-        vc?.modalPresentationStyle = .overCurrentContext
-        vc?.modalTransitionStyle = .crossDissolve
-        self.present(vc!, animated: true)
+        self.chatButton.isSelected = !self.chatButton.isSelected
     }
     
     @IBAction func onBackButtonTap(_ sender: Any!) {
@@ -195,7 +192,7 @@ class ListingDetailPageViewController: UIViewController, UIGestureRecognizerDele
         products.append(productItem)
         
         //Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(110))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(500))
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: products)
         //Section
@@ -283,25 +280,25 @@ class ListingDetailPageViewController: UIViewController, UIGestureRecognizerDele
     
     func createDataSource() -> [ListingPageProductSectionDTO] {
         //Section 1
-        let product1 = ListingPageProductDTO(itemImage: "s1p1", itemType: .horizontalGroupItem, itemPriority: 0.6, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
-        let product2 = ListingPageProductDTO(itemImage: "s1p2", itemType: .horizontalGroupItem, itemPriority: 0.4, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product1 = ListingPageProductDTO(itemImage: "s1p1", itemType: .horizontalGroupItem, itemPriority: 0.5, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product2 = ListingPageProductDTO(itemImage: "s1p2", itemType: .horizontalGroupItem, itemPriority: 0.5, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
         let section1 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product1, product2])
         //Section 2
-        let product3 = ListingPageProductDTO(itemImage: "s2p1", itemType: .horizontalGroupItem, itemPriority: 0.4, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
-        let product4 = ListingPageProductDTO(itemImage: "s2p2", itemType: .horizontalGroupItem, itemPriority: 0.6, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product3 = ListingPageProductDTO(itemImage: "s2p1", itemType: .horizontalGroupItem, itemPriority: 0.5, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product4 = ListingPageProductDTO(itemImage: "s2p2", itemType: .horizontalGroupItem, itemPriority: 0.5, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
         let section2 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product3, product4])
         //Section 3
-        let product5 = ListingPageProductDTO(itemImage: "s3p1", itemType: .horizontalGroupItem, itemPriority: 0.6, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
-        let product6 = ListingPageProductDTO(itemImage: "s3p2", itemType: .horizontalGroupItem, itemPriority: 0.4, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product5 = ListingPageProductDTO(itemImage: "s3p1", itemType: .horizontalGroupItem, itemPriority: 0.5, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product6 = ListingPageProductDTO(itemImage: "s3p2", itemType: .horizontalGroupItem, itemPriority: 0.5, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
         let section3 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product5, product6])
         //Section 4
-        let product7 = ListingPageProductDTO(itemImage: "s4p1", itemType: .verticalGroupItem, itemPriority: 0.35, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
-        let product8 = ListingPageProductDTO(itemImage: "s4p2", itemType: .verticalGroupItem, itemPriority: 0.65, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product7 = ListingPageProductDTO(itemImage: "s4p1", itemType: .verticalGroupItem, itemPriority: 0.5, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product8 = ListingPageProductDTO(itemImage: "s4p2", itemType: .verticalGroupItem, itemPriority: 0.5, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
         let product9 = ListingPageProductDTO(itemImage: "s4p3", itemType: .verticalItem, itemPriority: 1, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
         let section4 = ListingPageProductSectionDTO(sectionName: "p2", sectionType: .verticalProductSection, products: [product7, product8, product9])
         //Section 5
-        let product10 = ListingPageProductDTO(itemImage: "s5p1", itemType: .horizontalGroupItem, itemPriority: 0.6, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
-        let product11 = ListingPageProductDTO(itemImage: "s5p2", itemType: .horizontalGroupItem, itemPriority: 0.4, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product10 = ListingPageProductDTO(itemImage: "s5p1", itemType: .horizontalGroupItem, itemPriority: 0.5, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
+        let product11 = ListingPageProductDTO(itemImage: "s5p2", itemType: .horizontalGroupItem, itemPriority: 0.5, categoryItemTitle: "Winter is Here", categoryItemDescription:  "", productStoreName: "Cloud Shoe 2024", productPrice: "R4 999.9")
         let section5 = ListingPageProductSectionDTO(sectionName: "p1", sectionType: .normalProductSection, products: [product10, product11])
         
         return [section1, section2, section3, section4, section5]

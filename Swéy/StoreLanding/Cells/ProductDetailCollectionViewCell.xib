@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,47 +18,133 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductDetailCollectionViewCell" customModule="Swey" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="460" height="105"/>
+            <rect key="frame" x="0.0" y="0.0" width="460" height="645"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="460" height="105"/>
+                <rect key="frame" x="0.0" y="0.0" width="460" height="645"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqc-eS-8kT">
-                        <rect key="frame" x="0.0" y="0.0" width="460" height="105"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRl-NZ-w4W">
+                        <rect key="frame" x="10" y="10" width="440" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="wx1-r4-Jd1"/>
+                        </constraints>
+                        <string key="text">The Nike Varsity Compete TR 3 gives you stability and traction during lifts or agility drills. Durable construction from top to bottom stands up to the rigors of training in the gym.</string>
+                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="13"/>
+                        <color key="textColor" name="storeLandingTextColorSet"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyh-rY-jRl">
+                        <rect key="frame" x="10" y="75" width="440" height="80"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRl-NZ-w4W">
-                                <rect key="frame" x="35" y="0.0" width="390" height="105"/>
-                                <string key="text">The Nike Varsity Compete TR 3 gives you stability and traction during lifts or agility drills. Durable construction from top to bottom stands up to the rigors of training in the gym...</string>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="13"/>
-                                <color key="textColor" name="storeLandingTextColorSet"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBm-xW-wdz">
+                                <rect key="frame" x="10" y="10" width="420" height="17"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Colour">
+                                        <attributes>
+                                            <color key="NSColor" red="0.29803921568627451" green="0.65490196078431373" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="DMSans-Medium"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="29" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jzs-kC-EFy">
+                                <rect key="frame" x="8" y="32" width="424" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KD8-ut-Gb4"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="L1d-BV-0QY">
+                                    <size key="itemSize" width="28" height="28"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="dRl-NZ-w4W" secondAttribute="bottom" id="bhx-hK-ue8"/>
-                            <constraint firstAttribute="trailing" secondItem="dRl-NZ-w4W" secondAttribute="trailing" constant="35" id="dZ2-Qd-SrE"/>
-                            <constraint firstItem="dRl-NZ-w4W" firstAttribute="top" secondItem="mqc-eS-8kT" secondAttribute="top" id="pE3-Pj-hwS"/>
-                            <constraint firstItem="dRl-NZ-w4W" firstAttribute="leading" secondItem="mqc-eS-8kT" secondAttribute="leading" constant="35" id="pLb-Uk-RpH"/>
+                            <constraint firstItem="Jzs-kC-EFy" firstAttribute="top" secondItem="PBm-xW-wdz" secondAttribute="bottom" constant="5" id="CH2-Mm-IWL"/>
+                            <constraint firstItem="PBm-xW-wdz" firstAttribute="leading" secondItem="qyh-rY-jRl" secondAttribute="leading" constant="10" id="I9X-rd-V2S"/>
+                            <constraint firstItem="Jzs-kC-EFy" firstAttribute="leading" secondItem="qyh-rY-jRl" secondAttribute="leading" constant="8" id="JGw-oT-cmC"/>
+                            <constraint firstAttribute="trailing" secondItem="Jzs-kC-EFy" secondAttribute="trailing" constant="8" id="P8L-4q-D0p"/>
+                            <constraint firstItem="PBm-xW-wdz" firstAttribute="top" secondItem="qyh-rY-jRl" secondAttribute="top" constant="10" id="VPf-1L-jK0"/>
+                            <constraint firstAttribute="height" constant="80" id="X5k-lb-GvF"/>
+                            <constraint firstAttribute="trailing" secondItem="PBm-xW-wdz" secondAttribute="trailing" constant="10" id="xnR-o9-ekW"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFv-yp-qCF">
+                        <rect key="frame" x="10" y="165" width="440" height="450"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53K-Lb-5lr">
+                                <rect key="frame" x="10" y="0.0" width="420" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="o5J-g7-csg"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Size US">
+                                        <attributes>
+                                            <color key="NSColor" red="0.29803921570000003" green="0.65490196079999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="DMSans-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="39" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yTk-cJ-iSX">
+                                <rect key="frame" x="8" y="25" width="424" height="395"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="5" id="XuQ-WL-3uo">
+                                    <size key="itemSize" width="80" height="40"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yTk-cJ-iSX" firstAttribute="top" secondItem="53K-Lb-5lr" secondAttribute="bottom" constant="10" id="Adz-V1-cT2"/>
+                            <constraint firstAttribute="trailing" secondItem="yTk-cJ-iSX" secondAttribute="trailing" constant="8" id="OUt-W8-gqa"/>
+                            <constraint firstItem="53K-Lb-5lr" firstAttribute="leading" secondItem="yFv-yp-qCF" secondAttribute="leading" constant="10" id="V8U-3k-1SW"/>
+                            <constraint firstAttribute="trailing" secondItem="53K-Lb-5lr" secondAttribute="trailing" constant="10" id="Ym2-z4-oxb"/>
+                            <constraint firstItem="yTk-cJ-iSX" firstAttribute="leading" secondItem="yFv-yp-qCF" secondAttribute="leading" constant="8" id="i28-70-iyK"/>
+                            <constraint firstItem="53K-Lb-5lr" firstAttribute="top" secondItem="yFv-yp-qCF" secondAttribute="top" id="nfr-C2-Kbs"/>
+                            <constraint firstAttribute="bottom" secondItem="yTk-cJ-iSX" secondAttribute="bottom" constant="30" id="pWq-of-VrJ"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="mqc-eS-8kT" secondAttribute="trailing" id="3PH-DR-RyK"/>
-                <constraint firstItem="mqc-eS-8kT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="unx-24-C2c"/>
-                <constraint firstItem="mqc-eS-8kT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vSz-4n-eka"/>
-                <constraint firstAttribute="bottom" secondItem="mqc-eS-8kT" secondAttribute="bottom" id="wCm-7g-CeG"/>
+                <constraint firstItem="dRl-NZ-w4W" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="5F8-Ri-FKr"/>
+                <constraint firstAttribute="trailing" secondItem="qyh-rY-jRl" secondAttribute="trailing" constant="10" id="6mV-Kv-Soz"/>
+                <constraint firstItem="yFv-yp-qCF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="AKj-KH-CSL"/>
+                <constraint firstItem="yFv-yp-qCF" firstAttribute="top" secondItem="qyh-rY-jRl" secondAttribute="bottom" constant="10" id="UTM-Pq-IoE"/>
+                <constraint firstItem="dRl-NZ-w4W" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="i0t-3I-zdC"/>
+                <constraint firstItem="qyh-rY-jRl" firstAttribute="top" secondItem="dRl-NZ-w4W" secondAttribute="bottom" constant="10" id="jtl-Xv-Lxp"/>
+                <constraint firstAttribute="bottom" secondItem="yFv-yp-qCF" secondAttribute="bottom" constant="30" id="lM1-2s-1YO"/>
+                <constraint firstAttribute="trailing" secondItem="yFv-yp-qCF" secondAttribute="trailing" constant="10" id="m1C-DQ-etg"/>
+                <constraint firstItem="qyh-rY-jRl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="nyq-ZW-7C4"/>
+                <constraint firstAttribute="trailing" secondItem="dRl-NZ-w4W" secondAttribute="trailing" constant="10" id="z5v-3T-phT"/>
             </constraints>
-            <size key="customSize" width="460" height="105"/>
-            <point key="canvasLocation" x="178.62595419847327" y="38.380281690140848"/>
+            <size key="customSize" width="460" height="645"/>
+            <connections>
+                <outlet property="colorCollectionView" destination="Jzs-kC-EFy" id="FYM-j6-uJm"/>
+                <outlet property="sizeCollectionView" destination="yTk-cJ-iSX" id="e5w-OM-9SH"/>
+            </connections>
+            <point key="canvasLocation" x="172.51908396946564" y="191.90140845070422"/>
         </collectionViewCell>
     </objects>
     <resources>
         <namedColor name="storeLandingTextColorSet">
             <color red="0.16899999976158142" green="0.16899999976158142" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
